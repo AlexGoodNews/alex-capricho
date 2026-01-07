@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: AlexGoodNews/AlexCapricho
   branch: main
 
 media_folder: "img/uploads"
