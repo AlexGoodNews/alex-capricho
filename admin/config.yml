@@ -8,15 +8,42 @@ public_folder: "/img/uploads"
 collections:
   - name: "puntos"
     label: "Puntos del Museo"
-    file: "data/puntos.json"
-    fields:
-      - { label: "ID", name: "id", widget: "string" }
-      - { label: "Nombre (ES)", name: "nombre_es", widget: "string" }
-      - { label: "Nombre (EN)", name: "nombre_en", widget: "string" }
-      - { label: "Descripción (ES)", name: "descripcion_es", widget: "text" }
-      - { label: "Descripción (EN)", name: "descripcion_en", widget: "text" }
-      - { label: "Coordenadas", name: "coords", widget: "list", field: {label: "Valor", name: "value", widget: "number"} }
-      - { label: "Accesible", name: "accesible", widget: "boolean" }
-      - { label: "Audio ES", name: "audio_es", widget: "file" }
-      - { label: "Audio EN", name: "audio_en", widget: "file" }
-      - { label: "Video Signos", name: "video_signos", widget: "file" }
+    files:
+      - name: "puntos"
+        label: "Puntos"
+        file: "data/puntos.json"
+        fields:
+          - label: "Lista de puntos"
+            name: "puntos"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+
+              - label: "Nombre"
+                name: "nombre"
+                widget: "object"
+                fields:
+                  - { label: "ES", name: "es", widget: "string" }
+                  - { label: "EN", name: "en", widget: "string" }
+
+              - label: "Descripción"
+                name: "descripcion"
+                widget: "object"
+                fields:
+                  - { label: "ES", name: "es", widget: "text" }
+                  - { label: "EN", name: "en", widget: "text" }
+
+              - label: "Coordenadas"
+                name: "coords"
+                widget: "list"
+                field: { label: "Valor", name: "value", widget: "number" }
+
+              - { label: "Accesible", name: "accesible", widget: "boolean" }
+
+              - label: "Media"
+                name: "media"
+                widget: "object"
+                fields:
+                  - { label: "Audio ES", name: "audio_es", widget: "file" }
+                  - { label: "Audio EN", name: "audio_en", widget: "file" }
+                  - { label: "Video Signos", name: "video_signos", widget: "file" }

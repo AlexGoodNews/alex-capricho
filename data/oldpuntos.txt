@@ -1,0 +1,41 @@
+
+[
+  {
+    "id": "punto1",
+    "nombre": {
+      "es": "Cámara Oscura",
+      "en": "The dark chamber"
+    },
+    "descripcion": {
+      "es": "Este espacio, ubicado en uno de los torreones del palacio, estará diseñado para proyectar una imagen exterior del jardín, permitiendo a los visitantes experimentar con este artilugio científico.",
+      "en": "This space, located in one of the palace's towers, will be designed to project an external image of the garden, allowing visitors to experiment with this scientific gadget."
+    },
+    "coords": [460, 1764],
+    "accesible": false,
+    "media": {
+      "audio_es": "audio/audio_es.mp3",
+      "audio_en": "audio/audio_en.mp3",
+      "video_signos": "videos/RehabilitacionCapricho.mp4"
+    }
+  },
+  {
+    "id": "punto2",
+    "nombre": {
+      "es": "Comedor",
+      "en": "Dining Room"
+    },
+    "descripcion": {
+      "es": "El comedor de gala del Palacio de El Capricho en Madrid ha sido objeto de una cuidadosa restauración que ha recuperado su configuración original del siglo XVIII, con especial énfasis en el suelo, que reproduce el emblemático Mosaico de Issos descubierto en Pompeya. Este suelo, que contiene tres reliquias de la época de los IX duques de Osuna —dos taraceas de mármol y pizarra y una reproducción en baldosas del mosaico—, ha sido restaurado y protegido para su exhibición. Además, se han restaurado las pinturas y decoraciones originales del techo del comedor, así como los colores, paredes y techos, todo ello con el objetivo de recrear fielmente el aspecto del siglo XVIII.",
+
+      "en": "The state dining room of the El Capricho Palace in Madrid has undergone a careful restoration that has restored its original 18th-century layout, with particular emphasis on the floor, which reproduces the iconic Issus Mosaic discovered in Pompeii. This floor, which contains three relics from the era of the 9th Duke and Duchess of Osuna—two marble and slate inlays and a tile reproduction of the mosaic—has been restored and protected for display. In addition, the original paintings and decorations on the dining room ceiling, as well as the colors, walls, and ceilings, have been restored with the aim of faithfully recreating its 18th-century appearance."
+
+    },
+    "coords": [844, 1760],
+    "accesible": true,
+    "media": {
+      "audio_es": "audio/audio_es.mp3",
+      "audio_en": "audio/audio_en.mp3",
+      "video_signos": "videos/RehabilitacionCapricho.mp4"
+    }
+  }
+]
