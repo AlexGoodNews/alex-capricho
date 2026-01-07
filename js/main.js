@@ -28,6 +28,55 @@ map.on('click', e => console.log(e.latlng));
 // Cargar puntos desde JSON
 fetch('data/puntos.json')
   .then(res => res.json())
+  .then(data => {
+    data.puntos.forEach(punto => {
+      // Usamos siempre el mismo icono
+      const marker = L.marker(punto.coords, { icon: puntoInfoIcon }).addTo(map);
+
+      // Elegimos la imagen de accesibilidad para el popup
+      const iconoAccesibilidad = punto.accesible ? iconoAccesible : iconoNoAccesible;
+      const popupHTML = `
+        <div class="card border-0 popup-contenido p-2">
+          <h5 class="card-title mb-1">${punto.nombre.es}</h5>
+          <h6 class="text-muted mb-2">${punto.nombre.en}</h6>
+
+          <div class="popup-informacion-extra mb-2">
+            <img src="${iconoAccesibilidad}" 
+                class="popup-icono-informativo" 
+                alt="${punto.accesible ? 'Accesible' : 'No accesible'}"
+                title="${punto.accesible ? 'Accesible' : 'No accesible'}" />
+            <!-- Podrás agregar más iconos aquí más adelante -->
+          </div>
+
+          <p class="card-text small">
+            ${punto.descripcion.es}<br>
+            <em class="mt-2 d-block">${punto.descripcion.en}</em>
+            ${!punto.accesible ? `
+              <span class="text-danger d-block mt-1">
+                 No accesible para sillas de ruedas.<br>
+                <em> Not accessible for wheelchairs.</em>
+              </span>
+            ` : ''}
+          </p>
+
+
+          <div class="iconos-reproductores mb-2">
+            <img src="icons/espana.png" class="icono-media" data-type="audio_es" alt="Audio ES" title="Audio en Español">
+            <img src="icons/reino-unido.png" class="icono-media" data-type="audio_en" alt="Audio EN" title="Audio en Inglés">
+            <img src="icons/hola-Signos.png" class="icono-media" data-type="video" alt="Lengua de Signos" title="Lengua de signos">
+          </div>
+
+          <div id="media-container-${punto.id}" class="media-contenedor"></div>
+        </div>
+      `;
+      marker.bindPopup(popupHTML);
+      marker.puntoData = punto; 
+    });
+  })
+  .catch(err => console.error("Error cargando puntos:", err));
+
+  /*
+  .then(res => res.json())
   .then(puntos => {
     puntos.forEach(punto => {
       // Usamos siempre el mismo icono
@@ -70,7 +119,7 @@ fetch('data/puntos.json')
         </div>
       `;
 
-      /*
+      
       const popupHTML = `
         <div style="position: relative;">
           <img src="${iconoAccesibilidad}" alt="Accesibilidad" title="${punto.accesible ? 'Accesible' : 'No accesible'}"
@@ -120,12 +169,12 @@ fetch('data/puntos.json')
           </video>
         </div>
       `;
-      */
+      
       marker.bindPopup(popupHTML);
       marker.puntoData = punto; 
     });
   })
-  .catch(err => console.error("Error cargando puntos:", err));
+  .catch(err => console.error("Error cargando puntos:", err));*/
 
 window.addEventListener('resize', () => {
   map.invalidateSize();
