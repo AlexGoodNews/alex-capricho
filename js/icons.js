@@ -9,7 +9,7 @@ const puntoInfoIcon = L.icon({
 // Íconos para mostrar dentro del popup (como imágenes)
 const iconoAccesible = 'icons/acceso.png';
 const iconoNoAccesible = 'icons/no-acceso.png';
-
+//hola
 
 //<a href="https://www.flaticon.es/iconos-gratis/info" title="info iconos">Info iconos creados por Freepik - Flaticon</a>
 //<a href="https://www.flaticon.es/iconos-gratis/silla-de-ruedas" title="silla de ruedas iconos">Silla de ruedas iconos creados por Freepik - Flaticon</a>
