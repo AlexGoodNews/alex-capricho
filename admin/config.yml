@@ -2,6 +2,7 @@ backend:
   name: github
   repo: AlexGoodNews/AlexCapricho
   branch: main
+  site-id: 32704109-fd33-4b42-a4a9-a1d7687a41b8
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
