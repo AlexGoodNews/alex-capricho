@@ -1,7 +1,10 @@
 backend:
-  name: git-gateway
-  repo: AlexGoodNews/AlexCapricho
+  name: github
+  repo: AlexGoodNews/AlexCapricho   # cámbialo por tu repo
   branch: main
+  auth_type: implicit
+  app_id: Ov23lipXbogDcxmrE5DM
+
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
