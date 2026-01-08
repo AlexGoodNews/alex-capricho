@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/auth"
+  to = "https://api.netlify.com/auth"
+  status = 200
+  force = true
