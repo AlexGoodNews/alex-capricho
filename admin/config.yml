@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: AlexGoodNews/AlexCapricho   # cámbialo por tu repo
+  repo: AlexGoodNews/AlexCapricho
   branch: main
   auth_type: implicit
   app_id: Ov23lipXbogDcxmrE5DM
@@ -40,7 +40,8 @@ collections:
               - label: "Coordenadas"
                 name: "coords"
                 widget: "list"
-                field: { label: "Valor", name: "value", widget: "number" }
+                fields:
+                  - { label: "Valor", name: "value", widget: "number" }
 
               - { label: "Accesible", name: "accesible", widget: "boolean" }
 
