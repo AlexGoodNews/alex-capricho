@@ -31,49 +31,90 @@ export async function onRequest(context) {
     }
 }
 */
-
 export async function onRequest(context) {
-    const { request, env } = context;
+  const { request, env } = context;
+  const url = new URL(request.url);
 
-    try {
-        const url = new URL(request.url);
-        const code = url.searchParams.get('code');
-        if (!code) throw new Error("No code");
+  const client_id = env.GITHUB_CLIENT_ID;
+  const client_secret = env.GITHUB_CLIENT_SECRET;
 
-        // Intercambia code por token
-        const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({
-                client_id: env.GITHUB_CLIENT_ID,
-                client_secret: env.GITHUB_CLIENT_SECRET,
-                code
-            })
-        });
+  // 1. Si NO hay "callback", redirigimos a GitHub
+  if (!url.searchParams.has("callback")) {
+    const redirectUrl = new URL("https://github.com/login/oauth/authorize");
+    redirectUrl.searchParams.set("client_id", client_id);
+    redirectUrl.searchParams.set("redirect_uri", url.origin + "/api/auth?callback=1");
+    redirectUrl.searchParams.set("scope", "repo user");
+    redirectUrl.searchParams.set(
+      "state",
+      crypto.getRandomValues(new Uint8Array(12)).join("")
+    );
 
-        const tokenData = await tokenResponse.json();
-        const accessToken = tokenData.access_token;
-        if (!accessToken) throw new Error("No access token");
+    return Response.redirect(redirectUrl.href, 302);
+  }
 
-        // Consulta al usuario autenticado
-        const userResponse = await fetch('https://api.github.com/user', {
-            headers: { Authorization: `Bearer ${accessToken}` }
-        });
-        const userData = await userResponse.json();
+  // 2. Si hay "callback", GitHub nos envía el "code"
+  const code = url.searchParams.get("code");
+  if (!code) {
+    return new Response("Missing code", { status: 400 });
+  }
 
-        // ✅ Solo permitimos tu usuario específico
-        const ALLOWED_USER = 'AlexGoodNews'; // <- reemplaza con tu login
-        if (userData.login !== ALLOWED_USER) {
-            return new Response('No autorizado', { status: 403 });
-        }
+  // 3. Intercambiar code por access_token
+  const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
+    method: "POST",
+    headers: { Accept: "application/json" },
+    body: new URLSearchParams({
+      client_id,
+      client_secret,
+      code,
+    }),
+  });
 
-        // Todo bien, devuelve lo que ya tenías configurado
-        return new Response(JSON.stringify({ accessToken, user: userData.login }), {
-            headers: { 'Content-Type': 'application/json' }
-        });
+  const tokenData = await tokenResponse.json();
+  const token = tokenData.access_token;
 
-    } catch (err) {
-        console.error(err);
-        return new Response(err.message, { status: 500 });
-    }
+  if (!token) {
+    return new Response("OAuth failed", { status: 401 });
+  }
+
+  // 4. Obtener datos del usuario autenticado
+  const userResponse = await fetch("https://api.github.com/user", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "User-Agent": "Cloudflare OAuth",
+    },
+  });
+
+  const user = await userResponse.json();
+
+  // 5. Validar usuario permitido
+  const allowedUsers = ["AlexGoodNews"]; // <-- aquí pones tu GitHub o el del cliente
+
+  if (!allowedUsers.includes(user.login)) {
+    return new Response("Unauthorized", { status: 403 });
+  }
+
+  // 6. Devolver token a Decap CMS
+  return new Response(
+    `
+    <html>
+      <body>
+        <script>
+          (function () {
+            const token = "${token}";
+            const adminUrl = "${url.origin}/admin/#access_token=" + token + "&token_type=bearer";
+
+            if (window.opener) {
+              window.opener.location.href = adminUrl;
+              window.close();
+            } else {
+              window.location.href = adminUrl;
+            }
+          })();
+        </script>
+      </body>
+    </html>
+    `,
+    { headers: { "Content-Type": "text/html" } }
+  );
 }
+
