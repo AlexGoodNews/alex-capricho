@@ -2,9 +2,8 @@ backend:
   name: github
   repo: AlexGoodNews/alex-capricho
   branch: main
-  auth_type: implicit
-  app_id: Ov23lipXbogDcxmrE5DM
-
+  base_url: https://alex-capricho.pages.dev
+  auth_endpoint: /api/auth
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
