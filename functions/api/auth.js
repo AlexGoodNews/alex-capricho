@@ -1,3 +1,4 @@
+/*
 export async function onRequest(context) {
     const {
         request, // same as existing Worker API
@@ -27,5 +28,52 @@ export async function onRequest(context) {
         return new Response(error.message, {
             status: 500,
         });
+    }
+}
+*/
+
+export async function onRequest(context) {
+    const { request, env } = context;
+
+    try {
+        const url = new URL(request.url);
+        const code = url.searchParams.get('code');
+        if (!code) throw new Error("No code");
+
+        // Intercambia code por token
+        const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                client_id: env.GITHUB_CLIENT_ID,
+                client_secret: env.GITHUB_CLIENT_SECRET,
+                code
+            })
+        });
+
+        const tokenData = await tokenResponse.json();
+        const accessToken = tokenData.access_token;
+        if (!accessToken) throw new Error("No access token");
+
+        // Consulta al usuario autenticado
+        const userResponse = await fetch('https://api.github.com/user', {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        });
+        const userData = await userResponse.json();
+
+        // ✅ Solo permitimos tu usuario específico
+        const ALLOWED_USER = 'AlexGoodNews'; // <- reemplaza con tu login
+        if (userData.login !== ALLOWED_USER) {
+            return new Response('No autorizado', { status: 403 });
+        }
+
+        // Todo bien, devuelve lo que ya tenías configurado
+        return new Response(JSON.stringify({ accessToken, user: userData.login }), {
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+    } catch (err) {
+        console.error(err);
+        return new Response(err.message, { status: 500 });
     }
 }

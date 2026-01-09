@@ -42,8 +42,7 @@ collections:
                 allow_add: true
                 required: false
 
-
-              - { label: "Accesible", name: "accesible", widget: "boolean" }
+              - { label: "Accesible", name: "accesible", widget: "boolean", required: false, default: false }
 
               - label: "Media"
                 name: "media"
