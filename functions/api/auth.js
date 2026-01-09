@@ -52,7 +52,8 @@ export async function onRequest(context) {
         <script>
         (function () {
         const token = "${tokenData.access_token}";
-        const adminUrl = "${url.origin}/admin/#access_token=" + token + "&token_type=bearer";
+        const adminUrl = '${url.origin}/admin/#access_token=${tokenData.access_token}&token_type=bearer';
+
 
         if (window.opener) {
             window.opener.location.href = adminUrl;
