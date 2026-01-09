@@ -39,8 +39,9 @@ collections:
               - label: "Coordenadas"
                 name: "coords"
                 widget: "list"
-                fields:
-                  - { label: "Valor", name: "value", widget: "number" }
+                allow_add: true
+                required: false
+
 
               - { label: "Accesible", name: "accesible", widget: "boolean" }
 
@@ -48,6 +49,7 @@ collections:
                 name: "media"
                 widget: "object"
                 fields:
-                  - { label: "Audio ES", name: "audio_es", widget: "file" }
-                  - { label: "Audio EN", name: "audio_en", widget: "file" }
-                  - { label: "Video Signos", name: "video_signos", widget: "file" }
+                  - { label: "Audio ES", name: "audio_es", widget: "file", required: false, default: "" }
+                  - { label: "Audio EN", name: "audio_en", widget: "file", required: false, default: "" }
+                  - { label: "Video Signos", name: "video_signos", widget: "file", required: false, default: "" }
+
