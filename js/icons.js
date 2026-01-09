@@ -7,7 +7,7 @@ const puntoInfoIcon = L.icon({
 });
 
 // Íconos para mostrar dentro del popup (como imágenes)
-const iconoAccesible = '/cons/acceso.png';
+const iconoAccesible = '/icons/acceso.png';
 const iconoNoAccesible = '/icons/no-acceso.png';
 //hola
 
