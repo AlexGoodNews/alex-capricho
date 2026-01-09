@@ -26,7 +26,7 @@ map.setZoom(-3);
 map.on('click', e => console.log(e.latlng));
 
 // Cargar puntos desde JSON
-fetch('data/puntos.json')
+fetch('/data/puntos.json')
   .then(res => res.json())
   .then(data => {
     data.puntos.forEach(punto => {
