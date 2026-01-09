@@ -13,9 +13,9 @@
       "coords": [460, 1764], 
       "accesible": false,
       "media": {
-        "audio_es": "audio/audio_es.mp3",
-        "audio_en": "audio/audio_en.mp3",
-        "video_signos": "videos/RehabilitacionCapricho.mp4"
+        "audio_es": "/uploads/audio/audio_es.mp3",
+        "audio_en": "/uploads/audio/audio_en.mp3",
+        "video_signos": "/uploads/videos/RehabilitacionCapricho.mp4"
       }
     },
     {
@@ -31,9 +31,9 @@
       "coords": [844, 1760],
       "accesible": true,
       "media": {
-        "audio_es": "audio/audio_es.mp3",
-        "audio_en": "audio/audio_en.mp3",
-        "video_signos": "videos/RehabilitacionCapricho.mp4"
+        "audio_es": "/uploads/audio/audio_es.mp3",
+        "audio_en": "/uploads/audio/audio_en.mp3",
+        "video_signos": "/uploads/videos/RehabilitacionCapricho.mp4"
       }
     }
   ]

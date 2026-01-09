@@ -19,7 +19,7 @@ const map = L.map('map', {
 
 
 const bounds = [[0, 0], [height, width]];
-L.imageOverlay('/img/plano-museo.png', bounds).addTo(map);
+L.imageOverlay('/uploads/img/plano-museo.png', bounds).addTo(map);
 map.fitBounds(bounds);
 map.setZoom(-3); 
 // Debug temporal para ver coordenadas
@@ -61,9 +61,9 @@ fetch('/data/puntos.json')
 
 
           <div class="iconos-reproductores mb-2">
-            <img src="icons/espana.png" class="icono-media" data-type="audio_es" alt="Audio ES" title="Audio en Español">
-            <img src="icons/reino-unido.png" class="icono-media" data-type="audio_en" alt="Audio EN" title="Audio en Inglés">
-            <img src="icons/hola-Signos.png" class="icono-media" data-type="video" alt="Lengua de Signos" title="Lengua de signos">
+            <img src="/uploads/icons/espana.png" class="icono-media" data-type="audio_es" alt="Audio ES" title="Audio en Español">
+            <img src="/uploads/icons/reino-unido.png" class="icono-media" data-type="audio_en" alt="Audio EN" title="Audio en Inglés">
+            <img src="/uploads/icons/hola-Signos.png" class="icono-media" data-type="video" alt="Lengua de Signos" title="Lengua de signos">
           </div>
 
           <div id="media-container-${punto.id}" class="media-contenedor"></div>

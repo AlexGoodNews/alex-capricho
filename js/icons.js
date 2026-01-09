@@ -1,14 +1,14 @@
 // Todos los puntos usan este icono
 const puntoInfoIcon = L.icon({
-  iconUrl: 'icons/info.png',
+  iconUrl: '/uploads/icons/info.png',
   iconSize: [32, 32],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32]
 });
 
 // Íconos para mostrar dentro del popup (como imágenes)
-const iconoAccesible = 'icons/acceso.png';
-const iconoNoAccesible = 'icons/no-acceso.png';
+const iconoAccesible = '/uploads/cons/acceso.png';
+const iconoNoAccesible = '/uploads/icons/no-acceso.png';
 //hola
 
 //<a href="https://www.flaticon.es/iconos-gratis/info" title="info iconos">Info iconos creados por Freepik - Flaticon</a>
