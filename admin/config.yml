@@ -1,12 +1,12 @@
 backend:
   name: github
   repo: AlexGoodNews/alex-capricho
-  branch: main
-  base_url: https://alex-capricho.pages.dev
+  branch: main # Branch to update (optional; defaults to master)
+  site_domain: https://alex-capricho.pages.dev/
+  base_url: https://alex-capricho.pages.dev/
   auth_endpoint: /api/auth
-
-media_folder: "img/uploads"
-public_folder: "/img/uploads"
+media_folder: static/img
+public_folder: /img
 
 collections:
   - name: "puntos"
