@@ -54,11 +54,15 @@ export async function onRequest(context) {
         const token = "${tokenData.access_token}";
         const adminUrl = '${url.origin}/admin/#access_token=${tokenData.access_token}&token_type=bearer';
 
-
         if (window.opener) {
+            console.log("Tengo un window.opener:", window.opener);
+            console.log("Redirigiendo al admin con token:", adminUrl);
+
             window.opener.location.href = adminUrl;
+            console.log("Intentando cerrar el popup...");
             window.close();
         } else {
+            console.log("No hay window.opener, redirigiendo el mismo popup al admin");
             window.location.href = adminUrl;
         }
         })();
