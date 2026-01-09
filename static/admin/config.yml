@@ -5,8 +5,8 @@ backend:
   site_domain: https://alex-capricho.pages.dev/
   base_url: https://alex-capricho.pages.dev/
   auth_endpoint: /api/auth
-media_folder: static/uploads
-public_folder: static/uploads
+media_folder: static/uploads/
+public_folder: /uploads
 
 collections:
   - name: "puntos"
