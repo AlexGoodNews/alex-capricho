@@ -19,7 +19,7 @@ const map = L.map('map', {
 
 
 const bounds = [[0, 0], [height, width]];
-L.imageOverlay('img/plano-museo.png', bounds).addTo(map);
+L.imageOverlay('/img/plano-museo.png', bounds).addTo(map);
 map.fitBounds(bounds);
 map.setZoom(-3); 
 // Debug temporal para ver coordenadas
