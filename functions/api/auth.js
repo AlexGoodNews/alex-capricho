@@ -50,17 +50,17 @@ export async function onRequest(context) {
     <html>
         <body>
         <script>
-            (function () {
-            const token = "${tokenData.access_token}";
-            const url = "/admin/#access_token=" + token + "&token_type=bearer";
+        (function () {
+        const token = "${tokenData.access_token}";
+        const adminUrl = "${url.origin}/admin/#access_token=" + token + "&token_type=bearer";
 
-            if (window.opener) {
-                window.opener.location.href = url;
-                window.close();
-            } else {
-                window.location.href = url;
-            }
-            })();
+        if (window.opener) {
+            window.opener.location.href = adminUrl;
+            window.close();
+        } else {
+            window.location.href = adminUrl;
+        }
+        })();
         </script>
         </body>
     </html>
