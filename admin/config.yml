@@ -1,9 +1,10 @@
 backend:
   name: github
-  repo: AlexGoodNews/AlexCapricho
+  repo: AlexGoodNews/alex-capricho
   branch: main
-  base_url: https://gncapricho.netlify.app
-  auth_endpoint: auth
+  auth_type: implicit
+  app_id: Ov23lipXbogDcxmrE5DM
+
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
