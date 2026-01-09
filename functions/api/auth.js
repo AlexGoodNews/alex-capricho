@@ -45,10 +45,33 @@ export async function onRequest(context) {
     }
 
     // Decap espera el token en el hash
-    return Response.redirect(
-      `${url.origin}/admin/#access_token=${tokenData.access_token}&token_type=bearer`,
-      302
+    return new Response(
+    `
+    <html>
+        <body>
+        <script>
+            (function () {
+            const token = "${tokenData.access_token}";
+            const url = "/admin/#access_token=" + token + "&token_type=bearer";
+
+            if (window.opener) {
+                window.opener.location.href = url;
+                window.close();
+            } else {
+                window.location.href = url;
+            }
+            })();
+        </script>
+        </body>
+    </html>
+    `,
+    {
+        headers: {
+        "Content-Type": "text/html",
+        },
+    }
     );
+
   }
 
   return new Response("Not found", { status: 404 });
