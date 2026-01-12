@@ -1,4 +1,4 @@
-
+/*
 export async function onRequest(context) {
     const {
         request, // same as existing Worker API
@@ -30,8 +30,8 @@ export async function onRequest(context) {
         });
     }
 }
+*/
 
-/*
 export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
@@ -104,10 +104,9 @@ export async function onRequest(context) {
             const token = "${token}";
             const adminUrl = "${url.origin}/admin/#access_token=" + token + "&token_type=bearer";
 
-            if (window.opener) {
-              window.opener.location.href = adminUrl;
-              window.close();
-            } else {
+            try {
+              window.location.replace(adminUrl);
+            } catch (e) {
               window.location.href = adminUrl;
             }
           })();
@@ -118,5 +117,5 @@ export async function onRequest(context) {
     { headers: { "Content-Type": "text/html" } }
   );
 }
-*/
+
 //creo que funciona
