@@ -1,4 +1,4 @@
-/*
+
 export async function onRequest(context) {
     const {
         request, // same as existing Worker API
@@ -30,7 +30,8 @@ export async function onRequest(context) {
         });
     }
 }
-*/
+
+/*
 export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
@@ -117,5 +118,5 @@ export async function onRequest(context) {
     { headers: { "Content-Type": "text/html" } }
   );
 }
-
+*/
 //creo que funciona
