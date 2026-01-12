@@ -104,9 +104,10 @@ export async function onRequest(context) {
             const token = "${token}";
             const adminUrl = "${url.origin}/admin/#access_token=" + token + "&token_type=bearer";
 
-            try {
-              window.location.replace(adminUrl);
-            } catch (e) {
+            if (window.opener) {
+              window.opener.location.href = adminUrl;
+              window.close();
+            } else {
               window.location.href = adminUrl;
             }
           })();
@@ -117,5 +118,4 @@ export async function onRequest(context) {
     { headers: { "Content-Type": "text/html" } }
   );
 }
-
 //creo que funciona
