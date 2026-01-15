@@ -48,14 +48,7 @@
           // Usuario no logueado → mostramos login
           appDiv.innerHTML = `<div id="sign-in"></div>`
           const signInDiv = document.getElementById('sign-in')
-          Clerk.mountSignIn(signInDiv)
-
-          // Opcional: cuando se loguee, recargar la página o inicializar dashboard
-          Clerk.addListener((event) => {
-            if (event.type === 'signedIn') {
-              location.reload() // Recarga para mostrar dashboard
-            }
-          })
+          Clerk.mountSignIn(signInDiv, { afterSignInUrl: '/admin', afterSignUpUrl: '/admin' })
         }
       })
     </script>
@@ -119,7 +112,7 @@
 
         const jsonActualizado = { puntos }
 
-        await fetch('/api/get-puntos', {
+        const resp = await fetch('/api/get-puntos', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(jsonActualizado)

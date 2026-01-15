@@ -26,7 +26,8 @@ map.setZoom(-3);
 map.on('click', e => console.log(e.latlng));
 
 // Cargar puntos desde JSON
-fetch('/data/puntos.json')
+//fetch('/data/puntos.json') antiguo sin cloudflare
+fetch('/api/get-puntos')
   .then(res => res.json())
   .then(data => {
     data.puntos.forEach(punto => {
