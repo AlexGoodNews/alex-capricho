@@ -1,5 +1,6 @@
 backend:
   name: github
+  #name:git-gateaway si se quiere usuario y contraseña
   repo: AlexGoodNews/alex-capricho
   branch: main # Branch to update (optional; defaults to master)
   site_domain: https://alex-capricho.pages.dev/

@@ -4,10 +4,127 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
+    <link rel="stylesheet" href="/admin/dark.css">
+
+
   </head>
   <body>
+    <div id="app"></div>
+
+    <!-- Clerk -->
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c3BsZW5kaWQtd29tYmF0LTAuY2xlcmsuYWNjb3VudHMuZGV2JA"
+      src="https://splendid-wombat-0.clerk.accounts.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
+      type="text/javascript">
+    </script>
+    
     <!-- Include the script that builds the page and powers Netlify CMS -->
-    <link rel="stylesheet" href="/admin/dark.css">
-    <script src="https://unpkg.com/decap-cms@3.1.0-beta.5/dist/decap-cms.js"></script>
+
+    <!--<script src="https://unpkg.com/decap-cms@3.1.0-beta.5/dist/decap-cms.js"></script>-->
+
+    <!-- Rest of your HTML file borrar a partir de aqui si se quiere netifly -->
+
+    <script>
+      window.addEventListener('load', async function () {
+        await Clerk.load()
+
+        const appDiv = document.getElementById('app')
+
+        if (Clerk.isSignedIn) {
+          // Usuario logueado → mostramos dashboard
+          appDiv.innerHTML = `
+            <div id="user-button"></div>
+            <h2>Dashboard de Puntos</h2>
+            <div id="dashboard"></div>
+          `
+
+          const userButtonDiv = document.getElementById('user-button')
+          Clerk.mountUserButton(userButtonDiv)
+
+          initDashboard() // Inicializamos dashboard
+        } else {
+          // Usuario no logueado → mostramos login
+          appDiv.innerHTML = `<div id="sign-in"></div>`
+          const signInDiv = document.getElementById('sign-in')
+          Clerk.mountSignIn(signInDiv)
+
+          // Opcional: cuando se loguee, recargar la página o inicializar dashboard
+          Clerk.addListener((event) => {
+            if (event.type === 'signedIn') {
+              location.reload() // Recarga para mostrar dashboard
+            }
+          })
+        }
+      })
+    </script>
+    <script>
+    async function initDashboard() {
+      const response = await fetch('/data/puntos.json')
+      const data = await response.json()
+      const puntos = data.puntos
+
+      const dashboardDiv = document.getElementById('dashboard')
+      dashboardDiv.innerHTML = '' // limpiar
+
+      puntos.forEach((punto, index) => {
+        const div = document.createElement('div')
+        div.style.border = '1px solid #ccc'
+        div.style.margin = '10px'
+        div.style.padding = '10px'
+
+        div.innerHTML = `
+          <h3>ID: <input type="text" id="id-${index}" value="${punto.id}"></h3>
+          <h4>Nombre</h4>
+          ES: <input type="text" id="nombre-es-${index}" value="${punto.nombre.es}"><br>
+          EN: <input type="text" id="nombre-en-${index}" value="${punto.nombre.en}"><br>
+          <h4>Descripción</h4>
+          ES: <textarea id="descripcion-es-${index}">${punto.descripcion.es}</textarea><br>
+          EN: <textarea id="descripcion-en-${index}">${punto.descripcion.en}</textarea><br>
+          <h4>Coordenadas</h4>
+          X: <input type="text" id="coord-x-${index}" value="${punto.coords[0]}">
+          Y: <input type="text" id="coord-y-${index}" value="${punto.coords[1]}"><br>
+          <label>
+            Accesible: <input type="checkbox" id="accesible-${index}" ${punto.accesible ? 'checked' : ''}>
+          </label><br>
+          <h4>Media</h4>
+          Audio ES: <input type="text" id="audio-es-${index}" value="${punto.media.audio_es || ''}"><br>
+          Audio EN: <input type="text" id="audio-en-${index}" value="${punto.media.audio_en || ''}"><br>
+          Video Signos: <input type="text" id="video-${index}" value="${punto.media.video_signos || ''}"><br>
+        `
+
+        dashboardDiv.appendChild(div)
+      })
+
+      // Botón Guardar
+      const saveButton = document.createElement('button')
+      saveButton.textContent = 'Guardar cambios'
+      saveButton.onclick = () => {
+        puntos.forEach((punto, index) => {
+          punto.id = document.getElementById(`id-${index}`).value
+          punto.nombre.es = document.getElementById(`nombre-es-${index}`).value
+          punto.nombre.en = document.getElementById(`nombre-en-${index}`).value
+          punto.descripcion.es = document.getElementById(`descripcion-es-${index}`).value
+          punto.descripcion.en = document.getElementById(`descripcion-en-${index}`).value
+          punto.coords[0] = document.getElementById(`coord-x-${index}`).value
+          punto.coords[1] = document.getElementById(`coord-y-${index}`).value
+          punto.accesible = document.getElementById(`accesible-${index}`).checked
+          punto.media.audio_es = document.getElementById(`audio-es-${index}`).value
+          punto.media.audio_en = document.getElementById(`audio-en-${index}`).value
+          punto.media.video_signos = document.getElementById(`video-${index}`).value
+        })
+
+        // JSON actualizado
+        const jsonActualizado = { puntos }
+        console.log('JSON actualizado en memoria:', jsonActualizado)
+      }
+
+
+      dashboardDiv.appendChild(saveButton)
+    }
+    </script>
+
+
   </body>
 </html>
