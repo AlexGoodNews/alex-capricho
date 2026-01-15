@@ -61,7 +61,9 @@
     </script>
     <script>
     async function initDashboard() {
-      const response = await fetch('/data/puntos.json')
+      //const response = await fetch('/data/puntos.json')
+      const response = await fetch('/api/puntos')
+
       const data = await response.json()
       const puntos = data.puntos
 
@@ -100,7 +102,7 @@
       // Botón Guardar
       const saveButton = document.createElement('button')
       saveButton.textContent = 'Guardar cambios'
-      saveButton.onclick = () => {
+      saveButton.onclick = async () => {
         puntos.forEach((punto, index) => {
           punto.id = document.getElementById(`id-${index}`).value
           punto.nombre.es = document.getElementById(`nombre-es-${index}`).value
@@ -115,10 +117,21 @@
           punto.media.video_signos = document.getElementById(`video-${index}`).value
         })
 
-        // JSON actualizado
         const jsonActualizado = { puntos }
-        console.log('JSON actualizado en memoria:', jsonActualizado)
+
+        const resp = await fetch('/api/puntos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(jsonActualizado)
+        })
+
+        if (resp.ok) {
+          alert("Cambios guardados correctamente")
+        } else {
+          alert("Error al guardar")
+        }
       }
+
 
 
       dashboardDiv.appendChild(saveButton)
