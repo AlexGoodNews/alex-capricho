@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+#dashboard {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.punto-card {
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.punto-card input,
+.punto-card textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 12px 0;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #222;
+  color: #eee;
+}
+
+button {
+  background: #4a8df6;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #3a7be0;
+}
+
+.delete-btn {
+  background: #d9534f;
+}
+
+.delete-btn:hover {
+  background: #c9302c;
+}
+
+h2, h3, h4 {
+  margin-top: 0;
+  color: #fff;
+}

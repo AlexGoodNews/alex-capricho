@@ -22,5 +22,8 @@ function generarPuntoHTML(punto, index) {
     Audio ES: <input type="text" id="audio-es-${index}" value="${punto.media.audio_es || ''}"><br>
     Audio EN: <input type="text" id="audio-en-${index}" value="${punto.media.audio_en || ''}"><br>
     Video Signos: <input type="text" id="video-${index}" value="${punto.media.video_signos || ''}"><br>
+
+    <button class="delete-btn" data-index="${index}">Eliminar punto</button>
+
   `
 }
