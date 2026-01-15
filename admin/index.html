@@ -62,7 +62,7 @@
     <script>
     async function initDashboard() {
       //const response = await fetch('/data/puntos.json')
-      const response = await fetch('/api/puntos')
+      const response = await fetch('/api/get-puntos')
 
       const data = await response.json()
       const puntos = data.puntos
@@ -119,11 +119,12 @@
 
         const jsonActualizado = { puntos }
 
-        const resp = await fetch('/api/puntos', {
+        await fetch('/api/get-puntos', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(jsonActualizado)
         })
+
 
         if (resp.ok) {
           alert("Cambios guardados correctamente")
