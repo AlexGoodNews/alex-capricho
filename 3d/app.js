@@ -2,17 +2,6 @@ import * as THREE from "three"
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 import { OrbitControls } from "three/addons/controls/OrbitControls.js"
 
-//outline
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
-import { OutlinePass } from 'three/addons/postprocessing/OutlinePass.js'
-
-//ffxaaa
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js'
-import { FXAAShader } from 'three/addons/shaders/FXAAShader.js'
-
-
-
 // Escena
 const scene = new THREE.Scene()
 scene.background = new THREE.Color(0xf5f5f5) // gris MUY claro
