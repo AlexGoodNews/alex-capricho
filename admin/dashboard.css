@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background: #111;
-  color: #eee;
+  background: #111; /*Modo oscuro cabiar a fff y color:000 si se quiere en blanco*/
+  color: #eee; 
   margin: 0;
   padding: 0;
 }
@@ -64,3 +64,10 @@ h2, h3, h4 {
   margin-top: 0;
   color: #fff;
 }
+
+#user-button {
+  display: flex;
+  justify-content: flex-end; /* lo manda a la derecha */
+  margin-bottom: 20px;
+}
+
