@@ -139,7 +139,7 @@ loader.load("/3d/models/caprichoThreeJS.glb", (gltf) => {
 
     cube.position.set(0, cubeHeight / 2 + i * cubeHeight, 0);
     cube.userData.floor = i + 1; // guarda la planta
-    cube.userData.url = `https://alex-capricho.pages.dev/`; // URL para redirigir
+    cube.userData.url = `https://alex-capricho.pages.dev/pagina1`; // URL para redirigir
 
     model.add(cube);
     floors.push(cube);
