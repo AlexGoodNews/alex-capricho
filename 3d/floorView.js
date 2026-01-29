@@ -36,7 +36,6 @@ export function updateCameraTransition(camera) {
     if (elapsedTime >= transitionDuration) {
         // La transición ha terminado, detener la animación
         cameraTransitionActive = false;
-        console.log("no me muevo, activamos");
         // Reactivar los botones cuando termine la transición
         document.querySelectorAll(".floor-btn").forEach(btn => {
             btn.disabled = false;
@@ -45,7 +44,6 @@ export function updateCameraTransition(camera) {
         transitionStartTime = null;  
 
     } else {
-        console.log("me muevo, deactivamos");
         // La cámara sigue moviéndose, aseguramos que los botones estén desactivados
         document.querySelectorAll(".floor-btn").forEach(btn => {
             btn.disabled = true;
@@ -55,8 +53,6 @@ export function updateCameraTransition(camera) {
 }
 
 export function activateFloorView(model, camera, floorNumber) {
-    if (!model) return;
-
     // Si ya estamos en esta planta, no hacer nada
     if (activeFloor === floorNumber) return;
 
@@ -75,33 +71,38 @@ export function activateFloorView(model, camera, floorNumber) {
     model.position.set(0, 0, 0);
 
     // --- NUEVO: definir target de cámara según planta ---
+    const btn1 = document.getElementById("btnPlanta1");
+    const btn2 = document.getElementById("btnPlanta2");
     if (floorNumber === 1) {
         cameraTargetPosition.set(-47.875, 4.293, 30.365);
+        btn1.textContent = "Volver";
+        btn1.classList.add("return-mode");
+
+        btn2.textContent = "Planta 2";
+        btn2.classList.remove("return-mode");
     }
     if (floorNumber === 2) {
         cameraTargetPosition.set(-37.875, 25, -111.3);
+        btn2.textContent = "Volver";
+        btn2.classList.add("return-mode");
+
+        btn1.textContent = "Planta 1";
+        btn1.classList.remove("return-mode");
     }
-
-    const btn = document.getElementById("btnPlanta" + floorNumber);
-    btn.textContent = "Volver";
-    btn.classList.add("return-mode");
-
     cameraTransitionActive = true;
 }
 
-export function restoreNormalView(model, camera) {
+export function restoreNormalView(model, mainViewPosition, mainViewRotation) {
     if (!floorViewActive) return;
 
     floorViewActive = false;
 
-    // Guardamos la planta antes de resetearla
     const floorToRestore = activeFloor;
 
-    // Restaurar cámara con interpolación suave
-    cameraTargetPosition.copy(savedCameraPosition);
-
+    // Restaurar cámara a la vista principal usando la cámara original
+    cameraTargetPosition.copy(mainViewPosition);
     const q = new THREE.Quaternion();
-    q.setFromEuler(savedCameraRotation);
+    q.setFromEuler(mainViewRotation);
     cameraTargetQuaternion.copy(q);
 
     cameraTransitionActive = true;
@@ -109,14 +110,13 @@ export function restoreNormalView(model, camera) {
     // Volver a rotación infinita
     model.userData.stopRotation = false;
 
-    // Ahora sí, restauramos el texto del botón
-    if (floorToRestore !== null) {
-        const btn = document.getElementById("btnPlanta" + floorToRestore);
-        btn.textContent = "Planta " + floorToRestore;
-        btn.classList.remove("return-mode");
-        //btn.disabled = true; // desactivado mientras vuelve la cámara
-    }
+    // Restaurar todos los botones
+    document.getElementById("btnPlanta1").textContent = "Planta 1";
+    document.getElementById("btnPlanta1").classList.remove("return-mode");
 
-    // Ahora sí, reseteamos activeFloor
+    document.getElementById("btnPlanta2").textContent = "Planta 2";
+    document.getElementById("btnPlanta2").classList.remove("return-mode");
+
+    // reseteamos activeFloor
     activeFloor = null;
 }

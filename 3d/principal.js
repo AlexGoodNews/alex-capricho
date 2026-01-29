@@ -15,6 +15,9 @@ const introTargetRotation = THREE.MathUtils.degToRad(360);
 
 // Crear la escena, cámara, renderizador y controles
 const camera = createCamera();
+const mainViewPosition = camera.position.clone();
+const mainViewRotation = camera.rotation.clone();
+
 const scene = createScene();
 const renderer = createRenderer();
 const controls = createControls(camera, renderer);
@@ -23,7 +26,7 @@ const { raycaster, pointer } = createRaycaster();
 // --- CARGAR MODELO ---
 loadModel('/3d/models/caprichoThreeJS1.glb', scene, camera).then((loadedModel) => {
     model = loadedModel;
-    console.log("ver7");
+    console.log("ver9");
     console.log("Posición cámara inciial", camera.position.toArray());
 
     
@@ -154,7 +157,7 @@ btn2.classList.add("hidden");
 
 document.getElementById("btnPlanta1").addEventListener("click", () => {
     if (isFloorViewActive() && activeFloor === 1) {
-        restoreNormalView(model, camera);
+        restoreNormalView(model, mainViewPosition, mainViewRotation);
     } else {
         activateFloorView(model, camera, 1);
     }
@@ -162,7 +165,7 @@ document.getElementById("btnPlanta1").addEventListener("click", () => {
 
 document.getElementById("btnPlanta2").addEventListener("click", () => {
     if (isFloorViewActive() && activeFloor === 2) {
-        restoreNormalView(model, camera);
+        restoreNormalView(model, mainViewPosition, mainViewRotation);
     } else {
         activateFloorView(model, camera, 2);
     }
