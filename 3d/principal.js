@@ -119,7 +119,7 @@ function animate() {
     }
 
     //raycasting
-    checkIntersections(model,raycaster, pointer, camera);
+    //checkIntersections(model,raycaster, pointer, camera);
 
     renderer.render(scene, camera)
     controls.update()

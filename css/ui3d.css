@@ -1,7 +1,8 @@
+/* Contenedor UI - escritorio */
 #ui {
     position: fixed;
     top: 50%;
-    right: 360px;       /* antes 20px, ahora más hacia el centro */
+    right: 60px;  /* espacio desde el borde derecho */
     transform: translateY(-50%);
     z-index: 9999;
 
@@ -10,10 +11,9 @@
     gap: 12px;
 }
 
-
-/* Botones de planta: clase común */
+/* Botones comunes */
 .floor-btn {
-    padding: 12px 20px;       /* ancho/alto base */
+    padding: 12px 20px;
     font-size: 16px;
     border-radius: 8px;
     border: none;
@@ -25,36 +25,53 @@
     pointer-events: none;
 }
 
-/* Diferentes tamaños por botón (si quieres) */
+/* Diferentes tamaños por botón si quieres */
 #btnPlanta2.floor-btn {
     padding: 12px 30px;
 }
 
-/* Oculto durante la intro */
+/* Estados */
 .floor-btn.hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-/* Estado visible */
 .floor-btn.visible {
     opacity: 1;
     pointer-events: auto;
 }
 
-/* Estado desactivado */
 .floor-btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
     pointer-events: none;
 }
 
-/* Hover solo si no está desactivado */
 .floor-btn:not(:disabled):hover {
     background: #555;
 }
 
-/* Botón en modo "volver" */
 .floor-btn.return-mode {
     background: #a33;
+}
+
+/* --- MEDIA QUERY PARA MÓVIL --- */
+@media (max-width: 768px) {
+    #ui {
+        top: auto;       /* quitamos centrar vertical */
+        bottom: 20px;    /* pegado abajo */
+        left: 50%;       /* centrado horizontal */
+        right: auto;     /* anulamos el right de escritorio */
+        transform: translateX(-50%);  /* centramos horizontal */
+        flex-direction: column;
+        gap: 16px;
+        width: 90%;      /* ancho grande para móvil */
+        max-width: 400px;
+    }
+
+    .floor-btn {
+        font-size: 20px;   /* más grande para tocar fácilmente */
+        padding: 16px 24px;
+        border-radius: 12px;
+    }
 }
