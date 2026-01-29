@@ -1,0 +1,91 @@
+#ui {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+
+#btnPlanta1 {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.6s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Oculto durante la intro */
+#btnPlanta1.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Estado desactivado */
+#btnPlanta1:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Si está visible y desactivado, gana este */
+#btnPlanta1.visible:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+#btnPlanta1:hover {
+    background: #555;
+}
+
+#btnPlanta1.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#btnPlanta2 {
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.6s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Oculto durante la intro */
+#btnPlanta2.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Estado desactivado */
+#btnPlanta2:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Si está visible y desactivado, gana este */
+#btnPlanta2.visible:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+#btnPlanta2:hover {
+    background: #555;
+}
+
+#btnPlanta2.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.return-mode {
+    background: #a33;
+}

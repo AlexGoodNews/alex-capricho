@@ -1,13 +1,17 @@
+/// <reference path="../types/index.d.ts" />
+
 import * as THREE from "three"
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 import { OrbitControls } from "three/addons/controls/OrbitControls.js"
+
+
+let model
+
 
 // Escena
 const scene = new THREE.Scene()
 scene.background = new THREE.Color(0xf5f5f5) // gris MUY claro
 
-const loader = new GLTFLoader()
-let model
 
 // Cámara
 const camera = new THREE.PerspectiveCamera(
@@ -53,11 +57,16 @@ scene.add(dirLight)
 
 //paraRaytracing
 const floors = [];
+
+
 // Modelo
+const loader = new GLTFLoader()
 loader.load("/3d/models/caprichoThreeJS.glb", (gltf) => {
   model = gltf.scene
 
-  // 🔹 Dirección de la cámara
+
+  //-----------------------Movida para que el objeto venga hacia la direccion que apunta la camara reversed (hacia a mi)------------------
+  //Dirección de la cámara
   const cameraDir = new THREE.Vector3()
   camera.getWorldDirection(cameraDir)
 
@@ -70,14 +79,12 @@ loader.load("/3d/models/caprichoThreeJS.glb", (gltf) => {
   )
 
   model.position.copy(startPosition)
-
   model.userData.startPosition = startPosition
   model.userData.finalPosition = finalPosition
-
   model.userData.targetPosition = model.userData.finalPosition.clone()
   model.userData.targetRotationY = model.rotation.y
   model.userData.targetOpacity = 1
-
+  //----------------------------------------------
 
   // Material, sombras, etc.
   model.traverse((child) => {
@@ -105,7 +112,8 @@ loader.load("/3d/models/caprichoThreeJS.glb", (gltf) => {
       child.material = new THREE.MeshBasicMaterial({
         color: 0x000000,
         side: THREE.BackSide
-      })
+      });
+      child.userData.isOutline = true; // Marca este objeto como outline
     }
   });
 
@@ -119,12 +127,12 @@ loader.load("/3d/models/caprichoThreeJS.glb", (gltf) => {
   )
   model.add(outlineModel)
 
-
-    //tres cubos
+  /*
+  //tres cubos
   const cubeHeight = 10; 
   for (let i = 0; i < 3; i++) {
     const cubeGeo = new THREE.BoxGeometry(100, cubeHeight, 200); // ancho, alto, profundidad
-        // Material transparente
+    // Material transparente
     const cubeMat = new THREE.MeshStandardMaterial({ 
       color: 0xff0000, 
       transparent: true, 
@@ -142,8 +150,12 @@ loader.load("/3d/models/caprichoThreeJS.glb", (gltf) => {
     cube.userData.url = `https://alex-capricho.pages.dev/pagina1`; // URL para redirigir
 
     model.add(cube);
-    floors.push(cube);
+    //floors.push(cube);
   }
+  //floors.push(model);
+
+  */
+  //floors.push(model);
 
   scene.add(model)
   startIntroAnimation()
@@ -154,12 +166,13 @@ loader.load("/3d/models/caprichoThreeJS.glb", (gltf) => {
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
 
-let INTERSECTED = null;
 
+//ir a web clicl
 window.addEventListener('mousemove', (event) => {
   pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
   pointer.y = - (event.clientY / window.innerHeight) * 2 + 1;
 });
+
 
 window.addEventListener('click', () => {
   if (INTERSECTED) {
@@ -168,14 +181,19 @@ window.addEventListener('click', () => {
   }
 });
 
+
+let INTERSECTED = null;
+const HOVER_COLOR = new THREE.Color(0x00ff00); // Color de hover (puedes cambiarlo a cualquier color que desees)
+const DEFAULT_COLOR = new THREE.Color(0x888888); // Color por defecto
 function checkIntersections() {
+  if (!model) return; // ← evita el error
   raycaster.setFromCamera(pointer, camera);
+  //const intersects = raycaster.intersectObjects(floors, true); //false para la opcion de los tres cubos
+  const intersects = raycaster.intersectObject(model, true); 
 
-  const intersects = raycaster.intersectObjects(floors, false);
-
+  /* --- old code 3 blocks----------
   if (intersects.length > 0) {
     const hovered = intersects[0].object;
-
     if (INTERSECTED !== hovered) {
       if (INTERSECTED) INTERSECTED.material.opacity = 0; // vuelve invisible el anterior
       INTERSECTED = hovered;
@@ -184,8 +202,35 @@ function checkIntersections() {
   } else {
     if (INTERSECTED) INTERSECTED.material.opacity = 0; // vuelve invisible
     INTERSECTED = null;
-  }
+  }*/
 
+
+  if (intersects.length > 0) {
+    const hovered = intersects[0].object;
+
+    // Ignorar la intersección si el objeto es parte del modelo de outline (negro)
+    if (hovered.userData.isOutline) {
+      return;
+    }
+
+    if (INTERSECTED !== hovered) {
+      if (INTERSECTED) {
+        // Restaura el color del objeto previamente interactuado
+        INTERSECTED.material.color.set(DEFAULT_COLOR);
+      }
+
+      INTERSECTED = hovered;
+
+      // Cambia el color del objeto al color de hover
+      INTERSECTED.material.color.set(HOVER_COLOR);
+    }
+  } else {
+    if (INTERSECTED) {
+      // Restaura el color al color por defecto si no hay intersección
+      INTERSECTED.material.color.set(DEFAULT_COLOR);
+      INTERSECTED = null;
+    }
+  }
 }
 
 

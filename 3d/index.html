@@ -3,12 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Museo 3D</title>
-    <style>
-      /*body { margin: 0; overflow: hidden; background: #111; }*/
-    </style>
+    <link rel="stylesheet" href="/css/ui3d.css" /> 
+
   </head>
   <body>
     <canvas id="canvas"></canvas>
+    <div id="ui">
+      <button id="btnPlanta1" class="floor-btn">Planta 1</button>
+      <button id="btnPlanta2" class="floor-btn">Planta 2</button>
+
+
+    </div>
 
     <!-- Three.js desde CDN oficial -->
 
@@ -19,14 +24,15 @@
 
     <script type="importmap">
     {
-    "imports": {
-        "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
-    }
+      "imports": {
+          "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
+      }
     }
     </script>
 
-    <script type="module" src="/3d/app.js"></script>
+    <script type="module" src="/3d/principal.js"></script>
+    <!--<script type="module" src="/3d/app.js"></script>-->
 
   </body>
 </html>
