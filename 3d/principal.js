@@ -170,3 +170,23 @@ document.getElementById("btnPlanta2").addEventListener("click", () => {
     }
 });
 
+function enableTouchFeedback(selector) {
+    const btn = document.getElementById(selector);
+    if (!btn) return;
+
+    btn.addEventListener("touchstart", () => {
+        btn.classList.add("pressed");
+    });
+
+    btn.addEventListener("touchend", () => {
+        btn.classList.remove("pressed");
+    });
+
+    btn.addEventListener("touchcancel", () => {
+        btn.classList.remove("pressed");
+    });
+}
+
+// Activamos feedback táctil en tus botones
+enableTouchFeedback("btnPlanta1");
+enableTouchFeedback("btnPlanta2");

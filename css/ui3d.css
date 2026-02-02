@@ -34,9 +34,21 @@ canvas {
     background: #333;
     color: white;
     cursor: pointer;
-    transition: opacity 0.6s ease, background 0.3s ease;
+    transition: opacity 0.6s ease, background 0.3s ease,/*animacion*/ transform 0.15s ease, box-shadow 0.15s ease;
     opacity: 0;
     pointer-events: none;
+
+    /*animacion*/
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+
+}
+
+/*animacion*/
+
+.floor-btn.pressed {
+    transform: scale(1.08) translateY(2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 /* Estados */
@@ -57,7 +69,7 @@ canvas {
 }
 
 .floor-btn:not(:disabled):hover {
-    background: #555;
+    /*background: #555;*/ /*no necesario porque quita el rojo de return mode y se quda como disabled*/
 }
 
 .floor-btn.return-mode {
@@ -129,12 +141,12 @@ canvas {
 
 .info-box h3 {
     margin: 0 0 8px 0;
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 .info-box p {
     margin: 0 0 12px 0;
-    font-size: 1rem;
+    font-size: 1.9rem;
 }
 
 .info-btn {

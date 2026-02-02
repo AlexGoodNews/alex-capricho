@@ -1,96 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Mi libro</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
-<script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
-<script src="extras/jgestures.min.js"></script>
-<script src="lib/turn.min.js"></script>
-<link rel="stylesheet" href="css/basic.css">
+	<meta charset="UTF-8">
+	<title>Mi libro</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+	<script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+	<script src="lib/turn.min.js"></script>
+	<link rel="stylesheet" href="css/basic.css">
 </head>
 
-
-
-
-</head>
 <body>
 
-<div class="flipbook-viewport">
-	<div class="container">
-		<div class="flipbook">
-			<div style="background-image:url(pages/1.jpg)"></div>
-			<div style="background-image:url(pages/2.jpg)"></div>
-			<div style="background-image:url(pages/3.jpg)"></div>
-			<div style="background-image:url(pages/4.jpg)"></div>
-			<div style="background-image:url(pages/5.jpg)"></div>
-			<div style="background-image:url(pages/6.jpg)"></div>
-			<div style="background-image:url(pages/7.jpg)"></div>
-			<div style="background-image:url(pages/8.jpg)"></div>
-			<div style="background-image:url(pages/9.jpg)"></div>
-			<div style="background-image:url(pages/10.jpg)"></div>
-			<div style="background-image:url(pages/11.jpg)"></div>
-			<div style="background-image:url(pages/12.jpg)"></div>
+	<div class="flipbook-viewport">
+		<div class="container">
+			<div class="flipbook">
+				<div style="background-image:url(pages/1.jpg)"></div>
+				<div style="background-image:url(pages/2.jpg)"></div>
+				<div style="background-image:url(pages/3.jpg)"></div>
+				<div style="background-image:url(pages/4.jpg)"></div>
+				<div style="background-image:url(pages/5.jpg)"></div>
+				<div style="background-image:url(pages/6.jpg)"></div>
+				<div style="background-image:url(pages/7.jpg)"></div>
+				<div style="background-image:url(pages/8.jpg)"></div>
+				<div style="background-image:url(pages/9.jpg)"></div>
+				<div style="background-image:url(pages/10.jpg)"></div>
+				<div style="background-image:url(pages/11.jpg)"></div>
+				<div style="background-image:url(pages/12.jpg)"></div>
+			</div>
 		</div>
 	</div>
-</div>
 
 
-<script type="text/javascript">
-
-function resizeBook() {
-
-	const bookRatio = 922 / 600;
-
-	let screenWidth = $(window).width();
-	let screenHeight = $(window).height();
-
-	let bookWidth = screenWidth;
-	let bookHeight = screenWidth / bookRatio;
-
-	if (bookHeight > screenHeight) {
-		bookHeight = screenHeight;
-		bookWidth = screenHeight * bookRatio;
-	}
-
-	$('.flipbook').turn('size', bookWidth, bookHeight);
-
-	$('.flipbook').css({
-		left: -(bookWidth / 2),
-		top: -(bookHeight / 2)
-	});
-}
-
-function loadApp() {
-
-	$('.flipbook').turn({
-		width: 922,
-		height: 600,
-		elevation: 50,
-		gradients: true,
-		autoCenter: true,
-		swipe: true
-	});
-	$('.flipbook').on('swipeleft', function () {
-		$(this).turn('next');
-	});
-
-	$('.flipbook').on('swiperight', function () {
-		$(this).turn('previous');
-	});
-
-	resizeBook();
-}
-
-$(window).resize(function() {
-	resizeBook();
-});
-
-
-
-loadApp();
-</script>
+	<script src="js/basic.js"></script>
 
 </body>
+
 </html>

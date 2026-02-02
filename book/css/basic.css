@@ -64,33 +64,25 @@ body{
 	-ms-box-shadow:0 0 20px #ccc;
 	box-shadow:0 0 20px #ccc;
 }
-.next-page-zone, .prev-page-zone {
-  position: absolute;
-  top: 0;
-  width: 20%; /* ocupa todo el borde vertical */
-  height: 100%;
-  z-index: 1000;
-}
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 50px;
-  color: rgba(0,0,0,0.5);
-  cursor: pointer;
-  z-index: 2000;
-  user-select: none;
-  transition: color 0.2s;
+
+.next-arrow {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	z-index: 9999;
+	font-size: 32px;
+	cursor: pointer;
+	color: #333;
+	background: rgba(255,255,255,0.8);
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
 }
 
-.arrow:hover {
-  color: rgba(0,0,0,0.8);
-}
-
-.arrow.prev {
-  left: 10px;
-}
-
-.arrow.next {
-  right: 10px;
+.next-arrow:hover {
+	background: rgba(0,0,0,0.1);
 }
