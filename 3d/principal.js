@@ -124,7 +124,6 @@ function animate() {
     renderer.render(scene, camera)
     controls.update()
 }
-
 // --- EVENTOS ---
 window.addEventListener("resize", onWindowResize)
 
@@ -170,3 +169,4 @@ document.getElementById("btnPlanta2").addEventListener("click", () => {
         activateFloorView(model, camera, 2);
     }
 });
+

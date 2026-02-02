@@ -90,6 +90,11 @@ export function activateFloorView(model, camera, floorNumber) {
         btn1.classList.remove("return-mode");
     }
     cameraTransitionActive = true;
+
+
+    // Mostrar info-box con retraso
+    //hideInfoBoxes();       // primero ocultamos otros
+    showInfoBox(floorNumber);
 }
 
 export function restoreNormalView(model, mainViewPosition, mainViewRotation) {
@@ -116,7 +121,34 @@ export function restoreNormalView(model, mainViewPosition, mainViewRotation) {
 
     document.getElementById("btnPlanta2").textContent = "Planta 2";
     document.getElementById("btnPlanta2").classList.remove("return-mode");
-
+    hideInfoBoxes();
     // reseteamos activeFloor
     activeFloor = null;
+}
+
+
+//cajas
+
+export function showInfoBox(floorNumber) {
+    const infoBox = document.getElementById("infoBox" + floorNumber);
+    if (!infoBox) return;
+
+    // Ocultar cualquier otro info-box activo
+    document.querySelectorAll(".info-box").forEach(box => {
+        box.classList.remove("visible");
+        box.classList.add("hidden");
+    });
+
+    // Mostrar con retraso de 1.5s
+    setTimeout(() => {
+        infoBox.classList.remove("hidden");
+        infoBox.classList.add("visible");
+    }, 1500);
+}
+
+export function hideInfoBoxes() {
+    document.querySelectorAll(".info-box").forEach(box => {
+        box.classList.remove("visible");
+        box.classList.add("hidden");
+    });
 }
