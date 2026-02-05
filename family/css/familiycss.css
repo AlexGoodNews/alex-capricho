@@ -1,0 +1,257 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 99%;
+}
+
+h1{
+  position: relative;
+  margin-bottom: 45px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #424242;
+}
+
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 90vh;
+}
+
+.itemTitle{
+  writing-mode: vertical-rl;
+  text-orientation:sideways;
+  transform: rotate(180deg);
+
+
+  min-width: 100%;
+  white-space: nowrap;
+  pointer-events: none; /* importante: no bloquea hover */
+
+  position: absolute;
+  bottom: 15px;
+  padding: 20px 0;
+
+
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+  z-index: 2;
+}
+.itemTitle:hover{
+  display: none;
+}
+
+.item:hover .itemTitle {
+  display: none;
+}
+
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+
+  position: relative;
+  
+  &:hover{
+    flex: 7;
+  }
+}
+
+.item::before,
+.item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.item::before {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    transparent
+  );
+  opacity: 1;
+}
+
+.item::after {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.70)
+    /*,rgba(0, 0, 0, 0.25)*/
+  );
+  opacity: 0;
+}
+
+.item:hover::before {
+  opacity: 0;
+}
+
+.item:hover::after {
+  opacity: 1;
+}
+
+.itemContent {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+  margin-top: 10px;
+  z-index: 5;
+  position: relative;
+  
+  box-sizing: border-box; 
+
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+}
+.item:hover .itemContent {
+  opacity: 1;
+  max-height: 1500px;
+}
+
+/* Contenido item */
+.contentWrapper {
+  width: 90%;         /* mismo ancho que el video */
+  margin: 0 auto;     /* centrado horizontalmente */
+}
+
+.contentWrapper video {
+  width: 100%;        /* ocupa todo el ancho del wrapper */
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+/* Video */
+.videoWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.videoWrapper video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.4s ease;
+}
+
+.videoWrapper.paused video {
+  filter: brightness(0.65);
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  color: white;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .videoWrapper:hover .videoOverlay {
+    transform: scale(1.1);
+  }
+}
+
+.videoWrapper.playing .videoOverlay {
+  opacity: 0;
+}
+
+.videoTouchLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: transparent;
+    touch-action: manipulation;
+}
+
+.item:hover .videoWrapper {
+  pointer-events: auto;
+}
+
+/* Iconos */
+.icons img {
+  width: 96px;
+  height: 96px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icons img:hover {
+  transform: scale(1.1); /* efecto hover */
+}
+
+
+/* Fin Iconos */
+
+/* Contenedor de texto + iconos */
+.textWithIcons {
+  display: flex;           
+  align-items: flex-start;     
+  justify-content: space-between; /* separa texto de iconos */
+  gap: 10px;
+  z-index: 20;
+  margin-top: 20px;   /* separa el texto del video */
+}
+
+.textWithIcons .contentText {
+  max-width: 80%; /*espacio que tengo en el div entre texto e iconos*/
+  text-align: justify;
+  margin: 0;
+  word-wrap: break-word;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+}
+
+.textWithIcons .icons {
+  display: flex;                /* fila horizontal de iconos */
+  gap: 10px;                    /* separación entre iconos */
+  flex-shrink: 0;               /* que no se reduzcan los iconos */
+}
+/* Items */
+
+
+.item-1 { 
+  background-image: url('https://www.bne.es/sites/default/files/repositorio-imagenes/Mariano_T%C3%A9llez_Gir%C3%B3n_y_Beaufort.png');
+}
+
+.item-2 { 
+  background-image: url('https://scontent-mad2-1.xx.fbcdn.net/v/t39.30808-6/468671353_10161959978598363_1797822211465459589_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1u-GscVMif8Q7kNvwFdP679&_nc_oc=AdlG9Q7leMfX90RqcBtdlMaIdRutFpCpVmVOseYmsdnROVfiB9BNKvqdLt7_ditXc3E&_nc_zt=23&_nc_ht=scontent-mad2-1.xx&_nc_gid=mSk-IA1HxvPIz5zFXhKmNw&oh=00_AfsnstH-7Fy7xwx9Ptk4KqqAnkiWL7B3sF_Wb3EsStG29w&oe=6988F77D');
+}
+
+.item-3 { 
+  background-image: url('https://artedemadrid.wordpress.com/wp-content/uploads/2024/01/retrato-dos-ninos-osuna.jpg');
+}
+
+.item-4 { 
+  background-image: url('https://s1.ppllstatics.com/mujerhoy/www/multimedia/202112/01/media/cortadas/duquesa-osuna2-kiB-U160129993998bRG-1248x1248@MujerHoy.jpg');
+}
