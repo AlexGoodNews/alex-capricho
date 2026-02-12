@@ -1,0 +1,261 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 99%;
+}
+
+h1{
+  position: relative;
+  margin-bottom: 45px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #424242;
+}
+
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 90vh;
+}
+
+.itemTitle{
+  writing-mode: vertical-rl;
+  text-orientation:sideways;
+  transform: rotate(180deg);
+
+
+  min-width: 100%;
+  white-space: nowrap;
+  pointer-events: none; /* importante: no bloquea hover */
+
+  position: absolute;
+  bottom: 15px;
+  padding: 20px 0;
+
+
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+  z-index: 2;
+}
+.itemTitle:hover{
+  display: none;
+}
+
+.item:hover .itemTitle {
+  display: none;
+}
+
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+
+  position: relative;
+  
+  &:hover{
+    flex: 7;
+  }
+}
+
+.item::before,
+.item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.item::before {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    transparent
+  );
+  opacity: 1;
+}
+
+.item::after {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.70)
+    /*,rgba(0, 0, 0, 0.25)*/
+  );
+  opacity: 0;
+}
+
+.item:hover::before {
+  opacity: 0;
+}
+
+.item:hover::after {
+  opacity: 1;
+}
+
+.itemContent {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+  margin-top: 10px;
+  z-index: 5;
+  position: relative;
+  
+  box-sizing: border-box; 
+
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+}
+.item:hover .itemContent {
+  opacity: 1;
+  max-height: 1500px;
+}
+
+/* Contenido item */
+.contentWrapper {
+  width: 90%;         /* mismo ancho que el video */
+  margin: 0 auto;     /* centrado horizontalmente */
+}
+
+.contentWrapper video {
+  width: 100%;        /* ocupa todo el ancho del wrapper */
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+/* Video */
+.videoWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.videoWrapper video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.4s ease;
+}
+
+.videoWrapper.paused video {
+  filter: brightness(0.65);
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  color: white;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .videoWrapper:hover .videoOverlay {
+    transform: scale(1.1);
+  }
+}
+
+.videoWrapper.playing .videoOverlay {
+  opacity: 0;
+}
+
+.videoTouchLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: transparent;
+    touch-action: manipulation;
+}
+
+.item:hover .videoWrapper {
+  pointer-events: auto;
+}
+
+/* Iconos */
+.icons img {
+  width: 96px;
+  height: 96px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icons img:hover {
+  transform: scale(1.1); /* efecto hover */
+}
+
+
+/* Fin Iconos */
+
+/* Contenedor de texto + iconos */
+.textWithIcons {
+  display: flex;           
+  align-items: flex-start;     
+  justify-content: space-between; /* separa texto de iconos */
+  gap: 10px;
+  z-index: 20;
+  margin-top: 20px;   /* separa el texto del video */
+}
+
+.textWithIcons .contentText {
+  max-width: 80%; /*espacio que tengo en el div entre texto e iconos*/
+  text-align: justify;
+  margin: 0;
+  word-wrap: break-word;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+}
+
+.textWithIcons .icons {
+  display: flex;                /* fila horizontal de iconos */
+  gap: 10px;                    /* separación entre iconos */
+  flex-shrink: 0;               /* que no se reduzcan los iconos */
+}
+/* Items */
+
+
+.item-1 { 
+  background-image: url('https://imgs.search.brave.com/sxdHpFL1oL2s16MIstwGyCBcORnfwtfLw4KW_6K7nuY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50My5jZG5wcmFk/by5uZXQvaW1hZ2Vu/ZXMvRG9jdW1lbnRv/cy9pbWdzZW0vMjIv/MjI2OC8yMjY4NWZh/ZC03OTljLTQzYjgt/ODQzOS1lYWNjODNl/MDI2YTcvNmFjOWZj/ODUtMjQxYS00NzI5/LTkzMDgtZjZiNTY0/MTI5MWIwLmpwZw');
+}
+
+.item-2 { 
+  background-image: url('https://imgs.search.brave.com/ZFuXtOS10-ysvRbsObS02LGFDMQzbpy-QaWfTbePvMA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYXJj/b3BvbGl0bzU2Lndv/cmRwcmVzcy5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTMv/MDEvNDI1cHgtZnJh/bmNpc2NvX2RlX2dv/eWFfeV9sdWNpZW50/ZXNfMTA0MS5qcGc_/dz00MjUmaD02MDA');
+}
+
+.item-3 { 
+  background-image: url('https://imgs.search.brave.com/uNqJckoOKmBLRoFWItiynUrJMU0LnzYmbJLuzz1J_mw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lc3Rh/dGljb3MtY2RuLnBy/ZW5zYWliZXJpY2Eu/ZXMvY2xpcC81YzU1/M2VlOC0xNTE3LTQ1/NzYtOTIxYS04YWMz/NTIwNTQxNWZfMTYt/OS1kaXNjb3Zlci1h/c3BlY3QtcmF0aW9f/ZGVmYXVsdF8wLmpw/Zw');
+}
+
+.item-4 { 
+  background-image: url('https://imgs.search.brave.com/uzy0oXhIlW7hT1wVcifCO7ZBO06U2nlQn1WGmA1CfDo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bWFkcmlkZXNub3Rp/Y2lhLmVzL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDI1LzAyL1Bh/bGFjaW8tQ2Fwcmlj/aG8tQWxhbWVkYS1P/c3VuYV8yMzU4OTc0/MTAzXzI5NDAyNjk0/XzEzMDB4NzMxLTEw/MjR4NTc2LmpwZw');
+}
+
+.item-5 { 
+  background-image: url('https://imgs.search.brave.com/609HAYP3RNcHt4D2UL9YFDPJ3DTAFaBQ1_X1Qs-ldys/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lc3Rh/dGljb3MtY2RuLnBy/ZW5zYWliZXJpY2Eu/ZXMvY2xpcC8yZjhm/OTRlZi04MzNlLTQz/MjMtODM3NC1jZjBl/M2Y2MTgyY2JfMTYt/OS1kaXNjb3Zlci1h/c3BlY3QtcmF0aW9f/ZGVmYXVsdF8wLmpw/Zw');
+}
