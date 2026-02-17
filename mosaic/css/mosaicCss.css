@@ -1,0 +1,257 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 99%;
+}
+
+h1{
+  position: relative;
+  margin-bottom: 45px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #424242;
+}
+
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 90vh;
+}
+
+.itemTitle{
+  writing-mode: vertical-rl;
+  text-orientation:sideways;
+  transform: rotate(180deg);
+
+
+  min-width: 100%;
+  white-space: nowrap;
+  pointer-events: none; /* importante: no bloquea hover */
+
+  position: absolute;
+  bottom: 15px;
+  padding: 20px 0;
+
+
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+  z-index: 2;
+}
+.itemTitle:hover{
+  display: none;
+}
+
+.item:hover .itemTitle {
+  display: none;
+}
+
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+
+  position: relative;
+  
+  &:hover{
+    flex: 7;
+  }
+}
+
+.item::before,
+.item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.item::before {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    transparent
+  );
+  opacity: 1;
+}
+
+.item::after {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.70)
+    /*,rgba(0, 0, 0, 0.25)*/
+  );
+  opacity: 0;
+}
+
+.item:hover::before {
+  opacity: 0;
+}
+
+.item:hover::after {
+  opacity: 1;
+}
+
+.itemContent {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+  margin-top: 10px;
+  z-index: 5;
+  position: relative;
+  
+  box-sizing: border-box; 
+
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+}
+.item:hover .itemContent {
+  opacity: 1;
+  max-height: 1500px;
+}
+
+/* Contenido item */
+.contentWrapper {
+  width: 90%;         /* mismo ancho que el video */
+  margin: 0 auto;     /* centrado horizontalmente */
+}
+
+.contentWrapper video {
+  width: 100%;        /* ocupa todo el ancho del wrapper */
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+/* Video */
+.videoWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.videoWrapper video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.4s ease;
+}
+
+.videoWrapper.paused video {
+  filter: brightness(0.65);
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  color: white;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .videoWrapper:hover .videoOverlay {
+    transform: scale(1.1);
+  }
+}
+
+.videoWrapper.playing .videoOverlay {
+  opacity: 0;
+}
+
+.videoTouchLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: transparent;
+    touch-action: manipulation;
+}
+
+.item:hover .videoWrapper {
+  pointer-events: auto;
+}
+
+/* Iconos */
+.icons img {
+  width: 96px;
+  height: 96px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icons img:hover {
+  transform: scale(1.1); /* efecto hover */
+}
+
+
+/* Fin Iconos */
+
+/* Contenedor de texto + iconos */
+.textWithIcons {
+  display: flex;           
+  align-items: flex-start;     
+  justify-content: space-between; /* separa texto de iconos */
+  gap: 10px;
+  z-index: 20;
+  margin-top: 20px;   /* separa el texto del video */
+}
+
+.textWithIcons .contentText {
+  max-width: 80%; /*espacio que tengo en el div entre texto e iconos*/
+  text-align: justify;
+  margin: 0;
+  word-wrap: break-word;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  color: aliceblue;
+}
+
+.textWithIcons .icons {
+  display: flex;                /* fila horizontal de iconos */
+  gap: 10px;                    /* separación entre iconos */
+  flex-shrink: 0;               /* que no se reduzcan los iconos */
+}
+/* Items */
+
+
+.item-1 { 
+  background-image: url('https://i.pinimg.com/originals/05/ff/ed/05ffeddca8ec7f11520d6483f22d65c6.jpg');
+}
+
+.item-2 { 
+  background-image: url('/mosaic/img/tallerMosaico1.png');
+}
+
+.item-3 { 
+  background-image: url('https://www.decorarconarte.com/wp-content/uploads/2021/06/Mosaico-pavimento-1536x637.jpeg');
+}
+
+.item-4 { 
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Reconstruction_of_the_mosaic_depiction_of_the_Battle_of_Issus_after_a_painting_by_Apelles_found_in_the_House_of_the_Faun_at_Pompeii_%28published_1893%29.jpg?20210124161506');
+}
