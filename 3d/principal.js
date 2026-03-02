@@ -99,7 +99,7 @@ function runIntroAnimation() {
 
 let introStarted = false;
 // --- ANIMACIÓN PRINCIPAL ---
-function animate() {
+export function animate() {
 
     requestAnimationFrame(animate)
     // Lanzar intro SOLO UNA VEZ 

@@ -3,51 +3,51 @@ const contentData = {
     item1: {
         ES: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'El Palacio de El Capricho y las casas que lo rodean surgieron a finales del siglo XVIII como parte de un ambicioso proyecto ideado por María Josefa de la Soledad Alonso‑Pimentel y Téllez‑Girón, la IX duquesa de Osuna, una de las figuras más destacadas de la alta nobleza ilustrada en España. En 1783, la duquesa y su esposo, el IX duque de Osuna, adquirieron una finca de recreo en las afueras de Madrid, en el camino de Aragón, en lo que hoy es el barrio de Alameda de Osuna. En esta propiedad ya existía una casa de campo típica de la época, que fue ampliada y transformada para convertirse en un elegante palacio de descanso estival y lugar de encuentro cultural. María Josefa, profundamente influenciada por las corrientes intelectuales de la Ilustración y los modelos paisajísticos franceses e ingleses, concibió un conjunto único donde la arquitectura y la naturaleza se integraban armoniosamente. Encargó la intervención de reconocidos arquitectos y paisajistas como Jean Baptiste Mulot y Pierre Provost para diseñar los jardines y las estructuras que animarían el entorno, transformando la finca en un jardín romántico con caminos serpenteantes, bosques, lagos y edificios singulares.'
+            //text: 'El Palacio de El Capricho y las casas que lo rodean surgieron a finales del siglo XVIII como parte de un ambicioso proyecto ideado por María Josefa de la Soledad Alonso‑Pimentel y Téllez‑Girón, la IX duquesa de Osuna, una de las figuras más destacadas de la alta nobleza ilustrada en España. En 1783, la duquesa y su esposo, el IX duque de Osuna, adquirieron una finca de recreo en las afueras de Madrid, en el camino de Aragón, en lo que hoy es el barrio de Alameda de Osuna. En esta propiedad ya existía una casa de campo típica de la época, que fue ampliada y transformada para convertirse en un elegante palacio de descanso estival y lugar de encuentro cultural. María Josefa, profundamente influenciada por las corrientes intelectuales de la Ilustración y los modelos paisajísticos franceses e ingleses, concibió un conjunto único donde la arquitectura y la naturaleza se integraban armoniosamente. Encargó la intervención de reconocidos arquitectos y paisajistas como Jean Baptiste Mulot y Pierre Provost para diseñar los jardines y las estructuras que animarían el entorno, transformando la finca en un jardín romántico con caminos serpenteantes, bosques, lagos y edificios singulares.'
         },
         EN: {
             video: '/videos/RehabilitacionCapricho copia.mp4',
-            text: 'Explanatory text about the origins of the houses.'
+            //text: 'Explanatory text about the origins of the houses.'
         }
     },
     item2: {
         ES: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'Texto sobre los IX Duques.'
+            //text: 'Texto sobre los IX Duques.'
         },
         EN: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'Text about the IX Dukes.'
+            //text: 'Text about the IX Dukes.'
         }
     },
     item3: {
         ES: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'Texto explicativo sobre la biografía familiar.'
+            //text: 'Texto explicativo sobre la biografía familiar.'
         },
         EN: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'Explanatory text about the family biography.'
+            //text: 'Explanatory text about the family biography.'
         }
     },
     item4: {
         ES: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'Texto explicativo sobre el album familiar.'
+            //text: 'Texto explicativo sobre el album familiar.'
         },
         EN: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'Explanatory text about the family album.'
+            //text: 'Explanatory text about the family album.'
         }
     },
     item5: {
         ES: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'Texto explicativo sobre el album familiar.'
+            //text: 'Texto explicativo sobre el album familiar.'
         },
         EN: {
             video: '/videos/RehabilitacionCapricho.mp4',
-            text: 'Explanatory text about the family album.'
+            //text: 'Explanatory text about the family album.'
         }
     }
 };

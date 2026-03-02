@@ -71,6 +71,8 @@ langButtons.forEach(btn => {
     });
 });
 document.querySelectorAll('.item').forEach(item => {
+    if (item.classList.contains('noVideo')) return;
+
     let initialized = false;
 
     item.addEventListener('pointerenter', () => {
@@ -81,7 +83,9 @@ document.querySelectorAll('.item').forEach(item => {
         if (!data) return;
 
         const video = item.querySelector('video');
+        if (!video) return;
         const source = video.querySelector('source');
+        if (!source) return;
         const text = item.querySelector('.contentText');
         const wrapper = video.closest('.videoWrapper');
 
@@ -110,9 +114,13 @@ items.forEach(item => {
 });
 
 document.querySelectorAll('.videoWrapper').forEach(wrapper => {
-    const video = wrapper.querySelector('video');
-    const touchLayer = wrapper.querySelector('.videoTouchLayer');
+    if (!wrapper) return;
 
+    const video = wrapper.querySelector('video');
+    if (!video) return;
+    const touchLayer = wrapper.querySelector('.videoTouchLayer');
+    if (!touchLayer) return;
+    
     let armed = false;
 
     // Estado inicial
