@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* IZQUIERDA (70%) */
+.hoy {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 80%;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h1 {
+    margin-top: 0;
+    font-size: 2.5em;
+}
+
+.meta {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.descripcion {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* DERECHA (30%) */
+.proximos {
+    width: 30%;
+    background: #222;
+    color: white;
+    padding: 20px;
+}
+
+.proximos h2 {
+    margin-top: 0;
+}
+
+.evento {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}

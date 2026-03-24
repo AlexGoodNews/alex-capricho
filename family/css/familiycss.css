@@ -56,6 +56,14 @@ h1{
 }
 
 
+.itemTitle,
+.contentWrapper,
+.textWithIcons,
+.contentText {
+  min-width: 0;
+}
+
+/*
 .item {
   flex: 1;
   height: 100%;
@@ -69,8 +77,28 @@ h1{
   &:hover{
     flex: 7;
   }
+}*/
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+  position: relative;
+  min-width: 0;
 }
 
+/* Cuando el usuario está interactuando con el acordeón */
+.gallery-wrap:hover .item {
+  flex: 0.5; /* todos se encogen */
+}
+
+/* El activo crece mucho */
+.gallery-wrap .item:hover {
+  flex: 6; 
+}
 .item::before,
 .item::after {
   content: "";
