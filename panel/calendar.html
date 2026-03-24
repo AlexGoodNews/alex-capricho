@@ -89,7 +89,7 @@
       calendar.render();
 
       // Cargar eventos del servidor
-      fetch('data/eventos.json')
+      fetch('/api/eventos')
         .then(res => res.json())
         .then(data => {
           eventos = data;
@@ -119,7 +119,7 @@
 
       // Función para guardar en servidor
       function guardarEventosServidor() {
-        fetch('data/eventos.json', {
+        fetch('/api/eventos', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(eventos)

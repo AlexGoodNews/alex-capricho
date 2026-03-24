@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "extendedProps": {
+      "descripcion": "Recorrido especial con explicaci\u00f3n de la exposici\u00f3n temporal.",
+      "ubicacion": "Sala principal"
+    },
+    "start": "2026-03-23T12:00",
+    "title": "Visita guiada al museo"
+  },
+  {
+    "extendedProps": {
+      "descripcion": "asfg",
+      "ubicacion": "asfga"
+    },
+    "start": "2026-03-24T12:00",
+    "title": "asdfasg"
+  },
+  {
+    "title": "Hola hoy evento de ",
+    "start": "2026-03-24T12:00",
+    "extendedProps": {
+      "ubicacion": "",
+      "descripcion": "si"
+    }
+  }
+]
