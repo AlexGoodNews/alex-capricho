@@ -1,19 +1,21 @@
 let eventos = [];
 const API_BASE = localStorage.getItem("api_url") || window.location.origin;
-
-
 /*const API_URL = localStorage.getItem("api_url") || "http://localhost:8888";*/ /*Cloudflare*/
 
-/*fetch(`${API_URL}/api/eventos`)*//*Cloudflare*/
-fetch(`${API_BASE}/api/eventos`)
-    .then(res => res.json())
-    .then(data => {
-        eventos = data;
-        procesarEventos();
-    })
-    .catch(err => console.error("Error cargando eventos", err));
 
-// Eventos de hoy
+// Función para cargar eventos desde el servidor
+function cargarEventos() {
+    /*fetch(`${API_URL}/api/eventos`)*//*Cloudflare*/
+    fetch(`${API_BASE}/api/eventos`)
+        .then(res => res.json())
+        .then(data => {
+            eventos = data;
+            procesarEventos();
+        })
+        .catch(err => console.error("Error cargando eventos", err));
+}
+
+// Eventos de hoy y próximos
 function procesarEventos() {
     const hoy = new Date().toISOString().split("T")[0];
 
@@ -60,3 +62,8 @@ function procesarEventos() {
     });
 }
 
+// -------------------------
+// Carga inicial y refresco automático cada 30 segundos
+// -------------------------
+cargarEventos(); // primera carga
+setInterval(cargarEventos, 3000000); // cada 30 segundos

@@ -16,11 +16,67 @@
     "title": "asdfasg"
   },
   {
-    "title": "Hola hoy evento de ",
+    "extendedProps": {
+      "descripcion": "si",
+      "ubicacion": ""
+    },
+    "start": "2026-03-24T12:00",
+    "title": "Hola hoy evento de "
+  },
+  {
+    "extendedProps": {
+      "descripcion": "",
+      "ubicacion": "Goodnews"
+    },
+    "start": "2026-03-25T12:00",
+    "title": "Manu"
+  },
+  {
+    "extendedProps": {
+      "descripcion": "",
+      "ubicacion": ""
+    },
+    "start": "2026-03-25T12:00",
+    "title": "Ale"
+  },
+  {
+    "extendedProps": {
+      "descripcion": "",
+      "ubicacion": ""
+    },
+    "start": "2026-03-25T12:00",
+    "title": "Rodri"
+  },
+  {
+    "extendedProps": {
+      "descripcion": "",
+      "ubicacion": ""
+    },
+    "start": "2026-03-25T12:00",
+    "title": "Pepe"
+  },
+  {
+    "extendedProps": {
+      "descripcion": "",
+      "ubicacion": ""
+    },
+    "start": "2026-03-24T12:00",
+    "title": "lola"
+  },
+  {
+    "extendedProps": {
+      "descripcion": "",
+      "ubicacion": ""
+    },
+    "start": "2026-03-24T12:00",
+    "title": "lola2"
+  },
+  {
+    "title": "lucia",
     "start": "2026-03-24T12:00",
     "extendedProps": {
       "ubicacion": "",
-      "descripcion": "si"
+      "descripcion": ""
     }
   }
 ]
