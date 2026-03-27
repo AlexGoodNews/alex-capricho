@@ -22,6 +22,8 @@ def obtener_ip_local():
 
 # -------------------------
 # Arrancar Flask en background, terminal oculta
+#                                     ,stdout=subprocess.DEVNULL,
+#                                    stderr=subprocess.DEVNULL)
 # -------------------------
 if sys.platform == 'win32':  # Windows
     # SW_HIDE oculta la ventana de la terminal
@@ -30,9 +32,8 @@ if sys.platform == 'win32':  # Windows
     flask_proceso = subprocess.Popen(['python', 'app.py'], startupinfo=si)
 else:  # Mac/Linux
     # En Mac, redirigimos stdout/stderr para no mostrar terminal
-    flask_proceso = subprocess.Popen(['python3', 'app.py'],
-                                     stdout=subprocess.DEVNULL,
-                                     stderr=subprocess.DEVNULL)
+    flask_proceso = subprocess.Popen(['python3', 'app.py'])
+
 
 # -------------------------
 # Obtener IP local
@@ -46,7 +47,7 @@ print(f"IP local detectada: {ip}")
 url = f'http://{ip}:8888'
 print("Esperando a que Flask arranque...")
 
-for _ in range(20):  # hasta 20 segundos
+for _ in range(40):  # hasta 40 segundos
     try:
         requests.get(url, timeout=1)
         print("Servidor Flask listo ")
@@ -76,3 +77,4 @@ urls = [f'http://{ip}:8888/panel/calendar.html',
 if chrome_path:
     for url in urls:
         webbrowser.open_new_tab(url)
+
