@@ -77,6 +77,13 @@ fetch('/data/puntos.json') //antiguo sin cloudflare
       marker.bindPopup(popupHTML);
       marker.puntoData = punto; 
       
+        marker.on('click', function () { //si hago click en el punto hace zoom tamb
+          const latlng = marker.getLatLng();
+
+          map.flyTo(latlng, 0.8, { // zoom menor que el del QR
+            duration: 1
+          });
+        })
       //GUARDAMOS EL MARKER SI COINCIDE CON EL QR 
       if (puntoIdDesdeQR && punto.id == puntoIdDesdeQR) {
         puntoEncontrado = marker;
