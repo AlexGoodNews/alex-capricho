@@ -2,16 +2,18 @@
 .leaflet-control-attribution {
   display: none !important;
 }
-
-html, body {
+html,head, body {
   height: 100%;
   margin: 0;
   font-family: sans-serif;
+  background-color: rgb(255, 205, 253);
 }
 
 #map {
-  height: calc(100vh - 56px); /* 100% alto menos el alto del navbar (56px) */
+  /*height: calc(100vh - 56px);*/ /* 100% alto menos el alto del navbar (56px) */
+  height: calc(100vh);
   width: 100%;
+  background-color: blanchedalmond;
 }
 
 /* Estilo general del contenido dentro de los popups */
@@ -30,6 +32,7 @@ html, body {
   height: auto;
 }
 
+/*popups*/
 .popup-informacion-extra {
   display: flex;
   align-items: center;
@@ -41,7 +44,15 @@ html, body {
   width: 24px;
   height: 24px;
 }
+/* Ocultar la flecha */
+.leaflet-popup-tip-container {
+    display: none;
+}
 
+/* Opcional: mover popup un poco hacia arriba */
+.leaflet-popup-content-wrapper {
+    transform: translateY(-10px); /* ajusta según tu diseño */
+}
 
 /* Iconos audios */
 
@@ -80,8 +91,28 @@ html, body {
   margin-top: 0.25rem;
 }
 
-
-
+.leaflet-popup-close-button {
+    font-size: 24px;    /* más grande, ajusta a tu gusto */
+    width: 32px;        /* ancho del botón */
+    height: 32px;       /* alto del botón */
+    line-height: 32px;  /* centrar la X verticalmente */
+    text-align: center; /* centrar horizontalmente */
+    top: 5px;           /* ajustar posición vertical */
+    right: 5px;         /* ajustar posición horizontal */
+}
+.leaflet-container a.leaflet-popup-close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border: none;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    font: 30px / 24px Tahoma, Verdana, sans-serif;
+    color: #757575;
+    text-decoration: none;
+    background: transparent;
+}
 /* Banderitas  */
 .iconos-reproductores {
   display: flex;

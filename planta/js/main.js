@@ -16,7 +16,8 @@ const map = L.map('map', {
   crs: L.CRS.Simple,
   minZoom: -2.5,
   maxZoom: 2,
-  attributionControl: false
+  attributionControl: false,
+  zoomControl: false
 });
 
 
@@ -74,7 +75,10 @@ fetch('/data/puntos.json') //antiguo sin cloudflare
           <div id="media-container-${punto.id}" class="media-contenedor"></div>
         </div>
       `;
-      marker.bindPopup(popupHTML);
+      marker.bindPopup(popupHTML, {
+          autoPan: true,
+          offset: [0, 250], // [x, y] en px, positivo y mueve hacia abajo
+      });
       marker.puntoData = punto; 
       
         marker.on('click', function () { //si hago click en el punto hace zoom tamb
