@@ -33,6 +33,7 @@ fetch('/data/puntos.json') //antiguo sin cloudflare
 //fetch('/api/get-puntos')
   .then(res => res.json())
   .then(data => {
+    let puntoEncontrado = null;
     data.puntos.forEach(punto => {
       // Usamos siempre el mismo icono
       const marker = L.marker(punto.coords, { icon: puntoInfoIcon }).addTo(map);
@@ -82,10 +83,15 @@ fetch('/data/puntos.json') //antiguo sin cloudflare
       }
     });
       //CUANDO TERMINA TODO, centramos
-      if (puntoEncontrado) {
-        map.setView(puntoEncontrado.getLatLng(), 0); // zoom ajustable
+    if (puntoEncontrado) {
+      const latlng = puntoEncontrado.getLatLng();
+
+      map.flyTo(latlng, 1.5, { duration: 1.5 });
+
+      setTimeout(() => {
         puntoEncontrado.openPopup();
-      }
+      }, 800);
+    }
   })
   .catch(err => console.error("Error cargando puntos:", err));
 
