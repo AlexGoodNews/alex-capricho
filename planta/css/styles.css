@@ -1,0 +1,110 @@
+/* Estilo general para que el mapa ocupe toda la pantalla */
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#map {
+  height: calc(100vh - 56px); /* 100% alto menos el alto del navbar (56px) */
+  width: 100%;
+}
+
+/* Estilo general del contenido dentro de los popups */
+.popup-contenido {
+  position: relative;
+  padding-right: 40px; /* espacio para el icono accesibilidad */
+  max-width: 300px;
+}
+
+/* Ícono de accesibilidad (o no) dentro del popup */
+.popup-icono-accesibilidad {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: auto;
+}
+
+.popup-informacion-extra {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.popup-icono-informativo {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Iconos audios */
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px; /* puedes ajustar según tu diseño */
+}
+.card-text {
+  text-align: justify;
+}
+
+.text-danger {
+  color: #dc3545; /* Bootstrap rojo */
+}
+.fw-bold {
+  font-weight: bold;
+}
+.d-block {
+  display: block;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+
+
+/* Banderitas  */
+.iconos-reproductores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.icono-media {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.popup-contenido audio,
+.popup-contenido video {
+  width: 100%;
+  margin-top: 8px;
+}
+.icono-media:hover {
+  opacity: 0.5;
+}
+
+.media-contenedor {
+  margin-top: 10px;
+}

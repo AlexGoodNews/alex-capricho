@@ -1,0 +1,142 @@
+const params = new URLSearchParams(window.location.search);
+const puntoIdDesdeQR = params.get("punto");
+
+// Dimensiones de la imagen del plano
+const width = 2000;
+const height = 1500;
+
+// Crear el mapa
+/*
+const map = L.map('map', {
+  crs: L.CRS.Simple,
+  minZoom: -1
+});
+*/
+const map = L.map('map', {
+  crs: L.CRS.Simple,
+  minZoom: -2.5,
+  maxZoom: 2,
+  attributionControl: false
+});
+
+
+
+const bounds = [[0, 0], [height, width]];
+L.imageOverlay('/img/plano-museo.png', bounds).addTo(map);
+map.fitBounds(bounds);
+map.setZoom(-3); 
+// Debug temporal para ver coordenadas
+//map.on('click', e => console.log(e.latlng));
+
+// Cargar puntos desde JSON
+fetch('/data/puntos.json') //antiguo sin cloudflare
+//fetch('/api/get-puntos')
+  .then(res => res.json())
+  .then(data => {
+    let puntoEncontrado = null;
+    data.puntos.forEach(punto => {
+      // Usamos siempre el mismo icono
+      const marker = L.marker(punto.coords, { icon: puntoInfoIcon }).addTo(map);
+
+      // Elegimos la imagen de accesibilidad para el popup
+      const iconoAccesibilidad = punto.accesible ? iconoAccesible : iconoNoAccesible;
+      const popupHTML = `
+        <div class="card border-0 popup-contenido p-2">
+          <h5 class="card-title mb-1">${punto.nombre.es}</h5>
+          <h6 class="text-muted mb-2">${punto.nombre.en}</h6>
+
+          <div class="popup-informacion-extra mb-2">
+            <img src="${iconoAccesibilidad}" 
+                class="popup-icono-informativo" 
+                alt="${punto.accesible ? 'Accesible' : 'No accesible'}"
+                title="${punto.accesible ? 'Accesible' : 'No accesible'}" />
+            <!-- Podrás agregar más iconos aquí más adelante -->
+          </div>
+
+          <p class="card-text small">
+            ${punto.descripcion.es}<br>
+            <em class="mt-2 d-block">${punto.descripcion.en}</em>
+            ${!punto.accesible ? `
+              <span class="text-danger d-block mt-1">
+                 No accesible para sillas de ruedas.<br>
+                <em> Not accessible for wheelchairs.</em>
+              </span>
+            ` : ''}
+          </p>
+
+
+          <div class="iconos-reproductores mb-2">
+            <img src="/icons/espana.png" class="icono-media" data-type="audio_es" alt="Audio ES" title="Audio en Español">
+            <img src="/icons/reino-unido.png" class="icono-media" data-type="audio_en" alt="Audio EN" title="Audio en Inglés">
+            <img src="/icons/hola-Signos.png" class="icono-media" data-type="video" alt="Lengua de Signos" title="Lengua de signos">
+          </div>
+
+          <div id="media-container-${punto.id}" class="media-contenedor"></div>
+        </div>
+      `;
+      marker.bindPopup(popupHTML);
+      marker.puntoData = punto; 
+      
+        marker.on('click', function () { //si hago click en el punto hace zoom tamb
+          const latlng = marker.getLatLng();
+
+          map.flyTo(latlng, 0.8, { // zoom menor que el del QR
+            duration: 1
+          });
+        })
+      //GUARDAMOS EL MARKER SI COINCIDE CON EL QR 
+      if (puntoIdDesdeQR && punto.id == puntoIdDesdeQR) {
+        puntoEncontrado = marker;
+      }
+    });
+      //CUANDO TERMINA TODO, centramos
+    if (puntoEncontrado) {
+      const latlng = puntoEncontrado.getLatLng();
+
+      map.flyTo(latlng, 1.5, { duration: 1.5 });
+
+      setTimeout(() => {
+        puntoEncontrado.openPopup();
+      }, 800);
+    }
+  })
+  .catch(err => console.error("Error cargando puntos:", err));
+
+window.addEventListener('resize', () => {
+  map.invalidateSize();
+});
+
+map.on('popupopen', function (e) {
+  const punto = e.popup._source.puntoData;
+  const mediaContainer = document.getElementById(`media-container-${punto.id}`);
+
+  e.popup._container.querySelectorAll('.icono-media').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const tipo = icon.getAttribute('data-type');
+      mediaContainer.innerHTML = ''; // Vaciar el contenedor
+
+      if (tipo === 'audio_es') {
+        mediaContainer.innerHTML = `
+          <audio controls class="w-100">
+            <source src="${punto.media.audio_es}" type="audio/mpeg" />
+            Tu navegador no soporta audio.
+          </audio>
+        `;
+      } else if (tipo === 'audio_en') {
+        mediaContainer.innerHTML = `
+          <audio controls class="w-100">
+            <source src="${punto.media.audio_en}" type="audio/mpeg" />
+            Tu navegador no soporta audio.
+          </audio>
+        `;
+      } else if (tipo === 'video') {
+        mediaContainer.innerHTML = `
+          <video controls class="w-100">
+            <source src="${punto.media.video_signos}" type="video/mp4" />
+            Tu navegador no soporta video.
+          </video>
+        `;
+      }
+    });
+  });
+});
