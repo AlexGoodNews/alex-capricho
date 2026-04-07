@@ -72,8 +72,16 @@
     "title": "lola2"
   },
   {
-    "title": "lucia",
+    "extendedProps": {
+      "descripcion": "",
+      "ubicacion": ""
+    },
     "start": "2026-03-24T12:00",
+    "title": "lucia"
+  },
+  {
+    "title": "Cumple Rodri",
+    "start": "2026-04-07T12:00",
     "extendedProps": {
       "ubicacion": "",
       "descripcion": ""

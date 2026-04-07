@@ -16,9 +16,9 @@
       ],
       "accesible": false,
       "media": {
-        "audio_es": "/audio/audio_es.mp3",
-        "audio_en": "/audio/audio_en.mp3",
-        "video_signos": "/videos/RehabilitacionCapricho.mp4"
+        "audio_es": "/audio/planta1/audio_es.mp3",
+        "audio_en": "/audio/planta1/audio_en.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
       }
     },
     {
@@ -37,9 +37,9 @@
       ],
       "accesible": true,
       "media": {
-        "audio_es": "/audio/audio_es.mp3",
-        "audio_en": "/audio/audio_en.mp3",
-        "video_signos": "/videos/RehabilitacionCapricho.mp4"
+        "audio_es": "/audio/planta1/audio_es.mp3",
+        "audio_en": "/audio/planta1/audio_en.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
       }
     },
     {

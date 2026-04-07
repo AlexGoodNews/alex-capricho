@@ -9,7 +9,7 @@ if %errorlevel% neq 0 (
     echo Una vez instalado Python, vuelve a ejecutar este script.
     exit /b
 ) else (
-    echo Python 3 encontrado ✅
+    echo Python 3 encontrado
 )
 
 echo Instalando libreria requests...
