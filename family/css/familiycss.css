@@ -1,12 +1,16 @@
 html,body{
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
+  background-color: black;
 }
 
 .container{
-  padding: 75px 0;
+  /*padding: 75px 0;*/
   margin: 0 auto;
-  width: 99%;
+  width: 100%;
+  height: 100%;
 }
 
 h1{
@@ -23,7 +27,7 @@ h1{
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
 }
 
 .itemTitle{
@@ -32,7 +36,7 @@ h1{
   transform: rotate(180deg);
 
 
-  min-width: 100%;
+  /*min-width: 100%;*/
   white-space: nowrap;
   pointer-events: none; /* importante: no bloquea hover */
 
@@ -50,11 +54,14 @@ h1{
 .itemTitle:hover{
   display: none;
 }
-
+/*antiguo apertura hover*/
+/*
 .item:hover .itemTitle {
   display: none;
+}*/
+.item.open .itemTitle {
+  display: none;
 }
-
 
 .itemTitle,
 .contentWrapper,
@@ -85,20 +92,33 @@ h1{
   background-position: center;
   background-size: cover;
   background-repeat: none;
-  transition: flex 0.8s ease;
+  transition: flex 1.0s ease;
   position: relative;
   min-width: 0;
 }
-
+/*antiguo apertura hover*/
 /* Cuando el usuario está interactuando con el acordeón */
+/* todos se encogen */
+/*
 .gallery-wrap:hover .item {
-  flex: 0.5; /* todos se encogen */
+  flex: 0.5; 
 }
+*/
 
 /* El activo crece mucho */
+/*
 .gallery-wrap .item:hover {
   flex: 6; 
 }
+*/
+.gallery-wrap .item {
+  flex: 0.5;
+}
+
+.gallery-wrap .item.open {
+  flex: 6;
+}
+
 .item::before,
 .item::after {
   content: "";
@@ -126,7 +146,8 @@ h1{
   );
   opacity: 0;
 }
-
+/*antiguo apertura hover*/
+/*
 .item:hover::before {
   opacity: 0;
 }
@@ -134,7 +155,14 @@ h1{
 .item:hover::after {
   opacity: 1;
 }
+*/
+.item.open::before {
+  opacity: 0;
+}
 
+.item.open::after {
+  opacity: 1;
+}
 .itemContent {
   opacity: 0;
   max-height: 0;
@@ -151,10 +179,18 @@ h1{
   font-family: 'Oswald', sans-serif;
   color: aliceblue;
 }
+
+.item.open .itemContent {
+  opacity: 1;
+  max-height: 1500px;
+}
+/*antiguo apertura hover*/
+/* antiguo apertura hover
 .item:hover .itemContent {
   opacity: 1;
   max-height: 1500px;
 }
+*/
 
 /* Contenido item */
 .contentWrapper {
@@ -266,7 +302,6 @@ h1{
   flex-shrink: 0;               /* que no se reduzcan los iconos */
 }
 /* Items */
-
 
 .item-1 { 
   background-image: url('https://www.bne.es/sites/default/files/repositorio-imagenes/Mariano_T%C3%A9llez_Gir%C3%B3n_y_Beaufort.png');

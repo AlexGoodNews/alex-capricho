@@ -60,7 +60,7 @@
       const btnCancelar = document.getElementById("cancelarEvento");
 
       let fechaSeleccionada = "";
-      let eventos = []; // ⚠️ Declarar antes
+      let eventos = []; // Declarar antes
 
       // Inicializar calendar
       const calendar = new FullCalendar.Calendar(calendarEl, {
@@ -79,7 +79,8 @@
 
         eventClick: function (info) {
           if (confirm("¿Eliminar evento?")) {
-            eventos = eventos.filter(e => e.start !== info.event.startStr);
+            const id = info.event.id;
+            eventos = eventos.filter(e => e.id !== id);
             info.event.remove();
             guardarEventosServidor(); // Guardar en JSON
           }
@@ -100,6 +101,7 @@
       // Guardar evento nuevo
       btnGuardar.addEventListener("click", function () {
         const nuevoEvento = {
+          id: Date.now().toString(),
           title: inputTitulo.value,
           start: fechaSeleccionada + "T" + inputHora.value,
           extendedProps: {
@@ -110,7 +112,7 @@
         eventos.push(nuevoEvento);
         calendar.addEvent(nuevoEvento);
         modal.style.display = "none";
-        guardarEventosServidor(); // ⚡ Guardar automáticamente
+        guardarEventosServidor(); // Guardar automáticamente
       });
 
       btnCancelar.addEventListener("click", function () {

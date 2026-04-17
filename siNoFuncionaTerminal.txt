@@ -1,0 +1,1 @@
+chmod +x instalar_Museo.command

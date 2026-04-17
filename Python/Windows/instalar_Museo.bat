@@ -1,3 +1,4 @@
+
 @echo off
 echo Comprobando si Python 3 está instalado...
 python --version >nul 2>&1

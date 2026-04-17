@@ -1,34 +1,11 @@
 [
   {
     "extendedProps": {
-      "descripcion": "Recorrido especial con explicaci\u00f3n de la exposici\u00f3n temporal.",
-      "ubicacion": "Sala principal"
-    },
-    "start": "2026-03-23T12:00",
-    "title": "Visita guiada al museo"
-  },
-  {
-    "extendedProps": {
-      "descripcion": "asfg",
-      "ubicacion": "asfga"
-    },
-    "start": "2026-03-24T12:00",
-    "title": "asdfasg"
-  },
-  {
-    "extendedProps": {
-      "descripcion": "si",
+      "descripcion": "",
       "ubicacion": ""
     },
-    "start": "2026-03-24T12:00",
-    "title": "Hola hoy evento de "
-  },
-  {
-    "extendedProps": {
-      "descripcion": "",
-      "ubicacion": "Goodnews"
-    },
-    "start": "2026-03-25T12:00",
+    "id": "1776339602186",
+    "start": "2026-04-16T12:00",
     "title": "Manu"
   },
   {
@@ -36,7 +13,8 @@
       "descripcion": "",
       "ubicacion": ""
     },
-    "start": "2026-03-25T12:00",
+    "id": "1776339607881",
+    "start": "2026-04-16T13:00",
     "title": "Ale"
   },
   {
@@ -44,47 +22,17 @@
       "descripcion": "",
       "ubicacion": ""
     },
-    "start": "2026-03-25T12:00",
+    "id": "1776351565510",
+    "start": "2026-04-21T12:00",
     "title": "Rodri"
   },
   {
     "extendedProps": {
-      "descripcion": "",
-      "ubicacion": ""
+      "descripcion": "asdgadfhnasdfglaishdi<hsdbc\u00f1ijbd\u00f1oj<sbd\u00f1ovj<bs\u00f1odb<sdob<osjbdoj<bsdob<osubdv\u00f1oj<",
+      "ubicacion": "aqui"
     },
-    "start": "2026-03-25T12:00",
-    "title": "Pepe"
-  },
-  {
-    "extendedProps": {
-      "descripcion": "",
-      "ubicacion": ""
-    },
-    "start": "2026-03-24T12:00",
-    "title": "lola"
-  },
-  {
-    "extendedProps": {
-      "descripcion": "",
-      "ubicacion": ""
-    },
-    "start": "2026-03-24T12:00",
-    "title": "lola2"
-  },
-  {
-    "extendedProps": {
-      "descripcion": "",
-      "ubicacion": ""
-    },
-    "start": "2026-03-24T12:00",
-    "title": "lucia"
-  },
-  {
-    "title": "Cumple Rodri",
-    "start": "2026-04-07T12:00",
-    "extendedProps": {
-      "ubicacion": "",
-      "descripcion": ""
-    }
+    "id": "1776352327581",
+    "start": "2026-04-16T12:00",
+    "title": "Mike"
   }
 ]

@@ -161,3 +161,58 @@ document.querySelectorAll('.videoWrapper').forEach(wrapper => {
         video.pause();
     });
 });
+
+//cierra el item al rato
+
+let closeTimeout;
+const AUTO_CLOSE_TIME = 10 * 60 * 1000; // 10 minutos
+
+items.forEach(item => {
+
+    // 🔹 Abrir item
+    item.addEventListener('click', () => {
+        openItem(item);
+    });
+
+    // 🔹 Reiniciar tiempo si hay interacción dentro
+    item.addEventListener('mousemove', () => {
+        if (item.classList.contains('open')) {
+            resetTimer(item);
+        }
+    });
+
+    item.addEventListener('touchstart', () => {
+        if (item.classList.contains('open')) {
+            resetTimer(item);
+        }
+    });
+
+    item.addEventListener('scroll', () => {
+        if (item.classList.contains('open')) {
+            resetTimer(item);
+        }
+    });
+});
+
+function openItem(item) {
+    clearTimeout(closeTimeout);
+
+    items.forEach(i => i.classList.remove('open'));
+    item.classList.add('open');
+
+    //console.log("open item");
+
+    startTimer(item);
+}
+
+function startTimer(item) {
+    closeTimeout = setTimeout(() => {
+        item.classList.remove('open');
+        //console.log("auto close");
+    }, AUTO_CLOSE_TIME);
+}
+
+function resetTimer(item) {
+    clearTimeout(closeTimeout);
+    startTimer(item);
+}

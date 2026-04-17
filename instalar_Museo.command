@@ -30,7 +30,7 @@ echo " pip listo"
 # -------------------------
 # Actualizar pip
 # -------------------------
-echo "⬆ Actualizando pip..."
+echo "Actualizando pip..."
 python3 -m pip install --upgrade pip
 
 # -------------------------
