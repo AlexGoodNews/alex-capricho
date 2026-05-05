@@ -98,11 +98,16 @@ function procesarEventos() {
             const div = document.createElement("div");
             div.className = "card";
             div.innerHTML = `
-                <div class="dia-grande">${dia}</div>
-                <div class="contenido">
-                    <div class="hora">${hora}</div>
-                    <h1>${ev.title}</h1>
+                <div class="diaUbic">
+                    <div class="dia-grande">${dia}</div>
                     <div class="meta">${ev.extendedProps?.ubicacion || ""}</div>
+                </div>
+                <div class="contenido">
+                    <div class="horaYTitulo">
+                        <h1>${ev.title}</h1>
+                        <div class="hora">${hora}</div>
+                    </div>
+                    
                     <div class="descripcion">${ev.extendedProps?.descripcion || ""}</div>
                 </div>
             `;

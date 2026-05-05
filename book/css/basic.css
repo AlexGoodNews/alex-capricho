@@ -2,7 +2,7 @@
 
 body{
 	overflow:hidden;
-	background-color:#fcfcfc;
+	background-color:#2c2c2b;
 	margin:0;
 	padding:0;
 }
@@ -29,7 +29,7 @@ body{
 .flipbook-viewport .page{
 	width:461px;
 	height:600px;
-	background-color:white;
+	background-color:#2c2c2b;
 	background-repeat:no-repeat;
 	background-size:100% 100%;
 }
