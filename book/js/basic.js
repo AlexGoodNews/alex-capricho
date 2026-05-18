@@ -129,7 +129,7 @@ function loadApp() {
 		gradients: true,
 		autoCenter: true
 	});
-	$('.flipbook').turn('page', 2); //pagina 2
+	$('.flipbook').turn('page', 1); //pagina 2
 	resizeBook();
 }
 
