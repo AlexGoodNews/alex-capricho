@@ -1,4 +1,11 @@
 export async function onRequest(context) {
+  return Response.json({
+    ok: true,
+    mensaje: "API funcionando"
+  })
+}
+/*
+export async function onRequest(context) {
   const kv = context.env.CMS_ALEXPUNTOS
 
   if (context.request.method === "GET") {
@@ -25,4 +32,4 @@ export async function onRequest(context) {
   return new Response("Método no permitido", {
     status: 405
   })
-}
+}*/
