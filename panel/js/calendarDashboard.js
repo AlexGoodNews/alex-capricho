@@ -28,7 +28,7 @@ async function initDashboard() {
         </div>
     `
 
-    const response = await fetch('/data/eventos.json')
+    const response = await fetch('/api/eventos') //cloud flare le gusta asi aunque este dentro de functions
     let eventos = await response.json()
 
     const calendarEl = document.getElementById('calendar')
@@ -102,7 +102,7 @@ async function initDashboard() {
         })
 
     async function guardarEventos() {
-        const resp = await fetch('/data/eventos.json', {
+        const resp = await fetch('/api/eventos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
