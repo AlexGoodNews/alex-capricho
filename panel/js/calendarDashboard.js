@@ -28,7 +28,7 @@ async function initDashboard() {
         </div>
     `
 
-    const response = await fetch('/api/eventos')
+    const response = await fetch('/data/eventos')
     let eventos = await response.json()
 
     const calendarEl = document.getElementById('calendar')
@@ -102,7 +102,7 @@ async function initDashboard() {
         })
 
     async function guardarEventos() {
-        const resp = await fetch('/api/eventos', {
+        const resp = await fetch('/data/eventos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
