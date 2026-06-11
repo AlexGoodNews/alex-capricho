@@ -1,10 +1,5 @@
-export async function onRequest(context) {
-  return Response.json({
-    kvExiste: !!context.env.CMS_ALEXPUNTOS
-  })
-}
 
-/*
+
 export async function onRequest(context) {
   const kv = context.env.CMS_ALEXPUNTOS
 
@@ -32,7 +27,7 @@ export async function onRequest(context) {
   return new Response("Método no permitido", {
     status: 405
   })
-}*/
+}
 
 
 /*export async function onRequest(context) {
@@ -41,3 +36,10 @@ export async function onRequest(context) {
     mensaje: "API funcionando"
   })
 }*/
+/*
+export async function onRequest(context) {
+  return Response.json({
+    kvExiste: !!context.env.CMS_ALEXPUNTOS
+  })
+}
+*/
