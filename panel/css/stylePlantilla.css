@@ -1,163 +1,212 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-/* IMAGEN DE FONDO */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image: url("img/Jardin_El_Capricho_Water_fontain01.jpg");
-    background-size: cover;
-    background-position: center;
-
-    filter: blur(2px) brightness(0.6);
-    transform: scale(1.05); /* evita bordes raros del blur */
-
-    z-index: -2;
+@font-face {
+    font-family: 'Carmen';
+    src: url('/fonts/BodoniModa-VariableFont_opsz\,wght.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* CAPA OSCURA ENCIMA DEL BLUR */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.35);
-
-    z-index: -1;
+@font-face {
+    font-family: 'Carmen';
+    src: url('/fonts/BodoniModa-Italic-VariableFont_opsz\,wght.ttf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
 }
-.container {
-    display: flex;
-    height: 100vh;
-    flex-direction: row;
-    justify-content: space-around;
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/fonts/HelveticaNeue\ LT\ 47\ LightCn\ Oblique.ttf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/fonts/HelveticaNeue\ LT\ 57\ Cn\ Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* IZQUIERDA (70%) */
-.hoy {
-    width: 80%;
+body{
+    width:100vw;
+    padding: 5%;
+    height:100vh;
+    overflow:hidden;
+    background:#E87D7D;
+
+}
+.es{
+    font-family: 'Helvetica', sans-serif;
+    margin-bottom: 2px;
+}
+.columna.columna-izquierda .en{
+    color: white;
+}
+.en{
+    font-family: 'Helvetica', sans-serif;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.hora{
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+}
+.container{
+    display:grid;
+    grid-template-columns: 20% 20% 60%;
+    width:100%;
+    height:100%;
+    gap:15px;
+    padding:15px;
+}
+.columna{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.columna-izquierda .bloque{
+    flex:1;
+    background:rgba(255, 255, 255, 0);
+    padding:20px;
+    color: white;
+}
+
+.subtitulo{
+    font-size: 175%;
+}
+.bloque.cabecera.subtitulo .es{
+    font-family: 'Carmen', sans-serif;
+    color: #E67A7A;
+}
+.bloque.cabecera.subtitulo .en{
+    font-family: 'Helvetica', sans-serif;
+    font-style: italic;
+    color: #E67A7A;
+    margin-bottom: 0px;
+}
+.bloque.info2 p{
+    color: #E67A7A;
+    font-size: 80%;
+}
+.bloque{
     display: flex;
     flex-direction: column;
-    gap: 20px;
     justify-content: center;
-    align-items: flex-end;
+}
+.bloque.directorio.subtitulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bloque.fecha1 .hora{
+    font-family: 'Helvetica', sans-serif;
+}
+.bloque.fecha2 .big{
+    font-size: 25px;
+}
+.columna-info{
+    background-color: white;
+    padding: 5%;
+}
+.columna-info .cabecera{
+    flex:0.2;
+    text-align: center;
+}
+
+.columna-info .fecha1{
+    flex:1;
+}
+
+.columna-info .fecha2{
+    flex:1;
+}
+
+.columna-info .info1{
+    flex:1;
+}
+
+.columna-info .info2{
+    flex:1;
+}
+
+.columna-info .bloque{
+    /*background:white;*/
+    padding:15px;
+}
+.columna-eventos{
+    background:white;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+}
+.fecha1,
+.fecha2{
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.fecha1::after,
+.fecha2::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+    width: 80%;
+    height: 2px;
+    background: #E67A7A;
+}
+.info2{
+    border: 2px solid #E67A7A;
 }
 .mes{
-    width: 15%;           
-    display: flex;
-    align-items: center;  
-    justify-content: center; 
-
-    font-size: 5rem;        
-    font-weight: bold;
-    color: white;
-
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-
+    height:80px;
 }
-.card {
-    width: 50%;
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
-/* Día grande a la izquierda */
-.dia-grande {
-    font-size: 5rem;
-    font-weight: bold;
-    min-width: 80px;
 
-    align-items: center;
-    justify-content: center;
-    color: #000000;
+.hoy{
+    flex:1;
 }
-.diaUbic{
+
+.card{
+    width:100%;
+    height:100%;
+}
+.logo{
+    flex:2.5;
+}
+
+.directorio{
+    flex:1.5;
+}
+
+.bienvenida{
+    flex:3;
+}
+
+.web{
+    flex:0.3;
+}
+
+
+.redes{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+}
 
-    margin-right: 2%;
-}
-/* Contenido derecha */
-.contenido {
-    flex: 1;
-}
-.horaYTitulo{
+.redes-icons{
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
+    gap: 25px;
+    font-size: 2.5rem;
+    color: #ffffff;
 }
-
-.hora {
-    font-size: 1.1rem;
-    opacity: 0.8;
-    margin-bottom: 5px;
-    justify-content: center;
-}
-
-.card h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.meta {
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-.descripcion {
-    font-size: 0.9rem;
-    opacity: 0.6;
-}
-.card h1 {
-    margin-top: 0;
-    font-size: 2.5em;
-}
-
-.meta {
-    font-size: 1.2em;
-    color: #555;
-    margin: 10px 0;
-}
-
-.descripcion {
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-/* DERECHA (30%) */
-.proximos {
-    width: 20%;
-    background: #222;
-    color: white;
-    padding: 20px;
-}
-
-.proximos h2 {
-    margin-top: 0;
-}
-
-.evento {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
+.logo img{
+    width: 90%;
+    height: auto;
+    object-fit: contain;
 }
