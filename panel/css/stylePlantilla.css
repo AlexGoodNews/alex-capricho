@@ -166,6 +166,7 @@ body{
     border: 2px solid #E67A7A;
 }
 .mes{
+    display: none;
     flex: 1;
     font-family: 'Helvetica', sans-serif;
     size: 10px;
