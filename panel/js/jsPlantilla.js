@@ -150,8 +150,8 @@ function procesarEventos() {
         div.innerHTML = `<strong>${ev.title}</strong><br>${fecha} ${hora}`;
         lista.appendChild(div);
     });
-    /*animate scroll*/
-    startScroll();
+    //animate scroll
+    //startScroll();
 }
 let pos = 0;
 let scrollStarted = false;
