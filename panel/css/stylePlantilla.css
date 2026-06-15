@@ -166,7 +166,9 @@ body{
     border: 2px solid #E67A7A;
 }
 .mes{
-    height:80px;
+    flex: 1;
+    font-family: 'Helvetica', sans-serif;
+    size: 10px;
 }
 
 .hoy{
@@ -363,6 +365,10 @@ body{
         black 90%,
         transparent
     );
+}
+.actividadesYmes{
+    display: flex;
+    flex-direction: row;
 }
 .act-item{
     display:flex;

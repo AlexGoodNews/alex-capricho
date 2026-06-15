@@ -27,7 +27,7 @@ function cargarEventos() {
         })
         .catch(err => console.error("Error cargando eventos", err));
 }
-function limpiarEventosPasados(dias = 1) {
+function limpiarEventosPasados(dias = 100) {
   const ahora = new Date();
 
   // Restamos los días que quieras conservar
@@ -55,22 +55,12 @@ function guardarEventosServidor() {
 
 // Eventos de hoy y próximos
 function procesarEventos() {
-    //const hoy = new Date().toISOString().split("T")[0];
     const ahora = new Date();
     ahora.setHours(0, 0, 0, 0); // inicio del día
     const mesActual = ahora.getMonth();
     const añoActual = ahora.getFullYear();
 
     // Eventos de hoy
-
-    /*
-    const eventosHoy = eventos
-    .filter(e => {
-        const fechaEvento = new Date(e.start);
-        return fechaEvento.toDateString() === hoy.toDateString();
-    })
-    .sort((a, b) => new Date(a.start) - new Date(b.start));
-    */
     const eventosMes = eventos
         .filter(e => {
             const fechaEvento = new Date(e.start);
@@ -80,8 +70,6 @@ function procesarEventos() {
             );
         })
         .sort((a, b) => new Date(a.start) - new Date(b.start));
-
-
 
     const contHoy = document.getElementById("activitiesTrack");
     contHoy.innerHTML = "";
@@ -101,13 +89,13 @@ function procesarEventos() {
                 <div class="act-item">
 
                     <div class="act-left">
-                        <div class="act-title-es">${ev.title}</div>
-                        <div class="act-title-en">${ev.extendedProps?.title_en || ""}</div>
+                        <div class="es">${ev.title}</div>
+                        <div class="en">${ev.extendedProps?.title_en || ""}</div>
                     </div>
 
                     <div class="act-right">
-                        <div class="act-time">${hora}</div>
-                        <div class="act-date">${dia}</div>
+                        <div class="es">${hora}</div>
+                        <div class="en">${dia}</div>
                     </div>
 
                 </div>
@@ -136,8 +124,11 @@ function procesarEventos() {
         lista.appendChild(div);
     });
     //animate scroll
-    //startScroll();
+    startScroll();
 }
+
+
+//--------------------------Animacion-----------------------
 let pos = 0;
 let scrollStarted = false;
 
