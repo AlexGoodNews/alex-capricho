@@ -171,13 +171,14 @@
                         <p class="es">ACTIVIDADES</p>
                         <p class="en">ACTIVITIES</p>      
                     </div>
+
+                    <div class="mes">
+                        <h1 id="mesActual"></h1>
+                    </div>
                     <div class="activities">
-                        <div class="activities-track" id="activities-track">
+                        <div class="activities-track" id="activitiesTrack">
                             <div class="card" id="eventoActual">
                                 <h1 id="titulo">Cargando...</h1>
-                                <div class="meta" id="hora"></div>
-                                <div class="meta" id="ubicacion"></div>
-                                <div class="descripcion" id="descripcion"></div>
                             </div>
                         </div>
                     </div>
@@ -377,4 +378,23 @@
                                     <div class="act-date">24/06</div>
                                 </div>
                             </div>
+
+
+
+
+                                        /* OLD
+            div.innerHTML = `
+                <div class="diaUbic">
+                    <div class="dia-grande">${dia}</div>
+                    <div class="meta">${ev.extendedProps?.ubicacion || ""}</div>
+                </div>
+                <div class="contenido">
+                    <div class="horaYTitulo">
+                        <h1>${ev.title}</h1>
+                        <div class="hora">${hora}</div>
+                    </div>
+                    
+                    <div class="descripcion">${ev.extendedProps?.descripcion || ""}</div>
+                </div>
+            `;*/
 </html>-->
