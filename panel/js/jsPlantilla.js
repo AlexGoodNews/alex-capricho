@@ -83,7 +83,7 @@ function procesarEventos() {
 
 
 
-    const contHoy = document.getElementById("hoyEventos");
+    const contHoy = document.getElementById("activitiesTrack");
     contHoy.innerHTML = "";
 
     if (eventosMes.length === 0) {
@@ -97,6 +97,7 @@ function procesarEventos() {
 
             const div = document.createElement("div");
             div.className = "card";
+            /* OLD
             div.innerHTML = `
                 <div class="diaUbic">
                     <div class="dia-grande">${dia}</div>
@@ -109,6 +110,21 @@ function procesarEventos() {
                     </div>
                     
                     <div class="descripcion">${ev.extendedProps?.descripcion || ""}</div>
+                </div>
+            `;*/
+            div.innerHTML = `
+                <div class="act-item">
+
+                    <div class="act-left">
+                        <div class="act-title-es">${ev.title}</div>
+                        <div class="act-title-en">${ev.extendedProps?.title_en || ""}</div>
+                    </div>
+
+                    <div class="act-right">
+                        <div class="act-time">${hora}</div>
+                        <div class="act-date">${dia}</div>
+                    </div>
+
                 </div>
             `;
             contHoy.appendChild(div);
@@ -134,6 +150,34 @@ function procesarEventos() {
         div.innerHTML = `<strong>${ev.title}</strong><br>${fecha} ${hora}`;
         lista.appendChild(div);
     });
+    /*animate scroll*/
+    startScroll();
+}
+let pos = 0;
+let scrollStarted = false;
+
+function startScroll() {
+    const track = document.querySelector(".activities-track");
+
+    if (!track || scrollStarted) return;
+
+    scrollStarted = true;
+
+    function animate() {
+        pos -= 0.5; // velocidad más suave
+
+        const height = track.scrollHeight / 2;
+
+        track.style.transform = `translateY(${pos}px)`;
+
+        if (Math.abs(pos) >= height) {
+            pos = 0;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
 }
 
 // -------------------------
