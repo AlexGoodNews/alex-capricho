@@ -125,10 +125,6 @@ async function initDashboard() {
         }
     }
 
-    if (!inputTitulo.value || !inputTituloEn.value || !inputHora.value) {
-        alert("Completa todos los campos")
-        return
-    }
 }
 function formatearFechas(dateStr) {
     const date = new Date(dateStr + "T00:00:00")

@@ -84,9 +84,9 @@ function procesarEventos() {
         contHoy.innerHTML = `<div class="card"><h1>No hay eventos hoy</h1></div>`;
     } else {
         eventosMes.forEach(ev => {
-            const fechaObj = new Date(ev.start);
+            const fechaES = ev.fecha || "";
+            const fechaEN = ev.fechaIngles || "";
 
-            const dia = fechaObj.getDate().toString().padStart(2, "0");
             const hora = fechaObj.toTimeString().slice(0, 5); // HH:MM
 
             const div = document.createElement("div");
@@ -100,8 +100,8 @@ function procesarEventos() {
                     </div>
 
                     <div class="act-right">
-                        <div class="es">${hora}</div>
-                        <div class="en">${dia}</div>
+                        <div class="es">${fechaES}</div>
+                        <div class="en">${fechaEN}</div>
                     </div>
 
                 </div>
