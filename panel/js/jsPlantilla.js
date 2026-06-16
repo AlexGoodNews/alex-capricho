@@ -1,3 +1,4 @@
+import { startScroll } from "./scroll.js";
 let eventos = [];
 const API_BASE = localStorage.getItem("api_url") || window.location.origin;
 /*const API_URL = localStorage.getItem("api_url") || "http://localhost:8888";*/ /*Cloudflare*/
@@ -77,7 +78,7 @@ function procesarEventos() {
         return;
     }
 
-    contHoy.innerHTML = "";"";
+    contHoy.innerHTML = "";
 
     if (eventosMes.length === 0) {
         contHoy.innerHTML = `<div class="card"><h1>No hay eventos hoy</h1></div>`;
@@ -129,38 +130,10 @@ function procesarEventos() {
         lista.appendChild(div);
     });
     //animate scroll
+    scrollStarted = false;
+    pos = 0;
     startScroll();
 }
-
-
-//--------------------------Animacion-----------------------
-let pos = 0;
-let scrollStarted = false;
-
-function startScroll() {
-    const track = document.querySelector(".activities-track");
-
-    if (!track || scrollStarted) return;
-
-    scrollStarted = true;
-
-    function animate() {
-        pos -= 0.5; // velocidad más suave
-
-        const height = track.scrollHeight / 2;
-
-        track.style.transform = `translateY(${pos}px)`;
-
-        if (Math.abs(pos) >= height) {
-            pos = 0;
-        }
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-}
-
 // -------------------------
 // Carga inicial y refresco automático cada 30 segundos
 // -------------------------

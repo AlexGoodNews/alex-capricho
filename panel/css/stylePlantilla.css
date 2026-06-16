@@ -355,7 +355,7 @@ body{
     flex-direction:column;
     overflow: hidden;
     position:relative;
-    height:100%;
+    height:300px;
     gap:15px;
 }
 .activities{
