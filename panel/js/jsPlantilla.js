@@ -87,8 +87,6 @@ function procesarEventos() {
             const fechaES = ev.fecha || "";
             const fechaEN = ev.fechaIngles || "";
 
-            const hora = fechaObj.toTimeString().slice(0, 5); // HH:MM
-
             const div = document.createElement("div");
             div.className = "card";
             div.innerHTML = `
