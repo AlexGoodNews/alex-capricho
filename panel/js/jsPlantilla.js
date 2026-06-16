@@ -21,13 +21,13 @@ function cargarEventos() {
         .then(res => res.json())
         .then(data => {
             eventos = data;
-            limpiarEventosPasados(1);
+            limpiarEventosPasados(100);
             guardarEventosServidor();
             procesarEventos();
         })
         .catch(err => console.error("Error cargando eventos", err));
 }
-function limpiarEventosPasados(dias = 100) {
+function limpiarEventosPasados(dias) {
   const ahora = new Date();
 
   // Restamos los días que quieras conservar
@@ -72,7 +72,12 @@ function procesarEventos() {
         .sort((a, b) => new Date(a.start) - new Date(b.start));
 
     const contHoy = document.getElementById("activitiesTrack");
-    contHoy.innerHTML = "";
+    if (!contHoy) {
+        console.warn("No existe #activitiesTrack en el DOM");
+        return;
+    }
+
+    contHoy.innerHTML = "";"";
 
     if (eventosMes.length === 0) {
         contHoy.innerHTML = `<div class="card"><h1>No hay eventos hoy</h1></div>`;
@@ -159,5 +164,7 @@ function startScroll() {
 // -------------------------
 // Carga inicial y refresco automático cada 30 segundos
 // -------------------------
-cargarEventos(); // primera carga
-setInterval(cargarEventos, 3000000); // cada 30 minutos
+document.addEventListener("DOMContentLoaded", () => {
+    cargarEventos(); //primera carga
+    setInterval(cargarEventos, 3000000); //espera media hora
+});
