@@ -57,7 +57,8 @@ function cargarEventos() {
         .then(data => {
             eventos = data;
             limpiarEventosPasados(100);
-            guardarEventosServidor();
+            // NO auto-save here — avoid overwriting server-side fixed/diferent data
+            //guardarEventosServidor();
             procesarEventos();
         })
         .catch(err => console.error("Error cargando eventos", err));
@@ -70,10 +71,18 @@ function limpiarEventosPasados(dias) {
   limite.setDate(ahora.getDate() - dias);
   limite.setHours(0, 0, 0, 0);
 
+    // Keep events without a start (e.g. fixed events stored without start)
   eventos = eventos.filter(e => {
+    if (!e.start) return true; // don't delete items that have no start property
     const fechaEvento = new Date(e.start);
     return fechaEvento >= limite;
   });
+  //old
+  /*
+  eventos = eventos.filter(e => {
+    const fechaEvento = new Date(e.start);
+    return fechaEvento >= limite;
+  });*/
 }
 function guardarEventosServidor() {
     fetch(`${API_BASE}/api/eventos`, {
@@ -94,6 +103,20 @@ function procesarEventos() {
     ahora.setHours(0, 0, 0, 0); // inicio del día
     const mesActual = ahora.getMonth();
     const añoActual = ahora.getFullYear();
+
+
+    // Build list: map fixed events into synthetic events for display (today's date + their hora)
+    const today = new Date(ahora); // copy
+    function fixedToEvent(f) {
+        const [hh = "00", mm = "00"] = (f.hora || "00:00").split(":");
+        const d = new Date(today);
+        d.setHours(parseInt(hh, 10), parseInt(mm, 10), 0, 0);
+        return {
+            ...f,
+            // ISO string so downstream date parsing works
+            start: d.toISOString()
+        };
+    }
 
     // Eventos de hoy
     const todosLosEventos = [...eventosFijos, ...eventos];
