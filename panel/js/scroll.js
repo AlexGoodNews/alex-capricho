@@ -23,10 +23,14 @@ export function startScroll(selector = ".activities-track") {
 
     setTimeout(() => {
 
+        const container = document.querySelector(".activities");
         console.log("scrollHeight:", track.scrollHeight);
         console.log("clientHeight:", track.clientHeight);
+        console.log(track);
+        console.log(track.parentElement);
+        console.log(track.parentElement.clientHeight);
 
-        if (track.scrollHeight <= track.clientHeight) {
+        if (track.scrollHeight <= container.clientHeight) {
             console.log("No hay overflow, no se inicia scroll");
             return;
         }

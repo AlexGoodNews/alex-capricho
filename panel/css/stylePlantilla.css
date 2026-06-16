@@ -357,8 +357,6 @@ body{
     position:relative;
     height:300px;
     gap:15px;
-}
-.activities{
     mask-image: linear-gradient(
         to bottom,
         transparent,
