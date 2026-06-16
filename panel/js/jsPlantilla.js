@@ -3,6 +3,40 @@ let eventos = [];
 const API_BASE = localStorage.getItem("api_url") || window.location.origin;
 /*const API_URL = localStorage.getItem("api_url") || "http://localhost:8888";*/ /*Cloudflare*/
 
+/* EVENTOS FIJOS (NO SE BORRAN NUNCA) */
+const eventosFijos = [
+    {
+        id: "fijo-1",
+        title: "Visita guiada",
+        titleEn: "Guided tour",
+        hora: "12:00",
+        dias: {
+            es: "Todos los días",
+            en: "Every day"
+        }
+    },
+    {
+        id: "fijo-2",
+        title: "Taller Familiar",
+        titleEn: "Family Workshop",
+        hora: "16:00",
+        dias: {
+            es: "Sábados",
+            en: "Saturdays"
+        }
+    },
+    {
+        id: "fijo-3",
+        title: "Cuentacuentos",
+        titleEn: "Storyteller",
+        hora: "17:00",
+        dias: {
+            es: "Domingos",
+            en: "Sundays"
+        }
+    }
+];
+
 //detector de mes
 const meses = [
     "Enero", "Febrero", "Marzo", "Abril",
@@ -62,7 +96,9 @@ function procesarEventos() {
     const añoActual = ahora.getFullYear();
 
     // Eventos de hoy
-    const eventosMes = eventos
+    const todosLosEventos = [...eventosFijos, ...eventos];
+
+    const eventosMes = todosLosEventos  
         .filter(e => {
             const fechaEvento = new Date(e.start);
             return (
@@ -86,6 +122,7 @@ function procesarEventos() {
         eventosMes.forEach(ev => {
             const fechaES = ev.fecha || "";
             const fechaEN = ev.fechaIngles || "";
+            const hora = ev.start?.split("T")[1]?.slice(0, 5) || "";
 
             const div = document.createElement("div");
             div.className = "card";
@@ -98,6 +135,7 @@ function procesarEventos() {
                     </div>
 
                     <div class="act-right">
+                        <div class="hora">${hora}</div>
                         <div class="es">${fechaES}</div>
                         <div class="en">${fechaEN}</div>
                     </div>
