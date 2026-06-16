@@ -72,3 +72,35 @@ h2, h3, h4 {
   margin-bottom: 20px;
 }
 
+.fc{
+  width: 50%;
+}
+/* Estilos para el modal */
+#modalEvento {
+    display: none;
+    position: fixed; /* Cambiado de block a fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cuando el modal está visible */
+#modalEvento[style*="display: block"] {
+    display: flex !important; /* Forzar flex para centrar */
+}
+
+.infoInput {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    z-index: 1001;
+}

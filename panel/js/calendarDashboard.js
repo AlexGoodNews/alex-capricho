@@ -7,7 +7,7 @@ async function initDashboard() {
         <div id="calendar"></div>
 
         <div id="modalEvento" style="display:none;">
-            <div id="modalContent">
+            <div class= "infoInput" id="modalContent">
                 <h2>Nuevo Evento</h2>
 
                 <label>Título (ES):</label>
@@ -124,6 +124,12 @@ async function initDashboard() {
             alert("Error guardando eventos")
         }
     }
+    // Evento para cerrar haciendo clic fuera del modal
+    document.getElementById('modalEvento').addEventListener('click', function(e) {
+        if (e.target === this) { // Solo si clic en el fondo oscuro
+            cerrarModal();
+        }
+    });
 
 }
 function formatearFechas(dateStr) {
