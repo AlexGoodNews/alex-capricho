@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+    <!--<link rel="stylesheet" href="/admin/dark.css">-->
+    <link rel="stylesheet" href="/admin/dashboard.css">
+  </head>
+
+  <body>
+    <div id="app">
+
+        <h1>Gestión de eventos</h1>
+
+        <div id="calendar"></div>
+
+        <div id="modalEvento" style="display:none;">
+            <div id="modalContent">
+                <h2>Nuevo Evento</h2>
+
+                <label>Título:</label>
+                <input type="text" id="inputTitulo"><br><br>
+
+                <label>Hora inicio:</label>
+                <input type="time" id="inputHora"><br><br>
+
+                <label>Ubicación:</label>
+                <input type="text" id="inputUbicacion"><br><br>
+
+                <label>Descripción:</label>
+                <textarea id="inputDescripcion"></textarea><br><br>
+
+                <button id="guardarEvento">Guardar</button>
+                <button id="cancelarEvento">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clerk -->
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c3BsZW5kaWQtd29tYmF0LTAuY2xlcmsuYWNjb3VudHMuZGV2JA"
+      src="https://splendid-wombat-0.clerk.accounts.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js">
+    </script>
+
+    <script src="/admin/js/auth.js"></script>
+    <script src="/panel/index.global.min.js"></script>
+    <script src="/panel/js/calendarDashboard.js"></script>
+
+  </body>
+</html>
+
+

@@ -10,17 +10,14 @@ async function initDashboard() {
             <div id="modalContent">
                 <h2>Nuevo Evento</h2>
 
-                <label>Título:</label>
+                <label>Título (ES):</label>
                 <input type="text" id="inputTitulo"><br><br>
+
+                <label>Título (EN):</label>
+                <input type="text" id="inputTituloEn"><br><br>
 
                 <label>Hora inicio:</label>
                 <input type="time" id="inputHora"><br><br>
-
-                <label>Ubicación:</label>
-                <input type="text" id="inputUbicacion"><br><br>
-
-                <label>Descripción:</label>
-                <textarea id="inputDescripcion"></textarea><br><br>
 
                 <button id="guardarEvento">Guardar</button>
                 <button id="cancelarEvento">Cancelar</button>
@@ -35,9 +32,13 @@ async function initDashboard() {
 
     const modal = document.getElementById("modalEvento")
     const inputTitulo = document.getElementById("inputTitulo")
+    const inputTituloEn = document.getElementById("inputTituloEn")
     const inputHora = document.getElementById("inputHora")
+
+    /*
     const inputUbicacion = document.getElementById("inputUbicacion")
     const inputDescripcion = document.getElementById("inputDescripcion")
+    */
 
     let fechaSeleccionada = ""
 
@@ -50,9 +51,10 @@ async function initDashboard() {
             fechaSeleccionada = info.dateStr
 
             inputTitulo.value = ""
+            inputTituloEn.value = ""
             inputHora.value = "12:00"
-            inputUbicacion.value = ""
-            inputDescripcion.value = ""
+            //inputUbicacion.value = ""
+            //inputDescripcion.value = ""
 
             modal.style.display = "flex"
         },
@@ -75,7 +77,7 @@ async function initDashboard() {
     document
         .getElementById("guardarEvento")
         .addEventListener("click", async () => {
-
+            /*
             const nuevoEvento = {
                 id: Date.now().toString(),
                 title: inputTitulo.value,
@@ -84,8 +86,16 @@ async function initDashboard() {
                     ubicacion: inputUbicacion.value,
                     descripcion: inputDescripcion.value
                 }
+            }*/
+           const fechas = formatearFechas(fechaSeleccionada)
+           const nuevoEvento = {
+                id: Date.now().toString(),
+                title: inputTitulo.value,
+                titleEn: inputTituloEn.value,
+                start: `${fechaSeleccionada}T${inputHora.value}`,
+                fecha: fechas.fechaES,
+                fechaIngles: fechas.fechaEN
             }
-
             eventos.push(nuevoEvento)
 
             calendar.addEvent(nuevoEvento)
@@ -114,6 +124,30 @@ async function initDashboard() {
             alert("Error guardando eventos")
         }
     }
-}
 
+    if (!inputTitulo.value || !inputTituloEn.value || !inputHora.value) {
+        alert("Completa todos los campos")
+        return
+    }
+}
+function formatearFechas(dateStr) {
+    const date = new Date(dateStr + "T00:00:00")
+
+    const fechaES = new Intl.DateTimeFormat('es-ES', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long'
+    }).format(date)
+
+    const fechaEN = new Intl.DateTimeFormat('en-GB', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long'
+    }).format(date)
+
+    return {
+        fechaES,
+        fechaEN: fechaEN.charAt(0).toUpperCase() + fechaEN.slice(1)
+    }
+}
 initDashboard()

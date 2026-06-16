@@ -3,11 +3,7 @@ let animationId = null;
 
 export function startScroll(selector = ".activities-track") {
 
-    console.log("startScroll() llamado");
-
     const track = document.querySelector(selector);
-
-    console.log("track encontrado:", track);
 
     if (!track) {
         console.log("No existe el elemento");
@@ -24,11 +20,6 @@ export function startScroll(selector = ".activities-track") {
     setTimeout(() => {
 
         const container = document.querySelector(".activities");
-        console.log("scrollHeight:", track.scrollHeight);
-        console.log("clientHeight:", track.clientHeight);
-        console.log(track);
-        console.log(track.parentElement);
-        console.log(track.parentElement.clientHeight);
 
         if (track.scrollHeight <= container.clientHeight) {
             console.log("No hay overflow, no se inicia scroll");
@@ -37,13 +28,9 @@ export function startScroll(selector = ".activities-track") {
 
         const originalHTML = track.innerHTML;
 
-        console.log("Longitud HTML:", originalHTML.length);
-
         track.innerHTML = originalHTML + originalHTML;
 
         const scrollHeight = track.scrollHeight / 2;
-
-        console.log("scrollHeight calculado:", scrollHeight);
 
         function animate() {
 
