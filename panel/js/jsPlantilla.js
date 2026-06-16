@@ -130,8 +130,6 @@ function procesarEventos() {
         lista.appendChild(div);
     });
     //animate scroll
-    scrollStarted = false;
-    pos = 0;
     startScroll();
 }
 // -------------------------
