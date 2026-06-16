@@ -95,8 +95,8 @@ function procesarEventos() {
                 <div class="act-item">
 
                     <div class="act-left">
-                        <div class="es">${ev.title}</div>
-                        <div class="en">${ev.extendedProps?.title_en || ""}</div>
+                        <div class="es">${ev.title || ""}</div>
+                        <div class="en">${ev.titleEn || ""}</div>
                     </div>
 
                     <div class="act-right">
