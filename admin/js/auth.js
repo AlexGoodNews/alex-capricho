@@ -20,8 +20,24 @@ window.addEventListener('load', async () => {
     appDiv.innerHTML = `<div id="sign-in"></div>`
 
     Clerk.mountSignIn(document.getElementById('sign-in'), {
+      appearance: {
+        elements: {
+          footerAction: {
+            display: 'none'
+          }
+        }
+      },
       afterSignInUrl: '/admin',
       afterSignUpUrl: '/admin'
     })
   }
 })
+/*
+
+    <!--<script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_test_c3BsZW5kaWQtd29tYmF0LTAuY2xlcmsuYWNjb3VudHMuZGV2JA"
+      src="https://splendid-wombat-0.clerk.accounts.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js">
+    </script>-->
+*/
