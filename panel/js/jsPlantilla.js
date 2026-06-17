@@ -119,10 +119,11 @@ function procesarEventos() {
     }
 
     // Eventos de hoy
-    const todosLosEventos = [...eventosFijos, ...eventos];
+    const todosLosEventos = [...eventosFijos.map(fixedToEvent), ...eventos];
 
     const eventosMes = todosLosEventos  
         .filter(e => {
+            if (!e.start) return false;
             const fechaEvento = new Date(e.start);
             return (
                 fechaEvento.getMonth() === mesActual &&
