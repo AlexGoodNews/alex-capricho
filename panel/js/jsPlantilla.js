@@ -77,12 +77,6 @@ function limpiarEventosPasados(dias) {
     const fechaEvento = new Date(e.start);
     return fechaEvento >= limite;
   });
-  //old
-  /*
-  eventos = eventos.filter(e => {
-    const fechaEvento = new Date(e.start);
-    return fechaEvento >= limite;
-  });*/
 }
 function guardarEventosServidor() {
     fetch(`${API_BASE}/api/eventos`, {

@@ -1,5 +1,6 @@
 async function initDashboard() {
-    const app = document.getElementById("app")
+    //const app = document.getElementById("app")
+    const app = document.getElementById("dashboard")
 
     app.innerHTML = `
         <h1>Gestión de eventos</h1>
