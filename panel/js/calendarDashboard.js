@@ -1,6 +1,6 @@
 async function initDashboard() {
-    const app = document.getElementById("app")
-    //const app = document.getElementById("dashboard")
+    //const app = document.getElementById("app")
+    const app = document.getElementById("dashboard")
 
     app.innerHTML = `
         <h1>Gestión de eventos</h1>
@@ -153,4 +153,10 @@ function formatearFechas(dateStr) {
         fechaEN: fechaEN.charAt(0).toUpperCase() + fechaEN.slice(1)
     }
 }
-initDashboard()
+window.addEventListener("load", async () => {
+  await window.Clerk.load();
+
+  if (window.Clerk.user) {
+    initDashboard();
+  }
+});
