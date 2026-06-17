@@ -1,5 +1,8 @@
 window.addEventListener('load', async () => {
   await Clerk.load()
+  console.log("SignedIn:", Clerk.isSignedIn)
+  console.log("User:", Clerk.user)
+  console.log("Email:", Clerk.user?.primaryEmailAddress?.emailAddress)
 
   const appDiv = document.getElementById('app')
 
