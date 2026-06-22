@@ -56,7 +56,7 @@ function cargarEventos() {
         .then(res => res.json())
         .then(data => {
             eventos = data;
-            limpiarEventosPasados(100);
+            limpiarEventosPasados(1);
             // NO auto-save here — avoid overwriting server-side fixed/diferent data
             //guardarEventosServidor();
             procesarEventos();
