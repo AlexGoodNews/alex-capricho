@@ -187,9 +187,9 @@ function procesarEventos() {
     startScroll();
 }
 // -------------------------
-// Carga inicial y refresco automático cada 30 segundos
+// Carga inicial y refresco automático cada 3 horas
 // -------------------------
 document.addEventListener("DOMContentLoaded", () => {
     cargarEventos(); //primera carga
-    setInterval(cargarEventos, 3000000); //espera media hora
+    setInterval(cargarEventos, 30000000); //espera 3 hora
 });
