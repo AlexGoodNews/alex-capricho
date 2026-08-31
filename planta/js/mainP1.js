@@ -146,6 +146,65 @@ map.on('popupopen', function (e) {
     });
   });
 });
+
+
+
+
+
+
+
+--------------------
+
+fetch('/data/planta1/puntosP1.json') //antiguo sin cloudflare
+//fetch('/api/get-puntos')
+  .then(res => res.json())
+  .then(data => {
+    let puntoEncontrado = null;
+    data.puntos.forEach(punto => {
+      // Usamos siempre el mismo icono
+      const marker = L.marker(punto.coords, { icon: puntoInfoIcon }).addTo(map);
+
+      // Elegimos la imagen de accesibilidad para el popup
+      const iconoAccesibilidad = punto.accesible ? iconoAccesible : iconoNoAccesible;
+
+      const popupHTML = `
+        <div class="card border-0 popup-contenido p-2">
+          <h5 class="card-title mb-1 titulo-texto"
+              data-es="${punto.nombre.es}"
+              data-en="${punto.nombre.en}">
+              ${punto.nombre.es}
+          </h5>
+
+          <div class="popup-informacion-extra mb-2">
+            <img src="${iconoAccesibilidad}" 
+                class="popup-icono-informativo" 
+                alt="${punto.accesible ? 'Accesible' : 'No accesible'}"
+                title="${punto.accesible ? 'Accesible' : 'No accesible'}" />
+            <!-- Podrás agregar más iconos aquí más adelante -->
+          </div>
+          
+          <p class="card-text small descripcion-texto"
+            data-es="${punto.descripcion.es}"
+            data-en="${punto.descripcion.en}"
+            data-accesible="${punto.accesible}">
+            ${punto.descripcion.es}
+            ${!punto.accesible ? `
+              <span class="text-danger d-block mt-1">
+                No accesible para sillas de ruedas.
+              </span>
+            ` : ''}
+          </p>
+
+
+          <div class="iconos-reproductores mb-2">
+            <img src="/icons/espana.png" class="icono-media" data-type="audio_es" alt="Audio ES" title="Audio en Español">
+            <img src="/icons/reino-unido.png" class="icono-media" data-type="audio_en" alt="Audio EN" title="Audio en Inglés">
+            <img src="/icons/hola-Signos.png" class="icono-media" data-type="video" alt="Lengua de Signos" title="Lengua de signos">
+          </div>
+
+          <div id="media-container-${punto.id}" class="media-contenedor"></div>
+        </div>
+      `;
 */
 
 
@@ -178,7 +237,13 @@ L.imageOverlay('/img/planta1/plano-museoP1.png', bounds).addTo(map);
 map.fitBounds(bounds);
 map.setZoom(-3); 
 // Debug temporal para ver coordenadas
-//map.on('click', e => console.log(e.latlng));
+map.on('click', e => console.log(e.latlng));
+
+const iconosPunto = {
+  wc: wcIcon,
+  escalera: escalerasIcon,
+  salonActos: salonActosIcon
+};
 
 // Cargar puntos desde JSON
 fetch('/data/planta1/puntosP1.json') //antiguo sin cloudflare
@@ -187,8 +252,17 @@ fetch('/data/planta1/puntosP1.json') //antiguo sin cloudflare
   .then(data => {
     let puntoEncontrado = null;
     data.puntos.forEach(punto => {
+
       // Usamos siempre el mismo icono
-      const marker = L.marker(punto.coords, { icon: puntoInfoIcon }).addTo(map);
+      const iconoPunto = punto.icono
+        ? iconosPunto[punto.icono] || puntoInfoIcon
+        : puntoInfoIcon;
+
+      const marker = L.marker(punto.coords, {
+        icon: iconoPunto
+      }).addTo(map);
+
+
 
       // Elegimos la imagen de accesibilidad para el popup
       const iconoAccesibilidad = punto.accesible ? iconoAccesible : iconoNoAccesible;
@@ -208,24 +282,52 @@ fetch('/data/planta1/puntosP1.json') //antiguo sin cloudflare
             <!-- Podrás agregar más iconos aquí más adelante -->
           </div>
 
-          <p class="card-text small descripcion-texto"
-            data-es="${punto.descripcion.es}"
-            data-en="${punto.descripcion.en}"
-            data-accesible="${punto.accesible}">
-            ${punto.descripcion.es}
+          ${punto.descripcion ? `
+            <p class="card-text small descripcion-texto"
+              data-es="${punto.descripcion.es}"
+              data-en="${punto.descripcion.en}"
+              data-accesible="${punto.accesible}">
+              ${punto.descripcion.es}
+              ${!punto.accesible ? `
+                <span class="text-danger d-block mt-1">
+                  No accesible para sillas de ruedas.
+                </span>
+              ` : ''}
+            </p>
+          ` : `
             ${!punto.accesible ? `
-              <span class="text-danger d-block mt-1">
-                No accesible para sillas de ruedas.
-              </span>
+              <p class="card-text small descripcion-texto"
+                data-es=""
+                data-en=""
+                data-accesible="false">
+                <span class="text-danger d-block mt-1">
+                  No accesible para sillas de ruedas.
+                </span>
+              </p>
             ` : ''}
-          </p>
+          `}
 
+          ${punto.media ? `
+            <div class="iconos-reproductores mb-2">
+              <img src="/icons/espana.png"
+                  class="icono-media"
+                  data-type="audio_es"
+                  alt="Audio ES"
+                  title="Audio en Español">
 
-          <div class="iconos-reproductores mb-2">
-            <img src="/icons/espana.png" class="icono-media" data-type="audio_es" alt="Audio ES" title="Audio en Español">
-            <img src="/icons/reino-unido.png" class="icono-media" data-type="audio_en" alt="Audio EN" title="Audio en Inglés">
-            <img src="/icons/hola-Signos.png" class="icono-media" data-type="video" alt="Lengua de Signos" title="Lengua de signos">
-          </div>
+              <img src="/icons/reino-unido.png"
+                  class="icono-media"
+                  data-type="audio_en"
+                  alt="Audio EN"
+                  title="Audio en Inglés">
+
+              <img src="/icons/hola-Signos.png"
+                  class="icono-media"
+                  data-type="video"
+                  alt="Lengua de Signos"
+                  title="Lengua de signos">
+            </div>
+          ` : ''}
 
           <div id="media-container-${punto.id}" class="media-contenedor"></div>
         </div>

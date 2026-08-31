@@ -1,67 +1,253 @@
 {
   "puntos": [
     {
-      "id": "punto1",
+      "id": "punto3",
       "nombre": {
-        "es": "Cámara Oscura",
-        "en": "The dark chamber"
+        "es": "Josefa Pimentel",
+        "en": "Josefa Pimentel"
       },
       "descripcion": {
-        "es": "Este espacio, ubicado en uno de los torreones del palacio, estará diseñado para proyectar una imagen exterior del jardín, permitiendo a los visitantes experimentar con este artilugio científico.",
-        "en": "This space, located in one of the palace's towers, will be designed to project an external image of the garden, allowing visitors to experiment with this scientific gadget."
+        "es": "Esta sala presenta a Josefa Pimentel, condesa-duquesa de Benavente y duquesa consorte de Osuna, a cuya extraordinaria visión y sensibilidad se debe la creación de El Capricho. Diferentes paneles y recursos bibliográficos presentan su biografía.",
+        "en": "This room introduces Josefa Pimentel, Countess-Duchess of Benavente and Duchess Consort of Osuna, whose extraordinary vision and sensitivity led to the creation of El Capricho. Various panels and bibliographic resources present her life and biography."
       },
       "coords": [
-        460,
-        1764
-      ],
-      "accesible": false,
-      "media": {
-        "audio_es": "/audio/planta1/audio_es.mp3",
-        "audio_en": "/audio/planta1/audio_en.mp3",
-        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
-      }
-    },
-    {
-      "id": "punto2",
-      "nombre": {
-        "es": "Comedor",
-        "en": "Dining Room"
-      },
-      "descripcion": {
-        "es": "El comedor de gala del Palacio de El Capricho en Madrid ha sido objeto de una cuidadosa restauración que ha recuperado su configuración original del siglo XVIII, con especial énfasis en el suelo, que reproduce el emblemático Mosaico de Issos descubierto en Pompeya. Este suelo, que contiene tres reliquias de la época de los IX duques de Osuna —dos taraceas de mármol y pizarra y una reproducción en baldosas del mosaico—, ha sido restaurado y protegido para su exhibición. Además, se han restaurado las pinturas y decoraciones originales del techo del comedor, así como los colores, paredes y techos, todo ello con el objetivo de recrear fielmente el aspecto del siglo XVIII.",
-        "en": "The state dining room of the El Capricho Palace in Madrid has undergone a careful restoration that has restored its original 18th-century layout, with particular emphasis on the floor, which reproduces the iconic Issus Mosaic discovered in Pompeii. This floor, which contains three relics from the era of the 9th Duke and Duchess of Osuna—two marble and slate inlays and a tile reproduction of the mosaic—has been restored and protected for display. In addition, the original paintings and decorations on the dining room ceiling, as well as the colors, walls, and ceilings, have been restored with the aim of faithfully recreating its 18th-century appearance."
-      },
-      "coords": [
-        844,
-        1760
+        1233,
+        1441
       ],
       "accesible": true,
       "media": {
-        "audio_es": "/audio/planta1/audio_es.mp3",
-        "audio_en": "/audio/planta1/audio_en.mp3",
+        "audio_es": "/audio/planta1/3Esp.mp3",
+        "audio_en": "/audio/planta1/3Eng.mp3",
         "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
       }
     },
     {
-      "media": {
-        "audio_es": "",
-        "audio_en": "",
-        "video_signos": ""
+      "id": "punto4",
+      "nombre": {
+        "es": "Tertulias o Cuarto señoritos",
+        "en": "Intellectual Gatherings"
       },
-      "id": "punto3",
+      "descripcion": {
+        "es": "Ubicado en el torreón sureste, este espacio nació durante la gran ampliación del palacio para albergar los cuartos de los hijos varones de los duques, dentro del ala masculina. En la actualidad, la sala conmemora las tertulias del siglo XVIII, recordando que los encuentros presididos por la duquesa se convirtieron en uno de los focos culturales e intelectuales más brillantes de la Ilustración española.",
+        "en": "Located in the southeast tower, this space was created during the palace’s major expansion to accommodate the rooms of the dukes’ sons, within the male wing. Today, the room commemorates the literary salons of the 18th century, recalling how the gatherings hosted by the Duchess became one of the most brilliant cultural and intellectual centres of the Spanish Enlightenment."
+      },
+      "coords": [
+        1214,
+        1775
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/4Esp.mp3",
+        "audio_en": "/audio/planta1/4Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "punto5",
+      "nombre": {
+        "es": "Junta de Damas",
+        "en": "Ladies’ Assembly"
+      },
+      "descripcion": {
+        "es": "Ubicado en el torreón noreste, este espacio albergaba originalmente los aposentos de las hijas de los duques, dentro de la zona femenina del palacio. Hoy en día, la sala versa sobre la condición femenina durante el siglo XVIIII en una sociedad eminentemente masculina. Así como sobre la creación de la Junta de Damas de Honor y Mérito, institución surgida a imitación de la Real Sociedad Económica Matritense.",
+        "en": "Located in the northeast tower, this space originally housed the apartments of the dukes’ daughters, within the female quarters of the palace. Today, the room explores the status of women in the 18th century, in a predominantly male-dominated society, as well as the creation of the Junta de Damas de Honor y Mérito, an institution established in imitation of the Royal Economic Society of Madrid."
+      },
+      "coords": [
+        1248,
+        284
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/5Esp.mp3",
+        "audio_en": "/audio/planta1/5Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "punto6",
+      "nombre": {
+        "es": "Socorre enseñando",
+        "en": "Helping by Teaching"
+      },
+      "descripcion": {
+        "es": "Esta sala se ubica en una crujía del edificio construida a principios del siglo XX sobre lo que era una terraza del palacio original. Bajo el lema de la Real Sociedad Económica Matritense, “Socorre enseñando”, su contenido se centra en la actividad de la Junta de Damas de Honor y Mérito a favor de los niños de las inclusas, los huérfanos y las presas, con el fin de convertirlos en individuos útiles para la sociedad. Complementan el espacio diferentes útiles asociados a la crianza y lactancia durante los siglos XVIII y XIX, momento en el cual se sientan conceptos de infancia y usos de maternidad y pedagogía próximos a los actuales.",
+        "en": "This room is located in a niche of the building constructed at the beginning of the 20th century on what was originally a terrace of the palace. Under the motto of the Royal Economic Society of Madrid, 'Helping by Teaching', its content focuses on the activities of the Junta de Damas de Honor y Mérito in favor of children in orphanages, orphans, and widows, with the aim of making them useful members of society. The space is complemented by various tools associated with childcare and breastfeeding during the 18th and 19th centuries, a period when concepts of childhood and practices of maternity and pedagogy began to resemble those of today."
+      },
+      "coords": [
+        890,
+        300
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/6Esp.mp3",
+        "audio_en": "/audio/planta1/6Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "punto7",
+      "nombre": {
+        "es": "Coleccionistas y mecenas",
+        "en": "Collectors and Patrons"
+      },
+      "descripcion": {
+        "es": "Esta sala, hoy destinada a explicar el papel de los duques de Osuna como protectores y promotores de las artes y la cultura, fue durante el siglo XIX una pieza de compañía.",
+        "en": "This room, now dedicated to explaining the role of the Dukes of Osuna as protectors and promoters of the arts and culture, was during the 19th century a companion room."
+      },
+      "coords": [
+        470,
+        290
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/7Esp.mp3",
+        "audio_en": "/audio/planta1/7Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "punto8",
+      "nombre": {
+        "es": "Gabinete de la Duquesa",
+        "en": "The Duchess's Office"
+      },
+      "descripcion": {
+        "es": "Nos encontramos en el único espacio del palacio que conserva uno de sus pavimentos cerámicos originales, así como la decoración del techo de estilo clasicista. Este gabinete, situado al noroeste, era el aposento privado de Josefa Pimentel. Conectados por sendas escaleras de caracol, sobre él se encontraba el \"baño de la duquesa\" y en la planta baja, el oratorio.",
+        "en": "We are in the only space in the palace that preserves one of its original ceramic floors, as well as the classicist-style ceiling decoration. This office, located in the northwest, was the private room of Josefa Pimentel. Connected by spiral staircases, it housed the \"duchess's bathroom\" and on the ground floor, the chapel."
+      },
+      "coords": [
+        500,
+        606
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/8Esp.mp3",
+        "audio_en": "/audio/planta1/8Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "punto9",
+      "nombre": {
+        "es": "Sala Goya 1",
+        "en": "Goya Room 1"
+      },
+      "descripcion": {
+        "es": "Esta sala explica la estrecha relación entre Francisco de Goya y los IX duques, quienes fueron sus mecenas y amigos, contabilizándose en El Capricho en 1834, a la muerte de la condesa-duquesa de Benavente, un total de 23 lienzos del maestro aragonés.",
+        "en": "This room explains the close relationship between Francisco de Goya and the IX Dukes, who were his patrons and friends, with 23 canvases by the Aragonese master being counted in El Capricho upon the death of the Countess-Duchess of Benavente in 1834."
+      },
+      "coords": [
+        500,
+        916
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/9Esp.mp3",
+        "audio_en": "/audio/planta1/9Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "punto10",
+      "nombre": {
+        "es": "Gabinete de países",
+        "en": "Landscape Cabinet"
+      },
+      "descripcion": {
+        "es": "Conocida originalmente como «Gabinete de Países» por su decoración de temática paisajista, esta sala albergó siete destacadas pinturas de Goya que retrataban escenas campestres y de costumbres. Hoy en día, una instalación audiovisual recrea su atmósfera original mediante la reproducción de dichas obras.",
+        "en": "Originally known as the 'Landscape Cabinet' due to its landscape-themed decoration, this room housed seven notable paintings by Goya depicting rural and everyday life scenes. Today, an audiovisual installation recreates its original atmosphere by reproducing these works."
+      },
+      "coords": [
+        500,
+        1150
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/10Esp.mp3",
+        "audio_en": "/audio/planta1/10Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "punto11",
+      "nombre": {
+        "es": "Biblioteca",
+        "en": "Library"
+      },
+      "descripcion": {
+        "es": "Este espacio albergó originalmente las habitaciones privadas del IX duque. En la actualidad, narra la historia de las importantes colecciones bibliográficas de los duques de Osuna, conservadas hoy en distintas bibliotecas españolas, como la Biblioteca Nacional de España, las del Congreso y el Senado y las bibliotecas universitarias existentes a finales del siglo XIX.",
+        "en": "This space originally housed the private rooms of the IX Duke. Currently, it narrates the history of the important bibliographic collections of the Dukes of Osuna, preserved today in various Spanish libraries, such as the National Library of Spain, those of the Congress and the Senate, and the university libraries existing at the end of the 19th century."
+      },
+      "coords": [
+        500,
+        1444
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/11Esp.mp3",
+        "audio_en": "/audio/planta1/11Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "punto12",
+      "nombre": {
+        "es": "Gabinete del Duque",
+        "en": "Duke's Cabinet"
+      },
+      "descripcion": {
+        "es": "Esta sala ochavada, originalmente aposento del IX duque, es la estancia del palacio que mejor ha conservado sus pinturas murales de temática militar e inspiración pompeyana. El suelo, de losetas de mármol y pizarra, sustituyó a principios del siglo XX al original de azulejo policromado encargado en el siglo XVIII a la Real Fábrica de Valencia. Actualmente, presenta la figura del IX duque, diplomático y militar, mediante diversos objetos análogos a los que pudo utilizar en su día a día.",
+        "en": "This octagonal room, originally the apartment of the IX Duke, is the palace space that has best preserved its wall paintings with military themes and Pompeian inspiration. The floor, made of marble and slate tiles, replaced the original polychrome tile floor commissioned in the 18th century from the Royal Factory of Valencia at the beginning of the 20th century. Currently, it presents the figure of the IX Duke, diplomat and military man, through various"
+      },
+      "coords": [
+        500,
+        1763
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/12Esp.mp3",
+        "audio_en": "/audio/planta1/12Eng.mp3",
+        "video_signos": "/videos/planta1/RehabilitacionCapricho.mp4"
+      }
+    },
+    {
+      "id": "aseos",
+      "nombre": {
+        "es": "Aseos",
+        "en": "Restrooms"
+      },
+      "coords": [
+        1300,
+        600
+      ],
+      "accesible": false,
+      "icono": "wc"
+    },
+    {
+      "id": "escalera",
       "nombre": {
         "es": "Escaleras",
         "en": "Stairs"
       },
-      "descripcion": {
-        "es": "Escaleras Lj",
-        "en": "Lux Stairs"
+      "coords": [
+        850,
+        1450
+      ],
+      "accesible": false,
+      "icono": "escalera"
+    },
+    {
+      "id": "salonActos",
+      "nombre": {
+        "es": "Salón de Actos",
+        "en": "Auditorium"
       },
       "coords": [
-        "700",
-        "1010"
+        850,
+        1000
       ],
-      "accesible": true
+      "accesible": false,
+      "icono": "salonActos"
     }
   ]
 }

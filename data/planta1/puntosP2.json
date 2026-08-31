@@ -1,0 +1,71 @@
+{
+  "puntos": [
+    {
+      "id": "punto17",
+      "nombre": {
+        "es": "Cámara Oscura",
+        "en": "Dark Room"
+      },
+      "descripcion": {
+        "es": "La planta alta del torreón del duque alberga una cámara oscura estenopeica. Este ingenio utiliza un pequeño orificio o estenopo (del griego, «agujero estrecho») para proyectar invertida la imagen del jardín en el interior del torreón. Su resultado es una experiencia mágica que utilizaban nobles y reyes en sus palacios con fines recreativos y de estudio.",
+        "en": "The upper floor of the duke's tower houses a pinhole darkroom. This device uses a small hole or pinhole (from Greek, 'narrow hole') to project an inverted image of the garden inside the tower. Its result is a magical experience that nobles and kings used in their palaces for recreational and study purposes."
+      },
+      "coords": [
+        500,
+        1750
+      ],
+      "accesible": false,
+      "media": {
+        "audio_es": "/audio/planta1/17Esp.mp3",
+        "audio_en": "/audio/planta1/17Eng.mp3",
+        "video_signos": "/videos/planta1/17Signos.mp4"
+      }
+    },
+    {
+      "id": "punto18",
+      "nombre": {
+        "es": "Biblioteca Especializada",
+        "en": "Specialized Library"
+      },
+      "descripcion": {
+        "es": "El palacio pone a disposición del público una biblioteca de investigación con acceso restringido mediante cita previa. Este fondo especializado se articula en torno a las siguientes temáticas: El espíritu de la Ilustración, los jardines y el paisajismo. Estudios históricos sobre los derechos y el papel de las mujeres en la Edad Moderna. Monografías sobre Goya y el arte de los siglos XVIII y XIX. Estudios sobre las casas de Osuna y Benavente y sus principales miembros, con atención especial a los siglos XVIII y XIX.",
+        "en": "The palace offers the public a research library with restricted access by appointment. This specialized collection is organized around the following themes: The spirit of the Enlightenment, gardens and landscaping. Historical studies on the rights and role of women in the Early"
+      },
+      "coords": [
+        1214,
+        1775
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/18Esp.mp3",
+        "audio_en": "/audio/planta1/18Eng.mp3",
+        "video_signos": "/videos/planta1/18Signos.mp4"
+      }
+    },
+    {
+      "id": "talleres",
+      "nombre": {
+        "es": "Talleres",
+        "en": "Workshops"
+      },
+      "coords": [
+        1300,
+        280
+      ],
+      "accesible": false
+    },
+    {
+      "id": "areaRestringida",
+      "nombre": {
+        "es": "Area Restringida",
+        "en": "Restricted Area"
+      },
+      "coords": [
+        1300,
+        1000
+      ],
+      "accesible": false,
+      "icono": "restrictedArea"
+    }
+  ]
+}

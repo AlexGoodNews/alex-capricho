@@ -1,0 +1,204 @@
+{
+  "puntos": [
+    {
+      "id": "punto0",
+      "nombre": {
+        "es": "Sala de Exposiciones Temporales",
+        "en": "Temporary Exhibition Room"
+      },
+      "descripcion": {
+        "es": "Fragmentado originalmente en cuartos de servicio, este espacio es hoy una pequeña sala de exposiciones temporales en la cual se ofrecerán muestras relacionadas con distintos aspectos de la historia y contexto histórico cultural de El Capricho y de sus creadores.",
+        "en": "Originally fragmented into service rooms, this space is now a small temporary exhibition room in which exhibitions related to different aspects of the history and historical-cultural context of El Capricho and its creators will be offered."
+      },
+      "coords": [
+        850,
+        1020
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/0Esp.mp3",
+        "audio_en": "/audio/planta1/0Eng.mp3",
+        "video_signos": "/videos/planta1/0Signos.mp4"
+      }
+    },
+    {
+      "id": "punto1",
+      "nombre": {
+        "es": "Patio de la fuente",
+        "en": "Fountain Courtyard"
+      },
+      "descripcion": {
+        "es": "Concebido a finales del siglo XVIII para dotar de luz natural a las estancias interiores, este patio conserva su fuente original. Hoy, tras una cuidada rehabilitación que lo dotó de un techo de vidrio, da la bienvenida al visitante como punto de partida del recorrido museístico, donde se explican con audiovisuales generalidades del edificio y el jardín.",
+        "en": "Designed at the end of the 18th century to provide natural light to the interior rooms, this courtyard retains its original fountain. Today, after a careful rehabilitation that provided it with a glass roof, it welcomes visitors as the starting point of the museum tour, where audiovisuals explain general information about the building and the garden."
+      },
+      "coords": [
+        880,
+        614
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/1Esp.mp3",
+        "audio_en": "/audio/planta1/1Eng.mp3",
+        "video_signos": "/videos/planta1/1Signos.mp4"
+      }
+    },
+    {
+      "id": "punto2",
+      "nombre": {
+        "es": "Zaguán",
+        "en": "Entrance Hall"
+      },
+      "descripcion": {
+        "es": "Este otro punto de acceso histórico al edificio es una entrada de servicio en relación directa con la vecina casa de oficios. En él se conservan elementos originales del palacio como la escalera monumental, el pavimento de empedrado, el escudo de la casa ducal y el portón de acceso. Originalmente estuvo decorado con cuadros de pájaros y bodegones de flores. Hoy sirve para explicar los orígenes de las casas de Osuna y Benavente y para presentar a sus principales miembros: antepasados ilustres y progenie de Pedro Téllez Girón y Josefa Pimentel, novenos duques de Osuna, y creadores de El Capricho. ",
+        "en": "This other historical access point to the building is a service entrance in direct relation to the neighboring house of offices. It retains original elements of the palace such as the monumental staircase, the cobblestone floor, the coat of arms of the ducal house, and the access gate. Originally it was decorated with paintings of birds and flower still lifes. Today it serves to explain the origins of the houses of Osuna and Benavente and to present their main members: illustrious ancestors and progeny of Pedro Téllez Girón and Josefa Pimentel, ninth Dukes of Osuna, and creators of El Capricho."
+      },
+      "coords": [
+        1270,
+        1016
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/2Esp.mp3",
+        "audio_en": "/audio/planta1/2Eng.mp3",
+        "video_signos": "/videos/planta1/2Signos.mp4"
+      }
+    },
+    {
+      "id": "punto13",
+      "nombre": {
+        "es": "Sala Polivalente",
+        "en": "Multipurpose Room"
+      },
+      "descripcion": {
+        "es": "Este espacio, dedicado a presentaciones y conferencias, originalmente estuvo dividido en varias estancias. La más destacada era la «antesala de países», un aposento que en alguna época se destinó a biblioteca y donde colgaron hasta dieciséis pinturas de Goya.",
+        "en": "This space, dedicated to presentations and conferences, was originally divided into several rooms. The most notable was the 'antechamber of countries', a room that at some point was used as a library and where up to sixteen paintings by Goya were hung."
+      },
+      "coords": [
+        850,
+        1762
+      ],
+      "accesible": true,
+      "media": {
+        "audio_es": "/audio/planta1/13Esp.mp3",
+        "audio_en": "/audio/planta1/13Eng.mp3",
+        "video_signos": "/videos/planta1/13Signos.mp4"
+      }
+    },
+    {
+      "id": "punto14",
+      "nombre": {
+        "es": "Comedor de Gala",
+        "en": "Gala Dining Room"
+      },
+      "descripcion": {
+        "es": "El Comedor de Gala es fruto de la gran reforma iniciada hacia 1840 por el XI duque, Pedro Téllez-Girón, bajo la dirección del arquitecto de la familia, Martín López Aguado. Concebido como una estancia suntuosa de techo abovedado y exquisita ornamentación, albergaba los grandes eventos sociales de la casa. Tras una meticulosa restauración, ha recuperado su fisonomía de principios del siglo XX, destacando en él el suelo cerámico fabricado por Biagio Giustiniani e hijos a mediados del siglo XIX, copia reconstruida del mosaico pompeyano de la batalla de Issos. Corona la sala una de las dos lámparas de estilo imperio que pendían en este espacio documentadas hasta finales de los años 30 del siglo pasado.",
+        "en": "The Gala Dining Room is the result of the major renovation initiated around 1840 by the XI Duke, Pedro Téllez-Girón, under the direction of the family architect, Martín López Aguado. Conceived as a luxurious room with a vaulted ceiling and exquisite decoration, it hosted the major social events of the house. After a meticulous restoration, it has regained its appearance from the beginning of the 20th century, with particular emphasis on the ceramic floor manufactured by Biagio Giustiniani e hijos in the mid-19th century, a reconstructed copy of the Pompeian mosaic from the Battle of Issos. The room is crowned by one of two Empire-style lamps that hung in this space and were documented until the end of the 1930s."
+      },
+      "coords": [
+        500,
+        1764
+      ],
+      "accesible": false,
+      "media": {
+        "audio_es": "/audio/planta1/14Esp.mp3",
+        "audio_en": "/audio/planta1/14Eng.mp3",
+        "video_signos": "/videos/planta1/14Signos.mp4"
+      }
+    },
+    {
+      "id": "punto15",
+      "nombre": {
+        "es": "Ni que fuera Osuna",
+        "en": "As if it were Osuna"
+      },
+      "descripcion": {
+        "es": "La antigua tribuna de la orquesta, el rincón elevado donde se situaban los músicos para amenizar los banquetes del comedor, glosa actualmente el siglo XIX en El Capricho a través de las figuras contrapuestas y vivencias de los hermanos Pedro y Mariano Téllez-Girón, XI y XII duques de Osuna. ",
+        "en": "The former orchestra platform, the elevated corner where musicians were positioned to entertain the banquets in the dining room, currently narrates the 19th century in El Capricho through the contrasting figures and experiences of the brothers Pedro and Mariano Téllez-Girón, XI and XII Dukes of Osuna."
+      },
+      "coords": [
+        500,
+        1442
+      ],
+      "accesible": false,
+      "media": {
+        "audio_es": "/audio/planta1/15Esp.mp3",
+        "audio_en": "/audio/planta1/15Eng.mp3",
+        "video_signos": "/videos/planta1/15Signos.mp4"
+      }
+    },
+    {
+      "id": "oficinas",
+      "nombre": {
+        "es": "Oficinas",
+        "en": "Offices"
+      },
+      "coords": [
+        900,
+        280
+      ],
+      "accesible": true
+    },
+    {
+      "id": "taquillas",
+      "nombre": {
+        "es": "Taquillas",
+        "en": "Ticket Office"
+      },
+      "coords": [
+        500,
+        600
+      ],
+      "accesible": true
+    },
+    {
+      "id": "entrada",
+      "nombre": {
+        "es": "Taquillas",
+        "en": "Ticket Office"
+      },
+      "coords": [
+        300,
+        1020
+      ],
+      "accesible": true
+    },
+    {
+      "id": "acogida",
+      "nombre": {
+        "es": "Acogida",
+        "en": "Welcome Area"
+      },
+      "coords": [
+        570,
+        1022
+      ],
+      "accesible": true
+    },
+    {
+      "id": "aseos",
+      "nombre": {
+        "es": "Entrada",
+        "en": "Entrance"
+      },
+      "coords": [
+        1230,
+        1424
+      ],
+      "accesible": true,
+      "icono": "wc"
+    },
+    {
+      "id": "aseos",
+      "nombre": {
+        "es": "Aseos",
+        "en": "Restrooms"
+      },
+      "coords": [
+        1230,
+        1768
+      ],
+      "accesible": false,
+      "icono": "wc"
+    }
+  ]
+}
