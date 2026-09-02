@@ -16,9 +16,9 @@
       ],
       "accesible": false,
       "media": {
-        "audio_es": "/audio/planta1/17Esp.mp3",
-        "audio_en": "/audio/planta1/17Eng.mp3",
-        "video_signos": "/videos/planta1/17Signos.mp4"
+        "audio_es": "/audio/planta2/17Esp.mp3",
+        "audio_en": "/audio/planta2/17Eng.mp3",
+        "video_signos": "/videos/planta2/17Signos.mp4"
       }
     },
     {
@@ -29,7 +29,7 @@
       },
       "descripcion": {
         "es": "El palacio pone a disposición del público una biblioteca de investigación con acceso restringido mediante cita previa. Este fondo especializado se articula en torno a las siguientes temáticas: El espíritu de la Ilustración, los jardines y el paisajismo. Estudios históricos sobre los derechos y el papel de las mujeres en la Edad Moderna. Monografías sobre Goya y el arte de los siglos XVIII y XIX. Estudios sobre las casas de Osuna y Benavente y sus principales miembros, con atención especial a los siglos XVIII y XIX.",
-        "en": "The palace offers the public a research library with restricted access by appointment. This specialized collection is organized around the following themes: The spirit of the Enlightenment, gardens and landscaping. Historical studies on the rights and role of women in the Early"
+        "en": "The palace offers the public a research library with restricted access by appointment. This specialized collection is organized around the following themes: The spirit of the Enlightenment, gardens and landscaping. Historical studies on the rights and role of women in the Early Modern period. Monographs on Goya and the art of the 18th and 19th centuries. Studies on the houses of Osuna and Benavente and their main members, with special attention to the 18th and 19th centuries."
       },
       "coords": [
         1214,
@@ -37,9 +37,9 @@
       ],
       "accesible": true,
       "media": {
-        "audio_es": "/audio/planta1/18Esp.mp3",
-        "audio_en": "/audio/planta1/18Eng.mp3",
-        "video_signos": "/videos/planta1/18Signos.mp4"
+        "audio_es": "/audio/planta2/18Esp.mp3",
+        "audio_en": "/audio/planta2/18Eng.mp3",
+        "video_signos": "/videos/planta2/18Signos.mp4"
       }
     },
     {

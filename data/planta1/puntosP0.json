@@ -16,9 +16,9 @@
       ],
       "accesible": true,
       "media": {
-        "audio_es": "/audio/planta1/0Esp.mp3",
-        "audio_en": "/audio/planta1/0Eng.mp3",
-        "video_signos": "/videos/planta1/0Signos.mp4"
+        "audio_es": "/audio/planta0/0Esp.mp3",
+        "audio_en": "/audio/planta0/0Eng.mp3",
+        "video_signos": "/videos/planta0/0Signos.mp4"
       }
     },
     {
@@ -37,9 +37,9 @@
       ],
       "accesible": true,
       "media": {
-        "audio_es": "/audio/planta1/1Esp.mp3",
-        "audio_en": "/audio/planta1/1Eng.mp3",
-        "video_signos": "/videos/planta1/1Signos.mp4"
+        "audio_es": "/audio/planta0/1Esp.mp3",
+        "audio_en": "/audio/planta0/1Eng.mp3",
+        "video_signos": "/videos/planta0/1Signos.mp4"
       }
     },
     {
@@ -49,7 +49,7 @@
         "en": "Entrance Hall"
       },
       "descripcion": {
-        "es": "Este otro punto de acceso histórico al edificio es una entrada de servicio en relación directa con la vecina casa de oficios. En él se conservan elementos originales del palacio como la escalera monumental, el pavimento de empedrado, el escudo de la casa ducal y el portón de acceso. Originalmente estuvo decorado con cuadros de pájaros y bodegones de flores. Hoy sirve para explicar los orígenes de las casas de Osuna y Benavente y para presentar a sus principales miembros: antepasados ilustres y progenie de Pedro Téllez Girón y Josefa Pimentel, novenos duques de Osuna, y creadores de El Capricho. ",
+        "es": "Este otro punto de acceso histórico al edificio es una entrada de servicio en relación directa con la vecina casa de oficios. En él se conservan elementos originales del palacio como la escalera monumental, el pavimento de empedrado, el escudo de la casa ducal y el portón de acceso. Originalmente estuvo decorado con cuadros de pájaros y bodegones de flores. Hoy sirve para explicar los orígenes de las casas de Osuna y Benavente y para presentar a sus principales miembros: antepasados ilustres y progenie de Pedro Téllez Girón y Josefa Pimentel, novenos duques de Osuna, y creadores de El Capricho.",
         "en": "This other historical access point to the building is a service entrance in direct relation to the neighboring house of offices. It retains original elements of the palace such as the monumental staircase, the cobblestone floor, the coat of arms of the ducal house, and the access gate. Originally it was decorated with paintings of birds and flower still lifes. Today it serves to explain the origins of the houses of Osuna and Benavente and to present their main members: illustrious ancestors and progeny of Pedro Téllez Girón and Josefa Pimentel, ninth Dukes of Osuna, and creators of El Capricho."
       },
       "coords": [
@@ -58,9 +58,9 @@
       ],
       "accesible": true,
       "media": {
-        "audio_es": "/audio/planta1/2Esp.mp3",
-        "audio_en": "/audio/planta1/2Eng.mp3",
-        "video_signos": "/videos/planta1/2Signos.mp4"
+        "audio_es": "/audio/planta0/2Esp.mp3",
+        "audio_en": "/audio/planta0/2Eng.mp3",
+        "video_signos": "/videos/planta0/2Signos.mp4"
       }
     },
     {
@@ -79,9 +79,9 @@
       ],
       "accesible": true,
       "media": {
-        "audio_es": "/audio/planta1/13Esp.mp3",
-        "audio_en": "/audio/planta1/13Eng.mp3",
-        "video_signos": "/videos/planta1/13Signos.mp4"
+        "audio_es": "/audio/planta0/13Esp.mp3",
+        "audio_en": "/audio/planta0/13Eng.mp3",
+        "video_signos": "/videos/planta0/13Signos.mp4"
       }
     },
     {
@@ -100,9 +100,9 @@
       ],
       "accesible": false,
       "media": {
-        "audio_es": "/audio/planta1/14Esp.mp3",
-        "audio_en": "/audio/planta1/14Eng.mp3",
-        "video_signos": "/videos/planta1/14Signos.mp4"
+        "audio_es": "/audio/planta0/14Esp.mp3",
+        "audio_en": "/audio/planta0/14Eng.mp3",
+        "video_signos": "/videos/planta0/14Signos.mp4"
       }
     },
     {
@@ -121,9 +121,9 @@
       ],
       "accesible": false,
       "media": {
-        "audio_es": "/audio/planta1/15Esp.mp3",
-        "audio_en": "/audio/planta1/15Eng.mp3",
-        "video_signos": "/videos/planta1/15Signos.mp4"
+        "audio_es": "/audio/planta0/15Esp.mp3",
+        "audio_en": "/audio/planta0/15Eng.mp3",
+        "video_signos": "/videos/planta0/15Signos.mp4"
       }
     },
     {

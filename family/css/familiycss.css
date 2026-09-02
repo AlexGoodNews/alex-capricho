@@ -304,17 +304,21 @@ h1{
 /* Items */
 
 .item-1 { 
-  background-image: url('https://www.bne.es/sites/default/files/repositorio-imagenes/Mariano_T%C3%A9llez_Gir%C3%B3n_y_Beaufort.png');
+  /*background-image: url('https://www.bne.es/sites/default/files/repositorio-imagenes/Mariano_T%C3%A9llez_Gir%C3%B3n_y_Beaufort.png');*/
+  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
 }
 
 .item-2 { 
-  background-image: url('https://scontent-mad2-1.xx.fbcdn.net/v/t39.30808-6/468671353_10161959978598363_1797822211465459589_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1u-GscVMif8Q7kNvwFdP679&_nc_oc=AdlG9Q7leMfX90RqcBtdlMaIdRutFpCpVmVOseYmsdnROVfiB9BNKvqdLt7_ditXc3E&_nc_zt=23&_nc_ht=scontent-mad2-1.xx&_nc_gid=mSk-IA1HxvPIz5zFXhKmNw&oh=00_AfsnstH-7Fy7xwx9Ptk4KqqAnkiWL7B3sF_Wb3EsStG29w&oe=6988F77D');
+  /*background-image: url('https://scontent-mad2-1.xx.fbcdn.net/v/t39.30808-6/468671353_10161959978598363_1797822211465459589_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1u-GscVMif8Q7kNvwFdP679&_nc_oc=AdlG9Q7leMfX90RqcBtdlMaIdRutFpCpVmVOseYmsdnROVfiB9BNKvqdLt7_ditXc3E&_nc_zt=23&_nc_ht=scontent-mad2-1.xx&_nc_gid=mSk-IA1HxvPIz5zFXhKmNw&oh=00_AfsnstH-7Fy7xwx9Ptk4KqqAnkiWL7B3sF_Wb3EsStG29w&oe=6988F77D');*/
+  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
 }
 
 .item-3 { 
-  background-image: url('https://artedemadrid.wordpress.com/wp-content/uploads/2024/01/retrato-dos-ninos-osuna.jpg');
+  /*background-image: url('https://artedemadrid.wordpress.com/wp-content/uploads/2024/01/retrato-dos-ninos-osuna.jpg');*/
+  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
 }
 
 .item-4 { 
-  background-image: url('https://s1.ppllstatics.com/mujerhoy/www/multimedia/202112/01/media/cortadas/duquesa-osuna2-kiB-U160129993998bRG-1248x1248@MujerHoy.jpg');
+  /*background-image: url('https://s1.ppllstatics.com/mujerhoy/www/multimedia/202112/01/media/cortadas/duquesa-osuna2-kiB-U160129993998bRG-1248x1248@MujerHoy.jpg');*/
+  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
 }
