@@ -2,41 +2,41 @@
 const contentData = {
     item1: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho copia.mp4',
+            video: '../videos/RehabilitacionCapricho copia.mp4',
             text: 'Explanatory text.'
         }
     },
     item2: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Explanatory text.'
         }
     },
     item3: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Explanatory text.'
         }
     },
     item4: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Explanatory text.'
         }
     }

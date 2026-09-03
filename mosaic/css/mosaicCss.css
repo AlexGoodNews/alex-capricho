@@ -305,20 +305,25 @@ h1{
 
 .item-1 { 
   /*background-image: url('https://i.pinimg.com/originals/05/ff/ed/05ffeddca8ec7f11520d6483f22d65c6.jpg');*/
-  background-image: url('/mosaic/img/av1.png');
+  background-image: url('../img/av1.png');                                                                        /*<-- hacerlo asi*/
+  /*background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');*/
 }
 
 .item-2 { 
   /*background-image: url('/mosaic/img/tallerMosaico1.png');*/
-  background-image: url('/mosaic/img/av2.jpg');
+  /*background-image: url('/mosaic/img/av2.jpg');*/
+  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
+  
 }
 
 .item-3 { 
   /*background-image: url('https://www.decorarconarte.com/wp-content/uploads/2021/06/Mosaico-pavimento-1536x637.jpeg');*/
-  background-image: url('/mosaic/img/av3.jpg');
+  /*background-image: url('/mosaic/img/av3.jpg');*/
+  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
 }
 
 .item-4 { 
   /*background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Reconstruction_of_the_mosaic_depiction_of_the_Battle_of_Issus_after_a_painting_by_Apelles_found_in_the_House_of_the_Faun_at_Pompeii_%28published_1893%29.jpg?20210124161506');*/
-  background-image: url('/mosaic/img/av4.jpg');
+  /*background-image: url('/mosaic/img/av4.jpg');*/
+  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
 }

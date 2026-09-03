@@ -2,51 +2,51 @@
 const contentData = {
     item1: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho copia.mp4',
+            video: '../videos/RehabilitacionCapricho copia.mp4',
             text: 'Explanatory text.'
         }
     },
     item2: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Explanatory text.'
         }
     },
     item3: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Explanatory text.'
         }
     },
     item4: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCaprichoQR.png',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Explanatory text'
         }
     },
     item5: {
         ES: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '/videos/RehabilitacionCapricho.mp4',
+            video: '../videos/RehabilitacionCapricho.mp4',
             text: 'Explanatory text'
         }
     }
@@ -81,89 +81,50 @@ langButtons.forEach(btn => {
     });
 });
 
-//cargar los videos
+//cargar los videos y QR
 document.querySelectorAll('.item').forEach(item => {
 
     if (item.classList.contains('noVideo')) return;
 
-    document.querySelectorAll('.item').forEach(item => {
-        const itemId = item.dataset.item;
-        const data = contentData[itemId][DEFAULT_LANG];
-        if (!data) return;
+    const itemId = item.dataset.item;
+    const data = contentData[itemId][DEFAULT_LANG];
 
-        const video = item.querySelector('video');
-        const source = video.querySelector('source');
-        const text = item.querySelector('.contentText');
-        const wrapper = item.querySelector('.videoWrapper');
+    if (!data) return;
 
-        // Cargar contenido inicial
-        source.src = data.video;
-        video.load();
-        video.pause();
+    const text = item.querySelector('.contentText');
 
-        wrapper.classList.remove('playing');
-        wrapper.classList.add('paused');
+    // ITEM QR
+    if (itemId === 'item4') {
+        const qrImage = item.querySelector('.qrWrapper img');
+
+        if (qrImage && data.qr) {
+            qrImage.src = data.qr;
+        }
 
         text.textContent = data.text;
-    });
-    /*
-    let initialized = false;
+        return;
+    }
 
-    item.addEventListener('pointerenter', () => {
-        if (initialized) return;
+    // ITEMS CON VIDEO
+    const video = item.querySelector('video');
+    const source = video.querySelector('source');
 
-        const itemId = item.dataset.item;
-        const data = contentData[itemId][DEFAULT_LANG];
-        if (!data) return;
+    if (!video || !source) return;
 
-        const video = item.querySelector('video');
-        if (!video) return;
-        const source = video.querySelector('source');
-        if (!source) return;
-        const text = item.querySelector('.contentText');
-        const wrapper = video.closest('.videoWrapper');
+    // Cargar contenido inicial
+    source.src = data.video;
 
-        // Cargar contenido inicial
-        source.src = data.video;
-        video.load();
-        video.pause();
+    video.load();
+    video.pause();
 
+    const wrapper = item.querySelector('.videoWrapper');
+
+    if (wrapper) {
         wrapper.classList.remove('playing');
         wrapper.classList.add('paused');
+    }
 
-        text.textContent = data.text;
-
-        initialized = true;
-    });
-    */
-    /*
-    let initialized = false;
-    
-    item.addEventListener('pointerenter', () => {
-        if (initialized) return;
-
-        const itemId = item.dataset.item;
-        const data = contentData[itemId][DEFAULT_LANG];
-        if (!data) return;
-
-        const video = item.querySelector('video');
-        const source = video.querySelector('source');
-        const text = item.querySelector('.contentText');
-        const wrapper = video.closest('.videoWrapper');
-
-        // Cargar contenido inicial
-        source.src = data.video;
-        video.load();
-        video.pause();
-
-        wrapper.classList.remove('playing');
-        wrapper.classList.add('paused');
-
-        text.textContent = data.text;
-
-        initialized = true;
-    });
-    */
+    text.textContent = data.text;
 });
 
 
