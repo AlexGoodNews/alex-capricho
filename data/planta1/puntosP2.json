@@ -11,8 +11,8 @@
         "en": "The upper floor of the duke's tower houses a pinhole darkroom. This device uses a small hole or pinhole (from Greek, 'narrow hole') to project an inverted image of the garden inside the tower. Its result is a magical experience that nobles and kings used in their palaces for recreational and study purposes."
       },
       "coords": [
-        500,
-        1750
+        490,
+        1558
       ],
       "accesible": false,
       "media": {
@@ -32,8 +32,8 @@
         "en": "The palace offers the public a research library with restricted access by appointment. This specialized collection is organized around the following themes: The spirit of the Enlightenment, gardens and landscaping. Historical studies on the rights and role of women in the Early Modern period. Monographs on Goya and the art of the 18th and 19th centuries. Studies on the houses of Osuna and Benavente and their main members, with special attention to the 18th and 19th centuries."
       },
       "coords": [
-        1214,
-        1775
+        1272,
+        1556
       ],
       "accesible": true,
       "media": {
@@ -49,8 +49,8 @@
         "en": "Workshops"
       },
       "coords": [
-        1300,
-        280
+        1322,
+        463
       ],
       "accesible": false
     },

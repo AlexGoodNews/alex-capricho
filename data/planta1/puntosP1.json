@@ -11,8 +11,8 @@
         "en": "This room introduces Josefa Pimentel, Countess-Duchess of Benavente and Duchess Consort of Osuna, whose extraordinary vision and sensitivity led to the creation of El Capricho. Various panels and bibliographic resources present her life and biography."
       },
       "coords": [
-        1233,
-        1441
+        1281,
+        1311
       ],
       "accesible": true,
       "media": {
@@ -32,8 +32,8 @@
         "en": "Located in the southeast tower, this space was created during the palace’s major expansion to accommodate the rooms of the dukes’ sons, within the male wing. Today, the room commemorates the literary salons of the 18th century, recalling how the gatherings hosted by the Duchess became one of the most brilliant cultural and intellectual centres of the Spanish Enlightenment."
       },
       "coords": [
-        1214,
-        1775
+        1278,
+        1563
       ],
       "accesible": true,
       "media": {
@@ -53,8 +53,8 @@
         "en": "Located in the northeast tower, this space originally housed the apartments of the dukes’ daughters, within the female quarters of the palace. Today, the room explores the status of women in the 18th century, in a predominantly male-dominated society, as well as the creation of the Junta de Damas de Honor y Mérito, an institution established in imitation of the Royal Economic Society of Madrid."
       },
       "coords": [
-        1248,
-        284
+        1350,
+        439
       ],
       "accesible": true,
       "media": {
@@ -74,8 +74,8 @@
         "en": "This room is located in a niche of the building constructed at the beginning of the 20th century on what was originally a terrace of the palace. Under the motto of the Royal Economic Society of Madrid, 'Helping by Teaching', its content focuses on the activities of the Junta de Damas de Honor y Mérito in favor of children in orphanages, orphans, and widows, with the aim of making them useful members of society. The space is complemented by various tools associated with childcare and breastfeeding during the 18th and 19th centuries, a period when concepts of childhood and practices of maternity and pedagogy began to resemble those of today."
       },
       "coords": [
-        890,
-        300
+        900,
+        436
       ],
       "accesible": true,
       "media": {
@@ -96,7 +96,7 @@
       },
       "coords": [
         470,
-        290
+        450
       ],
       "accesible": true,
       "media": {
@@ -117,7 +117,7 @@
       },
       "coords": [
         500,
-        606
+        700
       ],
       "accesible": true,
       "media": {
@@ -138,7 +138,7 @@
       },
       "coords": [
         500,
-        916
+        932
       ],
       "accesible": true,
       "media": {
@@ -159,7 +159,7 @@
       },
       "coords": [
         500,
-        1150
+        1087
       ],
       "accesible": true,
       "media": {
@@ -180,7 +180,7 @@
       },
       "coords": [
         500,
-        1444
+        1315
       ],
       "accesible": true,
       "media": {
@@ -200,8 +200,8 @@
         "en": "This octagonal room, originally the apartment of the IX Duke, is the palace space that has best preserved its wall paintings with military themes and Pompeian inspiration. The floor, made of marble and slate tiles, replaced the original polychrome tile floor commissioned in the 18th century from the Royal Factory of Valencia at the beginning of the 20th century. Currently, it presents the figure of the IX Duke, diplomat and military man, through various object analogues to those he may have used in his daily life."
       },
       "coords": [
-        500,
-        1763
+        470,
+        1563
       ],
       "accesible": true,
       "media": {
@@ -217,8 +217,8 @@
         "en": "Restrooms"
       },
       "coords": [
-        1300,
-        600
+        1345,
+        700
       ],
       "accesible": false,
       "icono": "wc"
@@ -230,8 +230,8 @@
         "en": "Stairs"
       },
       "coords": [
-        850,
-        1450
+        877,
+        1318
       ],
       "accesible": false,
       "icono": "escalera"
@@ -243,8 +243,8 @@
         "en": "Auditorium"
       },
       "coords": [
-        850,
-        1000
+        716,
+        980
       ],
       "accesible": false,
       "icono": "salonActos"

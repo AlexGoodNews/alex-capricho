@@ -23,7 +23,7 @@ const map = L.map('map', {
 
 
 const bounds = [[0, 0], [height, width]];
-L.imageOverlay('/img/planta1/plano-museoP1.png', bounds).addTo(map);
+L.imageOverlay('/planta/img/planta0/CAPRICHO_Planta0.svg', bounds).addTo(map);
 map.fitBounds(bounds);
 map.setZoom(-3); 
 // Debug temporal para ver coordenadas

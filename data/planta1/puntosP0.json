@@ -3,7 +3,7 @@
     {
       "id": "punto0",
       "nombre": {
-        "es": "Sala de Exposiciones Temporales",
+        "es": "Exposiciones Temporales",
         "en": "Temporary Exhibition Room"
       },
       "descripcion": {
@@ -11,8 +11,8 @@
         "en": "Originally fragmented into service rooms, this space is now a small temporary exhibition room in which exhibitions related to different aspects of the history and historical-cultural context of El Capricho and its creators will be offered."
       },
       "coords": [
-        850,
-        1020
+        900,
+        1000
       ],
       "accesible": true,
       "media": {
@@ -32,8 +32,8 @@
         "en": "Designed at the end of the 18th century to provide natural light to the interior rooms, this courtyard retains its original fountain. Today, after a careful rehabilitation that provided it with a glass roof, it welcomes visitors as the starting point of the museum tour, where audiovisuals explain general information about the building and the garden."
       },
       "coords": [
-        880,
-        614
+        900,
+        675
       ],
       "accesible": true,
       "media": {
@@ -53,8 +53,8 @@
         "en": "This other historical access point to the building is a service entrance in direct relation to the neighboring house of offices. It retains original elements of the palace such as the monumental staircase, the cobblestone floor, the coat of arms of the ducal house, and the access gate. Originally it was decorated with paintings of birds and flower still lifes. Today it serves to explain the origins of the houses of Osuna and Benavente and to present their main members: illustrious ancestors and progeny of Pedro Téllez Girón and Josefa Pimentel, ninth Dukes of Osuna, and creators of El Capricho."
       },
       "coords": [
-        1270,
-        1016
+        1300,
+        1000
       ],
       "accesible": true,
       "media": {
@@ -74,8 +74,8 @@
         "en": "This space, dedicated to presentations and conferences, was originally divided into several rooms. The most notable was the 'antechamber of countries', a room that at some point was used as a library and where up to sixteen paintings by Goya were hung."
       },
       "coords": [
-        850,
-        1762
+        900,
+        1550
       ],
       "accesible": true,
       "media": {
@@ -96,7 +96,7 @@
       },
       "coords": [
         500,
-        1764
+        1550
       ],
       "accesible": false,
       "media": {
@@ -117,7 +117,7 @@
       },
       "coords": [
         500,
-        1442
+        1300
       ],
       "accesible": false,
       "media": {
@@ -129,12 +129,12 @@
     {
       "id": "oficinas",
       "nombre": {
-        "es": "Oficinas",
-        "en": "Offices"
+        "es": "Oficina",
+        "en": "Office"
       },
       "coords": [
         900,
-        280
+        428
       ],
       "accesible": true
     },
@@ -146,19 +146,19 @@
       },
       "coords": [
         500,
-        600
+        675
       ],
       "accesible": true
     },
     {
       "id": "entrada",
       "nombre": {
-        "es": "Taquillas",
-        "en": "Ticket Office"
+        "es": "Entrada",
+        "en": "Entrance"
       },
       "coords": [
-        300,
-        1020
+        200,
+        1000
       ],
       "accesible": true
     },
@@ -169,8 +169,8 @@
         "en": "Welcome Area"
       },
       "coords": [
-        570,
-        1022
+        500,
+        1000
       ],
       "accesible": true
     },
@@ -181,8 +181,8 @@
         "en": "Entrance"
       },
       "coords": [
-        1230,
-        1424
+        1300,
+        1300
       ],
       "accesible": true,
       "icono": "wc"
@@ -194,8 +194,8 @@
         "en": "Restrooms"
       },
       "coords": [
-        1230,
-        1768
+        1300,
+        1550
       ],
       "accesible": false,
       "icono": "wc"

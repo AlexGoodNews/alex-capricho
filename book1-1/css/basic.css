@@ -100,3 +100,63 @@ body{
 .next-arrow:hover {
 	background: rgba(0,0,0,0.1);
 }
+
+.book-controls {
+	position: fixed;
+
+	left: 50%;
+	top: 50%;
+
+	transform: translate(-50%, -50%);
+
+	pointer-events: none;
+
+	z-index: 1000;
+}
+
+.book-button {
+	position: absolute;
+
+	top: 50%;
+
+	transform: translateY(-50%);
+
+	width: 42px;
+	height: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	border: none;
+
+	background: rgba(218, 221, 206, 0.064);
+	color: rgba(255, 255, 255, 0.8);
+
+	font-size: 40px;
+	line-height: 1;
+
+	cursor: pointer;
+
+	pointer-events: auto;
+
+	opacity: 1;
+
+	transition:
+		opacity 0.2s ease,
+		background 0.2s ease;
+}
+
+.book-button-prev {
+	left: 0;
+	border-radius: 8px 0 0 8px;
+}
+
+.book-button-next {
+	right: 0;
+	border-radius: 0 8px 8px 0;
+}
+
+.book-button:hover {
+	background: rgba(0, 0, 0, 0.20);
+}
+

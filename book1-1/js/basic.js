@@ -100,10 +100,27 @@ function isChrome() {
 function resizeBook() {
 
 	const bookRatio = 922 / 600;
+	const buttonSpace = 45;
 
 	let screenWidth = $(window).width();
 	let screenHeight = $(window).height();
 
+	/*
+	 * El libro NO puede ocupar todo el ancho.
+	 * Reservamos espacio a izquierda y derecha.
+	 */
+	/*
+	let maxBookWidth = screenWidth - (buttonSpace * 2);
+	let maxBookWidthByHeight = screenHeight * bookRatio;
+	let bookWidth = Math.min(
+		maxBookWidth,
+		maxBookWidthByHeight
+	);
+
+	let bookHeight = bookWidth / bookRatio;
+	*/	
+
+	//version sin botones laterales
 	let bookWidth = screenWidth;
 	let bookHeight = screenWidth / bookRatio;
 
@@ -111,6 +128,7 @@ function resizeBook() {
 		bookHeight = screenHeight;
 		bookWidth = screenHeight * bookRatio;
 	}
+	
 
 	$('.flipbook').turn('size', bookWidth, bookHeight);
 
@@ -118,6 +136,32 @@ function resizeBook() {
 		left: -(bookWidth / 2),
 		top: -(bookHeight / 2)
 	});
+
+	//new
+	// Los controles tienen exactamente el tamaño del libro
+
+	$('.book-controls').css({
+		width: (bookWidth + buttonSpace * 2) + 'px',
+		height: bookHeight + 'px'
+	});
+
+}
+function initBookButtons() {
+
+	$('.book-button-next').on('click', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('.flipbook').turn('next');
+	});
+
+	$('.book-button-prev').on('click', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('.flipbook').turn('previous');
+	});
+
 }
 
 function loadApp() {
@@ -128,9 +172,19 @@ function loadApp() {
 		elevation: 50,
 		gradients: true,
 		autoCenter: true
+
 	});
 	$('.flipbook').turn('page', 4); //pagina 2
 	resizeBook();
+
+	
+	//flip esquna siemrpe
+	$('.flipbook').turn('peel', 'br');
+	//flipp de nuevo al pasar pagina
+	$('.flipbook').bind('turned', function () {
+   		$('.flipbook').turn('peel', 'br');
+	});
+
 }
 
 /* ===============================
@@ -170,6 +224,8 @@ function initSwipe() {
 $(function () {
 	loadApp();
 	initSwipe();
+
+	initBookButtons();
 
 	$(window).on('resize', resizeBook);
 });
