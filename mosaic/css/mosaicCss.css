@@ -312,18 +312,17 @@ h1{
 .item-2 { 
   /*background-image: url('/mosaic/img/tallerMosaico1.png');*/
   /*background-image: url('/mosaic/img/av2.jpg');*/
-  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
-  
+  background-image: url('../img/2.Alexander_\(Battle_of_Issus\).png');
 }
 
 .item-3 { 
   /*background-image: url('https://www.decorarconarte.com/wp-content/uploads/2021/06/Mosaico-pavimento-1536x637.jpeg');*/
   /*background-image: url('/mosaic/img/av3.jpg');*/
-  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
+  background-image: url('../img/3.Giustiniani.JPG');
 }
 
 .item-4 { 
   /*background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Reconstruction_of_the_mosaic_depiction_of_the_Battle_of_Issus_after_a_painting_by_Apelles_found_in_the_House_of_the_Faun_at_Pompeii_%28published_1893%29.jpg?20210124161506');*/
   /*background-image: url('/mosaic/img/av4.jpg');*/
-  background-image: url('https://dummyimage.com/600x700/dee2e6/6c757d.jpg');
+  background-image: url('../img/4.Capricho.png');
 }

@@ -2,41 +2,41 @@
 const contentData = {
     item1: {
         ES: {
-            video: '../videos/RehabilitacionCapricho.mp4',
+            video: 'videos/PIEZA_16_AV1_v2_25mb.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '../videos/RehabilitacionCapricho copia.mp4',
+            video: 'videos/PIEZA_16_AV1_v2_subsENG.mp4',
             text: 'Explanatory text.'
         }
     },
     item2: {
         ES: {
-            video: '../videos/RehabilitacionCapricho.mp4',
+            video: 'videos/PIEZA_16_AV2_v2_25mb.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '../videos/RehabilitacionCapricho.mp4',
+            video: 'videos/PIEZA_16_AV2_v2_subsENG.mp4',
             text: 'Explanatory text.'
         }
     },
     item3: {
         ES: {
-            video: '../videos/RehabilitacionCapricho.mp4',
+            video: 'videos/PIEZA_16_AV3_v1_25mb.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '../videos/RehabilitacionCapricho.mp4',
+            video: 'videos/PIEZA_16_AV3_v1_engSUBS_25mb.mp4',
             text: 'Explanatory text.'
         }
     },
     item4: {
         ES: {
-            video: '../videos/RehabilitacionCapricho.mp4',
+            video: 'videos/PIEZA_16_AV4_v3_25mb.mp4',
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: '../videos/RehabilitacionCapricho.mp4',
+            video: 'videos/PIEZA 16_AV4_v3_engSUB_25mb.mp4',
             text: 'Explanatory text.'
         }
     }
