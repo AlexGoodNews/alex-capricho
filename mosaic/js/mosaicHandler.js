@@ -16,7 +16,7 @@ const contentData = {
             text: 'Descripcion Demostrativa.'
         },
         EN: {
-            video: 'videos/PIEZA_16_AV2_v2_subsENG.mp4',
+            video: 'videos/PIEZA_16_AV2_v2_subsENG_25mb.mp4',
             text: 'Explanatory text.'
         }
     },
