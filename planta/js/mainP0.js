@@ -137,6 +137,7 @@ fetch('/data/planta1/puntosP0.json') //antiguo sin cloudflare
           });
         })
       //http://ip:8888/planta/index.html?punto=punto1 para saber cada QR
+      //nuevo real funciona https://museo-capricho-interactive.pages.dev/planta/planta0/?punto=punto0 //hay que poner el punto de cada uno al final su ID punto0, punto1, punto2, punto3, punto4, punto5, punto6, punto7, punto8, punto9 etc
       //GUARDAMOS EL MARKER SI COINCIDE CON EL QR 
       if (puntoIdDesdeQR && punto.id == puntoIdDesdeQR) {
         puntoEncontrado = marker;
