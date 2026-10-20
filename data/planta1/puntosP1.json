@@ -7,7 +7,7 @@
         "en": "Josefa Pimentel"
       },
       "descripcion": {
-        "es": "Esta sala presenta a Josefa Pimentel, condesa-duquesa de Benavente y duquesa consorte de Osuna, a cuya extraordinaria visión y sensibilidad se debe la creación de El Capricho. Diferentes paneles y recursos bibliográficos presentan su biografía.",
+        "es": "Esta sala presenta a Josefa Pimentel, condesa-duquesa de Benavente y duquesa consorte de Osuna, a cuya extraordinaria visión y sensibilidad se debe la creación de El Capricho. Diferentes paneles y recursos bibliográficos relatan su biografía.",
         "en": "This room introduces Josefa Pimentel, Countess-Duchess of Benavente and Duchess Consort of Osuna, whose extraordinary vision and sensitivity led to the creation of El Capricho. Various panels and bibliographic resources present her life and biography."
       },
       "coords": [
@@ -95,8 +95,8 @@
         "en": "This room, now dedicated to explaining the role of the Dukes of Osuna as protectors and promoters of the arts and culture, was during the 19th century a companion room."
       },
       "coords": [
-        470,
-        450
+        500,
+        700
       ],
       "accesible": true,
       "media": {
@@ -112,12 +112,12 @@
         "en": "The Duchess's Office"
       },
       "descripcion": {
-        "es": "Nos encontramos en el único espacio del palacio que conserva uno de sus pavimentos cerámicos originales, así como la decoración del techo de estilo clasicista. Este gabinete, situado al noroeste, era el aposento privado de Josefa Pimentel. Conectados por sendas escaleras de caracol, sobre él se encontraba el \"baño de la duquesa\" y en la planta baja, el oratorio.",
+        "es": "Nos encontramos en el único espacio del palacio que conserva uno de sus pavimentos cerámicos originales, así como la decoración del techo de estilo clasicista. Este gabinete, situado al noroeste, era el aposento privado de Josefa Pimentel. Conectados por sendas escaleras de caracol, sobre él se encontraba el \"Baño de la duquesa\" y en la planta baja, el oratorio.",
         "en": "We are in the only space in the palace that preserves one of its original ceramic floors, as well as the classicist-style ceiling decoration. This office, located in the northwest, was the private room of Josefa Pimentel. Connected by spiral staircases, it housed the \"duchess's bathroom\" and on the ground floor, the chapel."
       },
       "coords": [
-        500,
-        700
+        470,
+        450
       ],
       "accesible": true,
       "media": {
@@ -211,6 +211,28 @@
       }
     },
     {
+      "id": "punto13",
+      "nombre": {
+        "es": "Sala Polivalente",
+        "en": "Multipurpose Room"
+      },
+      "descripcion": {
+        "es": "Este espacio, dedicado a presentaciones y conferencias, originalmente estuvo dividido en varias estancias. La más destacada era la «Antesala de países», un aposento que en alguna época se destinó a biblioteca y donde colgaron hasta dieciséis pinturas de Goya.",
+        "en": "This space, dedicated to presentations and conferences, was originally divided into several rooms. The most notable was the 'Antechamber of countries', a room that at some point was used as a library and where up to sixteen paintings by Goya were hung."
+      },
+      "coords": [
+        716,
+        980
+      ],
+      "accesible": false,
+      "icono": "salonActos",
+      "media": {
+        "audio_es": "/audio/planta0/13Esp.mp3",
+        "audio_en": "/audio/planta0/13Eng.mp3",
+        "video_signos": "/videos/planta0/13Signos.mp4"
+      }
+    },
+    {
       "id": "aseos",
       "nombre": {
         "es": "Aseos",
@@ -235,19 +257,6 @@
       ],
       "accesible": false,
       "icono": "escalera"
-    },
-    {
-      "id": "salonActos",
-      "nombre": {
-        "es": "Salón de Actos",
-        "en": "Auditorium"
-      },
-      "coords": [
-        716,
-        980
-      ],
-      "accesible": false,
-      "icono": "salonActos"
     }
   ]
 }
